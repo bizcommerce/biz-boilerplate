@@ -58,7 +58,7 @@ $bg_home = '{{css_image name="bg-home"}}'
 ```
 E para utilizar o css "offline" mapeando via Chrome Workspace é necessário colocar um valor real para a variável.
 ```
-$bg_home = 'https://myshopbrasil.dev.bizcommerce.com.br/media/interface/images/bg-home.png'
+$bg_home = 'https://biz4.dev.bizcommerce.com.br/media/interface/images/bg-home.png'
 ```
 
 Nosso framework possui 2 arquivos dedicados ao registro de varíaveis css/vars/dev.styl e css/vars/prod.styl.
@@ -72,9 +72,9 @@ $color1_font_hover = '#f25f22'
 $color1_bg = '#fafafa'
 $color1_bg_hover = '#fff8f2'
 
-$bg_home = 'https://myshopbrasil.dev.bizcommerce.com.br/media/interface/images/bg-home.png'
-$bg_bar = 'https://myshopbrasil.dev.bizcommerce.com.br/media/interface/images/bg-bar.png'
-$bg_simplify_life = 'https://myshopbrasil.dev.bizcommerce.com.br/media/interface/images/bg-simplify-life.png'
+$bg_home = 'https://biz4.dev.bizcommerce.com.br/media/interface/images/bg-home.png'
+$bg_bar = 'https://biz4.dev.bizcommerce.com.br/media/interface/images/bg-bar.png'
+$bg_simplify_life = 'https://biz4.dev.bizcommerce.com.br/media/interface/images/bg-simplify-life.png'
 ```
 
 **css/vars/prod.styl**
