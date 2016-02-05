@@ -1,5 +1,5 @@
-# Bizcommerce Skin Base (Working title)
-Aqui você encontrará um framework para auxiliar no desenvolvimento de skins para o Biz4.
+# Biz Boilerplate
+Aqui você encontrará um framework que auxilia no desenvolvimento de skins para o BIZ4.
 
 Saiba mais sobre como é [desenvolver para o Biz4](http://biz4treinamento.dev.bizcommerce.com.br).
 
@@ -25,22 +25,22 @@ Saiba mais sobre como é [desenvolver para o Biz4](http://biz4treinamento.dev.bi
 ```
 
 ## Stack
-O framework **Bizcommerce Skin Base** abraça o conceito "convention over configuration" e espera que os usuários familiarizem-se com as seguintes tecnologias:
+O framework **Biz Boilerplate** abraça o conceito "convention over configuration" e espera que os usuários familiarizem-se com as seguintes tecnologias:
 
 ### [Stylus](https://learnboost.github.io/stylus/)
 
-Um preprocessador extremamente versátil permite que você escreva as folhas de estilo usando chaves, ou apenas identação significativa.
+Um preprocessador extremamente versátil, permite que você escreva as folhas de estilo usando chaves, ou apenas identação significativa.
 
-O arquivo general.styl possui um exemplo da sintaxe sugerida, mas sinta-se a vontade para escrever do modo que preferir segundo a documentação do [Stylus](https://learnboost.github.io/stylus/).
+O arquivo general.styl possui um exemplo da sintaxe sugerida, mas sinta-se a vontade para escrever do modo que preferir, seguindo a documentação do [Stylus](https://learnboost.github.io/stylus/).
 
-Você pode compilar o arquivo stylus utilizando ferramenta de linha de comando global do stylus, mas recomendamos a utlização dos comandos locais ```gulp dev```, ```gulp prod``` e ```gulp watch``` Veja mais na sessão Comandos grunt.
+Você pode compilar o arquivo stylus utilizando ferramenta de linha de comando global do stylus, mas recomendamos a utlização dos comandos locais ```gulp dev```, ```gulp prod``` e ```gulp watch```. Veja mais na sessão Comandos grunt.
 
 #### Nib
 Nib é uma biblioteca de mixins para Stylus com atalhos para declarações repetitivas e browser vendors.
 
 ### [Gulp](http://gulpjs.com/)
-Escolhemos o Gulp como ferramenta de automatizações de tarefa por causa de sua simplicidade e abundacia de modulos para infinitos fins.
-As tarefas do Gulp estão declaradas no arquivo "gulpfile.js" e suas depencias encontram-se em "package.json"
+Escolhemos o Gulp como ferramenta de automatizações de tarefas, por causa de sua simplicidade e abundância de modulos para infinitos fins.
+As tarefas do Gulp estão declaradas no arquivo "gulpfile.js" e suas dependências encontram-se em "package.json"
 
 ### Chrome Web developer Workspace
 É uma opção nativa do Google Chrome que permite mapear arquivos locais e conferir seus efeitos na página sem precisar recarregar a página.
