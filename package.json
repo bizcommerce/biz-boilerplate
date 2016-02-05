@@ -1,0 +1,26 @@
+{
+  "name": "biz-skin",
+  "version": "1.0.0",
+  "description": "Estrutura base para custoização de Layouts Biz4",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "nib": "^1.1.0",
+    "gulp": "^3.9.0",
+    "gulp-svg-sprite": "^1.2.10",
+    "gulp-clipboard": "^0.1.1",
+    "gulp-stylus": "^2.0.7",
+    "gulp-svgmin": "^1.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "sudo npm install gulp -g"
+  },
+  "keywords": [
+    "bizcommerce",
+    "biz4",
+    "skins",
+    "magento"
+  ],
+  "author": "Bizcommerce",
+  "license": "ISC"
+}

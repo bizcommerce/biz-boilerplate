@@ -1,0 +1,101 @@
+/*
+* Utilities
+*/
+@import '../node_modules/nib'
+
+/*
+* Libraries
+*/
+@import url("//fonts.googleapis.com/css?family=Exo+2:400,500italic,600,500,400italic,600italic,700,300italic,300|Titillium+Web:400,600");
+
+/**
+* Mixins - Font-weight
+*/
+light = 300
+regular = 400
+medium = 500
+semibold = 600
+bold = 700
+
+/**
+* Mixins - Viewport
+*/
+viewport = 980
+sidebar =  220
+gutter =   30
+
+/**
+* Mixins - Responsive
+* @media (max-width screen-sm-min)
+* @media (max-width screen-md-min)
+* @media (max-width screen-lg-min)
+*/
+// Smaller devices (phones, 320px and down)
+screen-xxs = 320px
+// Small devices (phones, 480px and down)
+screen-xs = 480px
+// Small devices (tablets, 768px and down)
+screen-sm = 768px
+// Medium devices (desktops, 992px and down)
+screen-md = 992px
+// Medium devices (desktops, 1200px and down)
+screen-lg = 1200px
+
+
+/*
+* Base
+* Estilo base do elementos do Html
+*/
+
+/*
+* Global
+* Classes globais que devem ser extendidas por componentes
+*/
+
+/*
+* Modules
+* Componentes que se adaptam ao contexto
+*/
+/*
+* Module - Messages
+*/
+.messages{
+  > li{
+    display block
+    padding 10px 20px
+    margin-bottom 20px
+    font-size 14px
+  }
+  .success-msg{
+    border 1px solid #2baf60
+    background #c8efc0
+    color #1d904b
+  }
+  .error-msg{
+    border 1px solid #d92100
+    background #ffdcdc
+    color #d92100
+  }
+  .notice-msg{
+    border 1px solid #f7be07
+    background #f9f0d5
+    color #f7be07
+  }
+}
+
+
+/*
+* Layout
+* Estrutura tamanhos e ordem dos elementos no layout
+*/
+
+
+/*
+* State
+* Estado global do Layout
+*/
+
+/*
+* Theme
+* Customização do modulos ou layout, hacks !importants e etc
+*/
