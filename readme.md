@@ -43,11 +43,11 @@ Escolhemos o Gulp como ferramenta de automatizações de tarefas, por causa de s
 As tarefas do Gulp estão declaradas no arquivo "gulpfile.js" e suas dependências encontram-se em "package.json"
 
 ### Chrome Web developer Workspace
-É uma opção nativa do Google Chrome que permite mapear arquivos locais e conferir seus efeitos na página sem precisar recarregar a página.
+É uma opção nativa do Google Chrome que permite mapear arquivos locais e conferir seus efeitos na página, sem precisar recarrega-la.
 
 
 ## Varíaveis
-No Biz4 afim de dar maior autonomia aos desenvolvedores disponibiliza tags em seu sistema que podem ser utilizadas dentro de arquivos css e javascript.
+Afim de oferecer maior autonomia aos desenvolvedores disponibiliza tags em seu sistema que podem ser utilizadas dentro de arquivos css e javascript.
 As tags trazem informações como cores da loja (definidas em configurações rápidas do sistema) bem como endereço completo das imagens cadastradas (em Design -> Imagens).
 
 Para poder compilar seus arquivos stylus utilizando as tags do sistema é necessário criar alias para elas utlizando variáveis do stylus.
@@ -139,12 +139,8 @@ gulp svg-min
 
 ## Setup
 ```shell
-## Install node
-git clone https://github.com/joyent/node
-cd node
-./configure
-make
-make install
+## Clonando o projeto
+git clone --depth 1 https://github.com/bizcommerce/biz-boilerplate.git nome-sua-loja
 
 ## Instalando dependências
 npm install .
