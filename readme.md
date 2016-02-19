@@ -58,62 +58,15 @@ As tarefas do Gulp estão declaradas no arquivo "gulpfile.js" e suas dependênci
 É uma opção nativa do Google Chrome que permite mapear arquivos locais e conferir seus efeitos na página, sem precisar recarrega-la.
 
 
-## Varíaveis
-Afim de oferecer maior autonomia aos desenvolvedores disponibiliza tags em seu sistema que podem ser utilizadas dentro de arquivos css e javascript.
-As tags trazem informações como cores da loja (definidas em configurações rápidas do sistema) bem como endereço completo das imagens cadastradas (em Design -> Imagens).
-
-Para poder compilar seus arquivos stylus utilizando as tags do sistema é necessário criar alias para elas utlizando variáveis do stylus.
-
-Ex
-```
-$bg_home = '{{css_image name="bg-home"}}'
-```
-E para utilizar o css "offline" mapeando via Chrome Workspace é necessário colocar um valor real para a variável.
-```
-$bg_home = 'https://biz4.dev.bizcommerce.com.br/media/interface/images/bg-home.png'
-```
-
-Nosso framework possui 2 arquivos dedicados ao registro de varíaveis css/vars/dev.styl e css/vars/prod.styl.
-
-**css/vars/dev.styl**
-Permite o uso das váriaveis de modo estático e local via chrome workspace
-
-```
-$color1_font = '#333333'
-$color1_font_hover = '#f25f22'
-$color1_bg = '#fafafa'
-$color1_bg_hover = '#fff8f2'
-
-$bg_home = 'https://biz4.dev.bizcommerce.com.br/media/interface/images/bg-home.png'
-$bg_bar = 'https://biz4.dev.bizcommerce.com.br/media/interface/images/bg-bar.png'
-$bg_simplify_life = 'https://biz4.dev.bizcommerce.com.br/media/interface/images/bg-simplify-life.png'
-```
-
-**css/vars/prod.styl**
-Renderiza as variáveis conforme as tags do sistema e é o modo como o css deve ser salvo no painel.
-```
-$color1_font = '{{color1_font}}'
-$color1_font_hover = '{{color1_font_hover}}'
-$color1_bg = '{{color1_bg}}'
-
-$bg_home = '{{css_image name="bg-home"}}'
-$bg_bar = '{{css_image name="bg-bar"}}'
-$bg_simplify_life = '{{css_image name="bg-simplify-life"}}'
-```
-
-Para utlizar as varíaveis de "dev" ou "prod" você pode pode incluir as variáveis do ambiente desejado no começo de arquivo .styl com ```@require "vars/dev"``` ou ```@require "vars/prod```.
-
-### Gerando css dev e prod
-Mas recomendamos fortemente o uso dos comandos ```gulp dev``` ```gulp prod``` para compilar seu css e não precisar trocar a importação de varíaveis toda vez que troca o ambiente.
-
 ## Gulp
-Gulp é a ferramenta de build (automatização de tarefas) do Skin base.
+Gulp é a ferramenta de build (automatização de tarefas) do Biz Boilerplate.
 
 Comandos disponíveis:
 
 * gulp dev
 * gulp prod
 * gulp watch
+* gulp svg-min
 * gulp svg
 
 ### gulp dev
@@ -134,6 +87,13 @@ O comando mais recomendado para se desenvolver offline, gera o arquivo css de de
 gulp watch
 ```
 
+### gulp svg-min
+Esta função otimiza os arquivos da pasta svg, removendo espaços em branco e atributos de estilo do vector.
+
+```shell
+gulp svg-min
+```
+
 ### gulp svg
 gulp svg é o commando responsável por gerar um svg-sprite do padrão symbol utilizando arquivos svgs dentro da data ```svg```.
 O commando copia o svg sprite para o clipboard e salva o resultado em ```templates/symbol/svg/sprite.symbol.svg```
@@ -142,11 +102,75 @@ O commando copia o svg sprite para o clipboard e salva o resultado em ```templat
 gulp svg
 ```
 
-### gulp svg-min
-Esta função otimiza os arquivos da pasta svg, removendo espaços em branco e atributos de estilo do vector.
+## Variáveis
+O biz-boilerplate permite utilizar variáveis diferentes em desenvolvimento e produção.
+Uma das vantagens é a criação de "alias" para tags do sistema.
 
+Tags como '{{color1_font}}' e '{{color1_font_hover}}' são renderizadas pelo Biz4, de acordo com as configurações de cores de seu admin.
+Para utilizar as tags de cores em desenvolvimento utilizando o chrome workspace (sem precisar salvar e publicar o arquivo), você declara-las da seguinte maneira:
+
+1. No arquivo vars/dev.styl
+```
+$color1_font = '#333333'
+$color1_font_hover = '#f25f22'
+```
+
+2. No arquivo vars/prod.styl
+```
+$color1_font = '{{color1_font}}'
+$color1_font_hover = '{{color1_font_hover}}'
+```
+
+3. Para utilizar essas variáveis em seu arquivo general.styl:
+```
+a
+  color unquote($color1_font)
+  &:hover
+    color unquote($color1_font_hover)
+```
+
+4. Gerando a versão DEV
 ```shell
-gulp svg-min
+gulp dev
+```
+
+Gera o seguinte arquivo general.css
+```css
+a{
+  color: #333333
+}
+a:hover{
+  color: #f25f22
+}
+```
+
+Esta versão pode ser mapeada no Chrome, que atualizará automaticamente sua página com a versão mais nova do css.
+
+
+5. Gerando a versão PROD
+```shell
+gulp prod
+```
+
+Gera o seguinte arquivo general.css
+```css
+a{
+  color: '{{color1_font}}'
+}
+a:hover{
+  color: '{{color1_font_hover}}'
+}
+```
+
+Esta opção é a que deve ser colada e salva pelo painel na seção "css" "general".
+Após salvo e publicado o css carregado em sua loja será:
+```css
+a{
+  color: #333333
+}
+a:hover{
+  color: #f25f22
+}
 ```
 
 ## Setup
