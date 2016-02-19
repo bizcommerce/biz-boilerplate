@@ -109,19 +109,22 @@ Uma das vantagens é a criação de "alias" para tags do sistema.
 Tags como '{{color1_font}}' e '{{color1_font_hover}}' são renderizadas pelo Biz4, de acordo com as configurações de cores de seu admin.
 Para utilizar as tags de cores em desenvolvimento utilizando o chrome workspace (sem precisar salvar e publicar o arquivo), você declara-las da seguinte maneira:
 
-### 1 - No arquivo vars/dev.styl
+### 1 - Configurando variáveis DEV
+No arquivo css/vars/dev.styl
 ```
 $color1_font = '#333333'
 $color1_font_hover = '#f25f22'
 ```
 
-### 2 - No arquivo vars/prod.styl
+### 2 - Configurando variáveis PROD
+No arquivo vars/prod.styl
 ```
 $color1_font = '{{color1_font}}'
 $color1_font_hover = '{{color1_font_hover}}'
 ```
 
-### 3 - Para utilizar essas variáveis em seu arquivo general.styl:
+### 3 - Utilizando as variáveis
+Para utilizar essas variáveis em seu arquivo general.styl:
 ```
 a
   color unquote($color1_font)
@@ -129,7 +132,8 @@ a
     color unquote($color1_font_hover)
 ```
 
-### 4 - Gerando a versão DEV
+### 4 - Gerando versão DEV
+Execute o seguinte comando na pasta de seu projeto
 ```shell
 gulp dev
 ```
@@ -148,6 +152,7 @@ Esta versão pode ser mapeada no Chrome, que atualizará automaticamente sua pá
 
 
 ### 5 -  Gerando a versão PROD
+Execute o comando a seguir
 ```shell
 gulp prod
 ```
