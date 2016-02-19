@@ -3,6 +3,18 @@ Aqui você encontrará um framework que auxilia no desenvolvimento de skins para
 
 Saiba mais sobre como é [desenvolver para o Biz4](http://biz4treinamento.dev.bizcommerce.com.br).
 
+## Setup
+```shell
+## Clonando o projeto
+git clone --depth 1 https://github.com/bizcommerce/biz-boilerplate.git nome-sua-loja
+
+## Instalando dependências
+npm install .
+
+## Começando seu projeto
+gulp watch
+```
+
 ## Estrutura
 ```
 ├── css
