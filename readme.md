@@ -108,7 +108,7 @@ gulp svg
 gulp img-sprite gera um arquivo de sprite
 
 ```shell
-gulp svg
+gulp img-sprite
 ```
 
 ## Variáveis
