@@ -2,7 +2,9 @@ var gulp                = require('gulp'),
 svgSprite               = require('gulp-svg-sprite'),
 clipboard               = require("gulp-clipboard"),
 stylus                  = require('gulp-stylus'),
-svgmin                  = require('gulp-svgmin');
+svgmin                  = require('gulp-svgmin'),
+gulpif                  = require('gulp-if'),
+sprite                  = require('css-sprite').stream;
 
 // More complex configuration example
 config                  = {
@@ -21,6 +23,17 @@ config                  = {
         }
     }
 };
+
+gulp.task('img-sprite', function () {
+  return gulp.src('./img/sprites/*.png')
+    .pipe(sprite({
+      name: 'sprite',
+      style: 'sprite.styl',
+      cssPath: '../img/sprites',
+      processor: 'stylus'
+    }))
+    .pipe(gulpif('*.png', gulp.dest('./img/sprites'), gulp.dest('./css')))
+});
 
 gulp.task('svg-min', function () {
   gulp.src('svg/*.svg').pipe(svgmin({
@@ -44,8 +57,7 @@ gulp.task('prod', function() {
         'name':'embedurl',
         'limit': false
       }
-    }))
-    .pipe(gulp.dest('./css'));
+    })).pipe(gulp.dest('./css'));
   gulp.src('css/general.css').pipe(clipboard());
 });
 

@@ -7,6 +7,7 @@ Saiba mais sobre como é [desenvolver para o Biz4](http://biz4treinamento.dev.bi
 ```shell
 ## Clonando o projeto
 git clone --depth 1 https://github.com/bizcommerce/biz-boilerplate.git nome-sua-loja
+cd nome-sua-loja
 
 ## Instalando dependências
 npm install .
@@ -26,8 +27,9 @@ gulp watch
 │   ├── editable.css    
 ├── package.json        (Declaração das dependências do projeto mixins e modulos de build)
 ├── gulpfile.js         (Base de código das tarefas de automatização do projeto)
-├── img
-├── svg
+├── img                 (Imagens utilizadas no projeto como background ou via tag img)
+│   ├── sprites         (Todas a imagens dessa pasta podem ser convertidas num único espaço com o comando gulp img-sprite)
+├── svg                 (Os icones desta pasta podem ser convertidos em svg sprite com o comando gulp svg )
 ├── js
 │   ├── general.js
 │   ├── editable.js
@@ -97,6 +99,13 @@ gulp svg-min
 ### gulp svg
 gulp svg é o commando responsável por gerar um svg-sprite do padrão symbol utilizando arquivos svgs dentro da data ```svg```.
 O commando copia o svg sprite para o clipboard e salva o resultado em ```templates/symbol/svg/sprite.symbol.svg```
+
+```shell
+gulp svg
+```
+
+### gulp img-sprite
+gulp img-sprite gera um arquivo de sprite
 
 ```shell
 gulp svg
