@@ -4,7 +4,6 @@
   "description": "Estrutura base para custoização de Layouts Biz4",
   "main": "gulpfile.js",
   "dependencies": {
-    "css-sprite": "^0.9.9",
     "gulp": "^3.9.0",
     "gulp-clipboard": "^0.1.1",
     "gulp-if": "^2.0.0",
