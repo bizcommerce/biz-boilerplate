@@ -1,0 +1,6 @@
+<div class="menu-principal">
+  {{widget type="interface/widget_menu" template="interface/widgets/menu.phtml" identificador="categories_menu" exibicao="normal" exibir_todos_departamentos="1" posicionar_automaticamente="1" texto_todos_departamentos="<svg class='icon'><use xlink:href='#menu-icon' /></svg><span class='text'> escolha por <strong>Categoria</strong></span>" niveis="1" ocultar_categorias="5,6,7,8,9,10,11"}}
+  {{widget type="menubuilder/output" id="4" template="menubuilder/output.phtml"}}
+  {{widget type="shopbybrand/widget" template="shopbybrand/widget.phtml" identificador="brands-menu" exibicao="lista" markup="<a href='{[link_marca]}' title='{[nome_marca]}'> <span class='marca_imagem'>{[imagem_marca tamanho='100x100']}</span> <span class='marca_nome'>{[nome_marca]}</span></a>"}}
+  {{widget type="interface/widget_buscaavancada" template="interface/widgets/buscaavancada.phtml" identificador="filter_menu" label_botao="Ok" atributos="1,2"}}
+</div>
