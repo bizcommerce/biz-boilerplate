@@ -29,6 +29,31 @@ body {
 * Global
 * Classes globais que devem ser extendidas por componentes
 */
+.container,
+.header-container header.header {
+  min-width: 0px;
+  max-width: 980px;
+  width: auto;
+  margin: 0 auto;
+}
+/*
+* Module - Dropdown
+* &:hover - Deve mostrar o .dropdown-content
+*/
+.dropdown {
+  position: relative;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: 0px;
+  top: 100%;
+  z-index: 9999;
+  width: 100%;
+}
 /*
 * Modules
 * Componentes que se adaptam ao contexto
@@ -56,6 +81,161 @@ body {
   border: 1px solid #f7be07;
   background: #f9f0d5;
   color: #f7be07;
+}
+/*
+* Module - Welcome
+*/
+.login-create-container .login-create {
+  color: #666;
+  font-size: 12px;
+  font-weight: 400;
+  color: #666;
+}
+.login-create-container .login-create a {
+  color: #666;
+  font-weight: 600;
+}
+/*
+* Module - Carrinho
+*/
+.mycart-container .mycart > a {
+  background: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  padding-left: 52px;
+  width: auto;
+  height: auto;
+  position: relative;
+}
+.mycart-container .mycart > a:before {
+  content: '';
+  background: #BC2031;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  display: block;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  left: 0px;
+}
+.mycart-container .mycart > a .icon {
+  width: 22px;
+  height: 20px;
+  top: initial;
+  margin: 0px;
+  left: 9px;
+  top: 11px;
+}
+.mycart-container .mycart > a > .qtd {
+  left: 28px;
+  width: 17px;
+  height: 17px;
+  background: #ffa200;
+  font-size: 11px;
+}
+.mycart-container .mycart > a .txt {
+  width: auto;
+  color: #BC2031;
+  text-align: left;
+  font-size: 16px;
+  padding-top: 6px;
+}
+.mycart-container .mycart > a .txt .qtd {
+  width: auto;
+  height: auto;
+  background: none;
+  color: #BC2031;
+  position: static;
+  text-align: left;
+  font-size: 12px;
+  padding-top: 5px;
+  line-height: 12px;
+}
+/*
+* Module - Header
+*/
+.call-center {
+  font-size: 12px;
+  font-weight: 500;
+}
+.call-center strong {
+  font-weight: 600;
+}
+/*
+* Module - Header
+*/
+header.header {
+  padding-bottom: 0px;
+}
+/*
+* Module - Header Container
+*/
+.header-container {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+/*
+* Module - main-menu
+*/
+.main-menu.normal ul.level0 {
+  background: #EA202C;
+}
+.main-menu.normal li.level0 {
+  padding-bottom: 0px;
+}
+.main-menu.normal li.level0.all .icon {
+  width: 20px;
+  height: 17px;
+  fill: #fff;
+  margin: 20px;
+}
+.main-menu.normal li.level0.all .text {
+  display: inline-block;
+  font-size: 12px;
+}
+.main-menu.normal li.level0.all .text strong {
+  display: block;
+  font-size: 18px;
+  font-weight: 800;
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCIgd2lkdGg9IjExIiBoZWlnaHQ9IjciIHZpZXdCb3g9IjAgMCAxMSA3Ij4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiAjZmZmOwogICAgICAgIGZpbGwtcnVsZTogZXZlbm9kZDsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPHBhdGggZD0iTTkuNjMyLDAuMDAwIEMxMC4wODgsMC40NjEgMTAuNTQ0LDAuOTIxIDExLjAwMCwxLjM4MCBDOS4xNDQsMy4yNTQgNy4yODcsNS4xMjcgNS40MzAsNy4wMDAgQzMuNjIxLDUuMTc0IDEuODExLDMuMzQ3IDAuMDAwLDEuNTIxIEMwLjQ1NiwxLjA2MSAwLjkxMiwwLjYwMSAxLjM2OSwwLjE0MCBDMi43MjIsMS41MDcgNC4wNzcsMi44NzIgNS40MzAsNC4yMzkgQzYuODMxLDIuODI3IDguMjMxLDEuNDEzIDkuNjMyLDAuMDAwIFoiIGNsYXNzPSJjbHMtMSIvPgo8L3N2Zz4K") no-repeat center right;
+  padding-right: 20px;
+}
+.main-menu.normal a.level0 .name {
+  padding-right: 20px;
+}
+.main-menu.normal a.level0 .name span {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.main-menu.normal a.level0:hover {
+  background: #000;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+/*
+* Module - Marcas
+*/
+.brands-container.list .brands {
+  padding: 0px;
+}
+.brands-container.list .brands > .list {
+  margin: 0px;
+}
+.brands-container .brands {
+  border: none;
+}
+.brands-container .brands .marca_nome {
+  display: none;
 }
 /*
 * Module - filter_menu
@@ -130,11 +310,12 @@ body {
 .filter_menu fieldset .label-text {
   color: rgba(255,255,255,0.7);
   font-size: 10px;
-  line-height: 9px;
+  line-height: 10px;
   display: inline-block;
   width: 30px;
   text-align: right;
   margin-right: 10px;
+  text-transform: uppercase;
 }
 .filter_menu fieldset select {
   -webkit-appearance: none;
@@ -176,7 +357,7 @@ body {
 * Module - Menu Principal
 */
 .menu-principal {
-  background: #00f;
+  background: #EA202C;
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
@@ -199,9 +380,36 @@ body {
   -webkit-justify-content: center;
   justify-content: center;
 }
+.menu-principal > .item {
+  padding: 10px 20px 0px 20px;
+  background: #EA202C;
+  min-height: 50px;
+}
+.menu-principal > .item:hover {
+  background: #000;
+}
+.menu-principal > .item .text {
+  font-size: 12px;
+  color: #fff;
+  text-transform: uppercase;
+  font-style: italic;
+  padding-bottom: 10px;
+  display: block;
+  cursor: pointer;
+}
+.menu-principal > .item .text strong {
+  font-weight: 800;
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCIgd2lkdGg9IjExIiBoZWlnaHQ9IjciIHZpZXdCb3g9IjAgMCAxMSA3Ij4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiAjZmZmOwogICAgICAgIGZpbGwtcnVsZTogZXZlbm9kZDsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPHBhdGggZD0iTTkuNjMyLDAuMDAwIEMxMC4wODgsMC40NjEgMTAuNTQ0LDAuOTIxIDExLjAwMCwxLjM4MCBDOS4xNDQsMy4yNTQgNy4yODcsNS4xMjcgNS40MzAsNy4wMDAgQzMuNjIxLDUuMTc0IDEuODExLDMuMzQ3IDAuMDAwLDEuNTIxIEMwLjQ1NiwxLjA2MSAwLjkxMiwwLjYwMSAxLjM2OSwwLjE0MCBDMi43MjIsMS41MDcgNC4wNzcsMi44NzIgNS40MzAsNC4yMzkgQzYuODMxLDIuODI3IDguMjMxLDEuNDEzIDkuNjMyLDAuMDAwIFoiIGNsYXNzPSJjbHMtMSIvPgo8L3N2Zz4K") no-repeat center right;
+  padding-right: 20px;
+  display: table;
+  font-size: 18px;
+}
 /*
 * Layout
 * Estrutura tamanhos e ordem dos elementos no layout
+*/
+/*
+* Layout - Header container
 */
 /*
 * State

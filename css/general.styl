@@ -55,10 +55,36 @@ body
 * Classes globais que devem ser extendidas por componentes
 */
 
+.container
+  min-width 0px
+  max-width unit(viewport, px)
+  width auto
+  margin 0 auto
+
+/*
+* Module - Dropdown
+* &:hover - Deve mostrar o .dropdown-content
+*/
+.dropdown
+  position relative
+  &:hover
+    .dropdown-content
+      display block
+
+.dropdown-content
+  display none
+  position absolute
+  left 0px
+  top 100%
+  z-index 9999
+  width 100%
+
+
 /*
 * Modules
 * Componentes que se adaptam ao contexto
 */
+
 
 /*
 * Module - Messages
@@ -86,6 +112,156 @@ body
     color #f7be07
   }
 }
+
+/*
+* Module - Welcome
+*/
+.login-create-container
+  .login-create
+    color #666666
+    font-size 12px
+    font-weight regular
+    color #666666
+    a
+      color #666666
+      font-weight semibold
+
+/*
+* Module - Carrinho
+*/
+.mycart-container
+  .mycart
+    > a
+        background none
+        box-shadow none
+        padding-left 52px
+        width auto
+        height auto
+        position relative
+        &:before
+          content ''
+          background unquote($color1_bg_hover)
+          border-radius 50%
+          display block
+          height 40px
+          width 40px
+          position absolute
+          left 0px
+        .icon
+          width 22px
+          height 20px
+          top initial
+          margin 0px
+          left 9px
+          top 11px
+        > .qtd
+            left 28px
+            width 17px
+            height 17px
+            background #ffa200
+            font-size 11px
+        .txt
+          width auto
+          color unquote($color1_bg_hover)
+          text-align left
+          font-size 16px
+          padding-top 6px
+          .qtd
+            width auto
+            height auto
+            background none
+            color unquote($color1_bg_hover)
+            position static
+            text-align left
+            font-size 12px
+            padding-top 5px
+            line-height 12px
+
+
+/*
+* Module - Header
+*/
+
+.call-center
+  font-size 12px
+  font-weight medium
+  strong
+    font-weight semibold
+
+/*
+* Module - Header
+*/
+header.header
+  padding-bottom 0px
+
+/*
+* Module - Header Container
+*/
+.header-container
+  box-shadow none
+
+/*
+* Module - main-menu
+*/
+.main-menu
+  &.normal
+    /*
+    * Menu nível 0
+    */
+    /*
+    * Ul de nível 0
+    */
+    ul.level0
+      background unquote($color1_bg)
+    /*
+    * Li de nível 0
+    */
+    li.level0
+      padding-bottom 0px
+      &.all
+        .icon
+          width 20px
+          height 17px
+          fill #fff
+          margin 20px
+        .text
+          display inline-block
+          font-size 12px
+          strong
+            display block
+            font-size 18px
+            font-weight 800
+            background embedurl('../img/arrow-down-icon.svg') no-repeat center right
+            padding-right 20px
+    /*
+    * A de nível 0
+    * &:hover - background #000
+    */
+    a.level0
+      .name
+        padding-right 20px
+        span
+          display flex
+          align-items center
+      &:hover
+        background #000
+        box-shadow none
+
+
+/*
+* Module - Marcas
+*/
+.brands-container
+  &.list
+    .brands
+      padding 0px
+      > .list
+          margin 0px
+  .brands
+    border none
+    .marca_nome
+      display none
+
 
 /*
 * Module - filter_menu
@@ -127,11 +303,12 @@ body
     .label-text
       color rgba(#ffffff, .7)
       font-size 10px
-      line-height 9px
+      line-height 10px
       display inline-block
       width 30px
       text-align right
       margin-right 10px
+      text-transform uppercase
     select
       appearance none
       background none
@@ -165,16 +342,43 @@ body
 * Module - Menu Principal
 */
 .menu-principal
-  background blue
+  background unquote($color1_bg)
   display flex
   flex-flow row wrap
   justify-content center
+  > .item
+      padding 10px 20px 0px 20px
+      background unquote($color1_bg)
+      min-height 50px
+      &:hover
+        background #000
+      .text
+        font-size 12px
+        color #fff
+        text-transform uppercase
+        font-style italic
+        padding-bottom 10px
+        display block
+        cursor pointer
+        strong
+          font-weight 800
+          background embedurl('../img/arrow-down-icon.svg') no-repeat center right
+          padding-right 20px
+          display table
+          font-size 18px
+
 
 /*
 * Layout
 * Estrutura tamanhos e ordem dos elementos no layout
 */
 
+/*
+* Layout - Header container
+*/
+.header-container
+  header.header
+    @extend .container
 
 /*
 * State
