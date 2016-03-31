@@ -55,6 +55,9 @@ body
 * Classes globais que devem ser extendidas por componentes
 */
 
+/*
+* Layout - Container
+*/
 .container
   min-width 0px
   max-width unit(viewport, px)
@@ -76,8 +79,8 @@ body
   position absolute
   left 0px
   top 100%
-  z-index 9999
-  width 100%
+  z-index 22
+  width auto
 
 
 /*
@@ -122,6 +125,7 @@ body
     font-size 12px
     font-weight regular
     color #666666
+    height auto
     a
       color #666666
       font-weight semibold
@@ -181,7 +185,38 @@ body
 * Module - Busca
 */
 .search-container
+  .input-box
+    .search-label
+      display none
+    .search-input
+      border none
+      padding 0px
+      height auto
+      line-height initial
+      box-shadow none
+      font-weight medium
+      font-size 13px
+      text-transform uppercase
+      font-style italic
+      color #666666
+      background #f3f3f3
+      height 40px
+      padding 0px 14px
+  /*
+  * &:hover - Icone deve ficar branco
+  */
   .search-button
+    display flex
+    align-items center
+    justify-content center
+    height 40px
+    line-height initial
+    width auto
+    &:hover
+      .ico
+        fill #fff
+    span
+      line-height initial
     .ico
       width 15px
       height 15px
@@ -189,20 +224,102 @@ body
       display inline-block
 
 /*
-* Module - Header
+* Module - Call center
+* header.header & - Sobrescreve propriedades
 */
-
 .call-center
-  font-size 12px
-  font-weight medium
-  strong
-    font-weight semibold
+  header.header &
+    font-size 12px
+    line-height 9px
+    font-weight medium
+    padding 0px
+    height auto
+    display flex
+    flex-flow row wrap
+    align-items center
+    padding-right 3px
+    strong
+      font-weight semibold
+      font-size 16px
+      line-height 15px
+      margin-left 7px
+      &:first-child
+        margin-right 7px
+
+/*
+* Module - Compare
+* &:not(.hasproducts) - Diminui o padding do botão
+*/
+.compare-container
+  display table
+  .compare
+    display table
+    header
+      display none
+    main
+      display table
+    .content
+      display table
+    .amount
+      display none
+    .compare-items
+      display none
+    .actions
+      display table
+      a
+        display none
+    .button
+      border-radius 20px
+      font-size 12px
+      font-weight semibold
+      font-style italic
+      text-transform uppercase
+      color #fff
+      box-shadow none
+      padding 0px
+      line-height 20px
+      padding 0px 14px
+      display block
+      height auto
+      background #333333 embedurl('../img/arrow-up-icon.svg') no-repeat 14px 5px
+      padding-left 29px
+  &:not(.hasproducts)
+    .compare
+      .button
+        padding-left 26px
+        background-position 12px 5px
+
 
 /*
 * Module - Header
 */
 header.header
   padding-bottom 0px
+  //box-shadow inset 0 43px 0 #ffffff, inset 0 44px 0 #eeeeee
+  align-items flex-start
+  justify-content flex-end
+  .login-create-container
+    margin-top 14px
+    order 1
+  .compare-container
+    margin-top 12px
+    order 2
+    margin-right 20px
+  .call-center
+    margin-top 14px
+    order 3
+  .before
+    flex 0 1 840px
+    border-top 1px solid #eeeeee
+    margin-top 12px
+    margin-bottom 20px
+  .logo-container
+    margin-top -41px
+    margin-right 28px
+  .search-container
+    margin-left 0px
+    margin-right 28px
+
 
 /*
 * Module - Header Container
@@ -211,66 +328,102 @@ header.header
   box-shadow none
 
 /*
-* Module - main-menu
+* Module - Menu configurável
+* .menu-principal &
+*/
+.mb-menu
+  .menu-principal &
+    background #000
+    padding 20px 33px 12px 18px
+    li
+      margin-bottom 20px
+      a
+        font-size 14px
+        text-transform uppercase
+        color #fff
+        display block
+        line-height 14px
+
+
+/*
+* Module - Menu categories
+* &.vertical - Deve ser igual o Menu configurável
+* &.normal -
 */
 .main-menu
+  &.vertical
+    ul.level0
+      @extend .menu-principal .mb-menu
+    /*
+    * li.level0
+    * &:hover - Reseta o estilo do tema da a.level0
+    */
+    li.level0
+      @extend .menu-principal .mb-menu li
+      &:hover
+        a.level0
+          background none
+    a.level0
+      padding 0px
+      background none
+      width auto
+      display block
+      @extend .menu-principal .mb-menu li a
+      .name
+        font-size inherit
   &.normal
     /*
-    * Menu nível 0
-    */
-    /*
-    * Ul de nível 0
-    */
-    ul.level0
-      background unquote($color1_bg)
-    /*
-    * Li de nível 0
+    * li.level0
+    * &.all - Deve dar espaço livre ao div.level0
     */
     li.level0
       padding-bottom 0px
       &.all
+        div.level1
+          width auto
+    a.level0
+      height auto
+      min-height 50px
+      padding 0px 20px
+      .name
         .icon
           width 20px
           height 17px
           fill #fff
-          margin 20px
-        .text
-          display inline-block
-          font-size 12px
-          strong
-            display block
-            font-size 18px
-            font-weight 800
-            background embedurl('../img/arrow-down-icon.svg') no-repeat center right
-            padding-right 20px
-    /*
-    * A de nível 0
-    * &:hover - background #000
-    */
-    a.level0
-      .name
-        padding-right 20px
-        span
-          display flex
-          align-items center
-      &:hover
-        background #000
-        box-shadow none
-
 
 /*
 * Module - Marcas
 */
 .brands-container
+  margin 0px
   &.list
     .brands
       padding 0px
       > .list
           margin 0px
+  .menu-principal &
+    .brands
+      > .list
+          justify-content flex-start
+          padding 10px
+          min-width 500px
+          .item
+            border 1px solid #dddddd
+            border-width 0px 1px 1px 0px
+            padding 15px
+            margin 0px !important
+            flex 0 0 120px
+            height 60px
+            &:nth-child(4n)
+              border-right none
+            &:nth-last-child(-n+4)
+              border-bottom none
   .brands
     border none
     .marca_nome
       display none
+    img
+      max-width 100%
 
 
 /*
@@ -334,7 +487,9 @@ header.header
       min-width 90px
       display inline-block
       position relative
+      font-weight semibold
       z-index 1
+      letter-spacing 1px
   input[type=submit]
     width 26px
     height 26px
@@ -356,10 +511,24 @@ header.header
   display flex
   flex-flow row wrap
   justify-content center
+  align-items stretch
+  position relative
+  &:after
+    content ''
+    width 100%
+    background unquote($color1_bg_hover)
+    display block
+    height 100%
+    position absolute
+  > .main-menu
+      z-index 25
+  /*
+  * .item
+  * &.brands - Reseta borda da classe brands
+  */
   > .item
       padding 10px 20px 0px 20px
       background unquote($color1_bg)
-      min-height 50px
       &:hover
         background #000
       .text
@@ -376,7 +545,11 @@ header.header
           padding-right 20px
           display table
           font-size 18px
-
+      &.brands
+        border none
+        .dropdown-content
+          background #fff
+          box-shadow 0px 0px 10px 0px rgba(0, 0, 0, 0.3)
 
 /*
 * Layout
@@ -389,6 +562,14 @@ header.header
 .header-container
   header.header
     @extend .container
+
+/*
+* Layout - .wrapper
+*/
+.wrapper
+  .header-container
+    margin-bottom 25px
+
 
 /*
 * State

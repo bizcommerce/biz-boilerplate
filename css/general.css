@@ -29,6 +29,9 @@ body {
 * Global
 * Classes globais que devem ser extendidas por componentes
 */
+/*
+* Layout - Container
+*/
 .container,
 .header-container header.header {
   min-width: 0px;
@@ -51,8 +54,8 @@ body {
   position: absolute;
   left: 0px;
   top: 100%;
-  z-index: 9999;
-  width: 100%;
+  z-index: 22;
+  width: auto;
 }
 /*
 * Modules
@@ -90,6 +93,7 @@ body {
   font-size: 12px;
   font-weight: 400;
   color: #666;
+  height: auto;
 }
 .login-create-container .login-create a {
   color: #666;
@@ -109,7 +113,7 @@ body {
 }
 .mycart-container .mycart > a:before {
   content: '';
-  background: #BC2031;
+  background: {{color1_bg_hover}};
   -webkit-border-radius: 50%;
   border-radius: 50%;
   display: block;
@@ -135,7 +139,7 @@ body {
 }
 .mycart-container .mycart > a .txt {
   width: auto;
-  color: #BC2031;
+  color: {{color1_bg_hover}};
   text-align: left;
   font-size: 16px;
   padding-top: 6px;
@@ -144,7 +148,7 @@ body {
   width: auto;
   height: auto;
   background: none;
-  color: #BC2031;
+  color: {{color1_bg_hover}};
   position: static;
   text-align: left;
   font-size: 12px;
@@ -154,65 +158,26 @@ body {
 /*
 * Module - Busca
 */
-.search-container .search-button .ico {
-  width: 15px;
-  height: 15px;
-  fill: #BC2031;
-  display: inline-block;
+.search-container .input-box .search-label {
+  display: none;
 }
-/*
-* Module - Header
-*/
-.call-center {
-  font-size: 12px;
-  font-weight: 500;
-}
-.call-center strong {
-  font-weight: 600;
-}
-/*
-* Module - Header
-*/
-header.header {
-  padding-bottom: 0px;
-}
-/*
-* Module - Header Container
-*/
-.header-container {
+.search-container .input-box .search-input {
+  border: none;
+  padding: 0px;
+  height: auto;
+  line-height: initial;
   -webkit-box-shadow: none;
   box-shadow: none;
+  font-weight: 500;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-style: italic;
+  color: #666;
+  background: #f3f3f3;
+  height: 40px;
+  padding: 0px 14px;
 }
-/*
-* Module - main-menu
-*/
-.main-menu.normal ul.level0 {
-  background: #EA202C;
-}
-.main-menu.normal li.level0 {
-  padding-bottom: 0px;
-}
-.main-menu.normal li.level0.all .icon {
-  width: 20px;
-  height: 17px;
-  fill: #fff;
-  margin: 20px;
-}
-.main-menu.normal li.level0.all .text {
-  display: inline-block;
-  font-size: 12px;
-}
-.main-menu.normal li.level0.all .text strong {
-  display: block;
-  font-size: 18px;
-  font-weight: 800;
-  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCIgd2lkdGg9IjExIiBoZWlnaHQ9IjciIHZpZXdCb3g9IjAgMCAxMSA3Ij4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiAjZmZmOwogICAgICAgIGZpbGwtcnVsZTogZXZlbm9kZDsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPHBhdGggZD0iTTkuNjMyLDAuMDAwIEMxMC4wODgsMC40NjEgMTAuNTQ0LDAuOTIxIDExLjAwMCwxLjM4MCBDOS4xNDQsMy4yNTQgNy4yODcsNS4xMjcgNS40MzAsNy4wMDAgQzMuNjIxLDUuMTc0IDEuODExLDMuMzQ3IDAuMDAwLDEuNTIxIEMwLjQ1NiwxLjA2MSAwLjkxMiwwLjYwMSAxLjM2OSwwLjE0MCBDMi43MjIsMS41MDcgNC4wNzcsMi44NzIgNS40MzAsNC4yMzkgQzYuODMxLDIuODI3IDguMjMxLDEuNDEzIDkuNjMyLDAuMDAwIFoiIGNsYXNzPSJjbHMtMSIvPgo8L3N2Zz4K") no-repeat center right;
-  padding-right: 20px;
-}
-.main-menu.normal a.level0 .name {
-  padding-right: 20px;
-}
-.main-menu.normal a.level0 .name span {
+.search-container .search-button {
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
@@ -225,20 +190,294 @@ header.header {
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 40px;
+  line-height: initial;
+  width: auto;
 }
-.main-menu.normal a.level0:hover {
-  background: #000;
+.search-container .search-button:hover .ico {
+  fill: #fff;
+}
+.search-container .search-button span {
+  line-height: initial;
+}
+.search-container .search-button .ico {
+  width: 15px;
+  height: 15px;
+  fill: {{color1_bg_hover}};
+  display: inline-block;
+}
+/*
+* Module - Call center
+* header.header & - Sobrescreve propriedades
+*/
+header.header .call-center {
+  font-size: 12px;
+  line-height: 9px;
+  font-weight: 500;
+  padding: 0px;
+  height: auto;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -o-box-orient: horizontal;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  -o-box-lines: multiple;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  padding-right: 3px;
+}
+header.header .call-center strong {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 15px;
+  margin-left: 7px;
+}
+header.header .call-center strong:first-child {
+  margin-right: 7px;
+}
+/*
+* Module - Compare
+* &:not(.hasproducts) - Diminui o padding do botão
+*/
+.compare-container {
+  display: table;
+}
+.compare-container .compare {
+  display: table;
+}
+.compare-container .compare header {
+  display: none;
+}
+.compare-container .compare main {
+  display: table;
+}
+.compare-container .compare .content {
+  display: table;
+}
+.compare-container .compare .amount {
+  display: none;
+}
+.compare-container .compare .compare-items {
+  display: none;
+}
+.compare-container .compare .actions {
+  display: table;
+}
+.compare-container .compare .actions a {
+  display: none;
+}
+.compare-container .compare .button {
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  font-style: italic;
+  text-transform: uppercase;
+  color: #fff;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  padding: 0px;
+  line-height: 20px;
+  padding: 0px 14px;
+  display: block;
+  height: auto;
+  background: #333 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCIgd2lkdGg9IjkiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDkgOSI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogI2ZmZjsKICAgICAgICBmaWxsLXJ1bGU6IGV2ZW5vZGQ7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgPC9kZWZzPgogIDxwYXRoIGQ9Ik03Ljg4Myw1LjI5NCBDNy4wNTYsNC41MDkgNi4yMzEsMy43MjMgNS40MDYsMi45MzggTDUuNDA2LDkuMDAwIEwzLjU5NCw5LjAwMCBMMy41OTQsMy4wNDYgQzIuNzY5LDMuODMyIDEuOTQzLDQuNjE3IDEuMTE4LDUuNDAzIEMwLjc0NSw1LjA0NyAwLjM3MSw0LjY5MiAtMC4wMDIsNC4zMzYgQzEuNTE4LDIuODkwIDMuMDM4LDEuNDQ0IDQuNTU3LC0wLjAwMiBDNi4wMzksMS40MDcgNy41MTksMi44MTggOS4wMDIsNC4yMjggQzguNjI5LDQuNTgzIDguMjU1LDQuOTM4IDcuODgzLDUuMjk0IFoiIGNsYXNzPSJjbHMtMSIvPgo8L3N2Zz4K") no-repeat 14px 5px;
+  padding-left: 29px;
+}
+.compare-container:not(.hasproducts) .compare .button {
+  padding-left: 26px;
+  background-position: 12px 5px;
+}
+/*
+* Module - Header
+*/
+header.header {
+  padding-bottom: 0px;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -o-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: end;
+  -moz-box-pack: end;
+  -o-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+header.header .login-create-container {
+  margin-top: 14px;
+  -webkit-box-ordinal-group: 1;
+  -moz-box-ordinal-group: 1;
+  -o-box-ordinal-group: 1;
+  -ms-flex-order: 1;
+  -webkit-order: 1;
+  order: 1;
+}
+header.header .compare-container {
+  margin-top: 12px;
+  -webkit-box-ordinal-group: 2;
+  -moz-box-ordinal-group: 2;
+  -o-box-ordinal-group: 2;
+  -ms-flex-order: 2;
+  -webkit-order: 2;
+  order: 2;
+  margin-right: 20px;
+}
+header.header .call-center {
+  margin-top: 14px;
+  -webkit-box-ordinal-group: 3;
+  -moz-box-ordinal-group: 3;
+  -o-box-ordinal-group: 3;
+  -ms-flex-order: 3;
+  -webkit-order: 3;
+  order: 3;
+}
+header.header .before {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 0 1 840px;
+  -ms-flex: 0 1 840px;
+  flex: 0 1 840px;
+  border-top: 1px solid #eee;
+  margin-top: 12px;
+  margin-bottom: 20px;
+}
+header.header .logo-container {
+  margin-top: -41px;
+  margin-right: 28px;
+}
+header.header .search-container {
+  margin-left: 0px;
+  margin-right: 28px;
+}
+/*
+* Module - Header Container
+*/
+.header-container {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
 /*
+* Module - Menu configurável
+* .menu-principal &
+*/
+.menu-principal .mb-menu,
+.main-menu.vertical ul.level0 {
+  background: #000;
+  padding: 20px 33px 12px 18px;
+}
+.menu-principal .mb-menu li,
+.main-menu.vertical ul.level0 li,
+.main-menu.vertical li.level0 {
+  margin-bottom: 20px;
+}
+.menu-principal .mb-menu li a,
+.main-menu.vertical ul.level0 li a,
+.main-menu.vertical li.level0 a,
+.main-menu.vertical a.level0 {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #fff;
+  display: block;
+  line-height: 14px;
+}
+/*
+* Module - Menu categories
+* &.vertical - Deve ser igual o Menu configurável
+* &.normal -
+*/
+.main-menu.vertical li.level0:hover a.level0 {
+  background: none;
+}
+.main-menu.vertical a.level0 {
+  padding: 0px;
+  background: none;
+  width: auto;
+  display: block;
+}
+.main-menu.vertical a.level0 .name {
+  font-size: inherit;
+}
+.main-menu.normal li.level0 {
+  padding-bottom: 0px;
+}
+.main-menu.normal li.level0.all div.level1 {
+  width: auto;
+}
+.main-menu.normal a.level0 {
+  height: auto;
+  min-height: 50px;
+  padding: 0px 20px;
+}
+.main-menu.normal a.level0 .name .icon {
+  width: 20px;
+  height: 17px;
+  fill: #fff;
+}
+/*
 * Module - Marcas
 */
+.brands-container {
+  margin: 0px;
+}
 .brands-container.list .brands {
   padding: 0px;
 }
 .brands-container.list .brands > .list {
   margin: 0px;
+}
+.menu-principal .brands-container .brands > .list {
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  -o-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  padding: 10px;
+  min-width: 500px;
+}
+.menu-principal .brands-container .brands > .list .item {
+  border: 1px solid #ddd;
+  border-width: 0px 1px 1px 0px;
+  padding: 15px;
+  margin: 0px !important;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 0 0 120px;
+  -ms-flex: 0 0 120px;
+  flex: 0 0 120px;
+  height: 60px;
+}
+.menu-principal .brands-container .brands > .list .item:nth-child(4n) {
+  border-right: none;
+}
+.menu-principal .brands-container .brands > .list .item:nth-last-child(-n+4) {
+  border-bottom: none;
 }
 .brands-container .brands {
   border: none;
@@ -246,11 +485,14 @@ header.header {
 .brands-container .brands .marca_nome {
   display: none;
 }
+.brands-container .brands img {
+  max-width: 100%;
+}
 /*
 * Module - filter_menu
 */
 .filter_menu {
-  background: #BC2031;
+  background: {{color1_bg_hover}};
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
@@ -345,7 +587,9 @@ header.header {
   min-width: 90px;
   display: inline-block;
   position: relative;
+  font-weight: 600;
   z-index: 1;
+  letter-spacing: 1px;
 }
 .filter_menu input[type=submit] {
   width: 26px;
@@ -366,7 +610,7 @@ header.header {
 * Module - Menu Principal
 */
 .menu-principal {
-  background: #EA202C;
+  background: {{color1_bg}};
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
@@ -388,11 +632,32 @@ header.header {
   -ms-flex-pack: center;
   -webkit-justify-content: center;
   justify-content: center;
+  -webkit-box-align: stretch;
+  -moz-box-align: stretch;
+  -o-box-align: stretch;
+  -ms-flex-align: stretch;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+  position: relative;
+/*
+  * .item
+  * &.brands - Reseta borda da classe brands
+  */
+}
+.menu-principal:after {
+  content: '';
+  width: 100%;
+  background: {{color1_bg_hover}};
+  display: block;
+  height: 100%;
+  position: absolute;
+}
+.menu-principal > .main-menu {
+  z-index: 25;
 }
 .menu-principal > .item {
   padding: 10px 20px 0px 20px;
-  background: #EA202C;
-  min-height: 50px;
+  background: {{color1_bg}};
 }
 .menu-principal > .item:hover {
   background: #000;
@@ -413,6 +678,14 @@ header.header {
   display: table;
   font-size: 18px;
 }
+.menu-principal > .item.brands {
+  border: none;
+}
+.menu-principal > .item.brands .dropdown-content {
+  background: #fff;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+}
 /*
 * Layout
 * Estrutura tamanhos e ordem dos elementos no layout
@@ -420,6 +693,12 @@ header.header {
 /*
 * Layout - Header container
 */
+/*
+* Layout - .wrapper
+*/
+.wrapper .header-container {
+  margin-bottom: 25px;
+}
 /*
 * State
 * Estado global do Layout
