@@ -1,0 +1,21 @@
+<header>
+    <h1>
+        <a href="{{url_produto}}" itemprop="url" title="Mais detalhes" class="product-link">
+            <span class="product-image">{{foto tamanho="260x260"}}</span>
+            <span class="product-name">{{nome tamanho="100"}}</span>
+        </a>
+    </h1>
+    {{variacoes}}
+</header>
+<main>
+	{{preco}}
+	{{preco_avista}}
+	{{preco_parcelado}}
+
+  <div class="actions">
+    @bt(comparar "Adicionar à comparação")
+    @bt(comprar "Comprar")
+    {{selos}}
+  </div>
+
+</main>

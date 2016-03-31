@@ -520,6 +520,7 @@ header.header
     display block
     height 100%
     position absolute
+    bottom 0px
   > .main-menu
       z-index 25
   /*
@@ -552,6 +553,129 @@ header.header
           box-shadow 0px 0px 10px 0px rgba(0, 0, 0, 0.3)
 
 /*
+* Module - Product-name
+* .product-collection & - Tamanho pequeno sem italico
+*/
+.product-name
+  .product-collection &
+    font-style normal
+    font-size 16px
+    line-height 14px
+
+/*
+* Module - Price-box
+* .product-collection & - Configura fonte pequena
+*/
+.price-box
+  > .price
+      color #000000
+      font-weight medium
+      font-style normal
+  .regular-price, .special-price, .minimum-price
+    .price
+      color #000000
+      font-weight medium
+      font-style normal
+    .label
+      display none
+  .product-collection &
+    > .price
+        font-size 15px
+    .regular-price, .special-price, .minimum-price
+      font-size 15px
+
+
+/*
+* Module - Price-box-avista
+* .product-collection & - Estiliza para a coleção
+*/
+.price-box-avista
+  .price
+    color unquote($color1_bg)
+    font-style normal
+  .product-collection &
+    padding 0px
+    text-align center
+    border 1px dotted #eeeeee
+    border-left none
+    border-right none
+    padding 8px 0px
+    align-items flex-start
+    justify-content center
+    .label
+      font-size 8px
+      text-transform uppercase
+      width 47px
+      color #666666
+      line-height 11px
+    .price
+      font-size 22px
+      line-height 21px
+      text-align left
+      flex 0 0 auto
+      span
+        line-height 21px
+
+/*
+* Module - Price box parcelado
+*/
+.price-box-parcelado
+  .preco-parcelado-sem-juros, .preco-parcelado
+    font-weight medium
+    font-size 14px
+    color #666666
+    font-style normal
+    .value, .num
+      font-weight normal
+      color #666666
+      span
+        color inherit
+    .upto
+      display none
+    .s-juros
+      display none
+  .preco-parcelado
+    display none
+
+
+/*
+* Module - .product-link
+*.product-collection & - Deve zerar a margem padrão de product name
+*/
+.product-link
+  .product-collection &
+    .product-name
+      margin-bottom 0px
+
+/*
+* Module - Link compare
+*/
+.link-compare
+  border-radius 3px
+  box-shadow inset 0px -3px 0px 0px rgba(0, 0, 0, 0.2)
+  background unquote($color1_bg)
+  color #fff
+  font-size 12px
+  font-weight bold
+  text-transform uppercase
+  padding 0px 10px
+
+
+/*
+* Module - product-collection
+*/
+.product-collection
+  ul.list
+    li.item
+      text-align center
+      article
+        position relative
+        .actions
+          position absolute
+          top 0px
+          width 100%
+
+/*
 * Layout
 * Estrutura tamanhos e ordem dos elementos no layout
 */
@@ -569,6 +693,8 @@ header.header
 .wrapper
   .header-container
     margin-bottom 25px
+  .main-container
+    @extend .container
 
 
 /*
