@@ -774,6 +774,271 @@ header.header
       a
         flex 0 0 480px
 
+/*
+* Module - footer-texto
+*/
+.footer-texto
+  margin-bottom 0px
+  color #cccccc
+  font-size 14px
+  font-weight regular
+  font-style italic
+  padding 0px
+  background #fff
+  .widget
+    @extend .container
+    padding 40px 148px
+
+/*
+* Module - Newsletter-container
+*/
+.newsletter-container
+  background #333333
+  .newsletter
+    display flex
+    flex-flow row wrap
+    justify-content space-between
+    padding 14px 14px 12px 10px
+    @extend .container
+    .message
+      flex 1 1 300px
+      display flex
+      align-items center
+      justify-content space-between
+      margin-right 28px
+      .icon
+        fill #fff
+        width 53px
+        flex 0 0 53px
+        height 37px
+        position relative
+      .title
+        font-style normal
+        font-weight medium
+        font-size 14px
+        text-transform uppercase
+        color #fff
+        margin-left 20px
+    .form-newsletter-footer
+      display flex
+      flex-flow row wrap
+      flex 1 1 620px
+      align-items center
+      .input-box
+        margin-right 10px
+        input
+          height 35px
+          padding 0px 10px
+          border-radius 3px
+          border none
+          box-shadow none
+          font-weight medium
+          font-size 13px
+          font-style italic
+          color #666666
+          text-transform uppercase
+        &.name
+          flex 1 1 230px
+          width auto
+        &.email
+          flex 1 1 320px
+          width auto
+      .submit
+        flex 0 0 30px
+        width auto
+        margin 0px
+        margin-left 6px
+        button
+          padding 0px
+          background unquote($color1_bg)
+          border-radius 50%
+          box-shadow none
+          width 30px
+          height 30px
+          font-style italic
+          font-size 14px
+
+/*
+* Module - Ftitle
+*/
+.ftitle
+  .footer &
+    font-style normal
+    font-size 16px
+    font-weight semibold
+
+/*
+* Module - Footer
+*/
+.footer
+  @extend .container
+  .footer-4cols, .footer-2cols, .footer-3cols
+    margin 0px
+    border-bottom 1px solid #ececec
+    .col
+      margin 50px 20px
+  .tele
+    font-style normal
+    color unquote($color1_bg)
+  .mb-menu
+    li
+      a
+        font-style normal
+        color #666666
+        font-size 14px
+        font-weight medium
+
+/*
+* Module - footer-3cols
+*/
+.footer-3cols
+  display flex
+  flex-flow row wrap
+  justify-content space-between
+  .col
+    flex 1 1 unit(viewport/3, px)
+    margin-left 0px !important
+    margin-right 0px !important
+    padding 0px
+
+/*
+* Module - Footer copy
+*/
+.footer-copy
+  background #fff
+  padding 28px 0px 72px 0px
+
+/*
+* Module - Footer container
+*/
+.footer-container
+  margin 0px
+  padding 0px
+
+/*
+* Module - Breadcrumbs
+*/
+.breadcrumbs-container
+  padding 17px 0px
+  .breadcrumbs
+    li
+      a,strong, .sep
+        color #666666
+        font-weight medium
+        font-size 13px
+
+/*
+* Module - Menu lateral
+*/
+.block-layered-nav .currently, .block-layered-nav .filters-list .item
+  border-radius 3px
+  box-shadow none
+  .filter-name, .block-subtitle
+    color #333333
+    font-style italic
+    font-size 16px
+    overflow visible
+    margin-right 0px
+  .the-filters
+    li
+      .a-filter
+        color #666666
+        font-size 14px
+        font-style normal
+        font-weight normal
+      .count
+        display none
+  .text
+    color #666666
+    font-size 14px
+    font-style normal
+    font-weight normal
+    .label
+      font-weight semibold
+
+/*
+* Module - Page title
+*/
+.page-title
+  h1
+    color #666666
+    font-size 32px
+    font-weight bold
+    font-style italic
+
+/*
+* Module - Descrição da categoria
+*/
+.category-description
+  background #f6f6f6
+  padding 37px
+  border none
+  font-weight regular
+
+/*
+* Module - Toolbar
+* .toolbar-bottom &
+*/
+.toolbar
+  .sorter
+    display flex
+    .view-mode
+      font-size 15px
+      color #373435
+      font-weight regular
+      font-style italic
+      display flex
+      flex-flow row wrap
+      label
+        order 1
+        font-size 15px
+      .list
+        order 2
+      .grid
+        order 3
+    .sort-by
+      select
+        box-shadow none
+        border-radius 1px
+        color #666666
+        font-size 14px
+        font-weight regular
+  .toolbar-bottom &
+    border 1px dashed #cccccc
+    border-left none
+    border-right none
+    padding 8px 2px
+    display flex
+    align-items center
+    justify-content space-between
+    .amount, .total, .from, .to
+      color #666666
+      font-size 15px
+      font-weight regular
+      line-height initial
+    .sorter
+      display none
+    .pager
+      ol
+        .current
+          span
+            border-radius 50%
+            width 25px
+            height 25px
+            text-align center
+            background unquote($color1_bg)
+            font-style normal
+
+/*
+* Module -
+*/
+.actions
+  .sidebar .currently &
+    .clear-all
+      font-weight regular
+      font-size 14px
+      background none
+      color #666666
 
 /*
 * Layout
@@ -795,15 +1060,38 @@ header.header
     margin-bottom 25px
   .menu-principal
     position relative
-    z-index 30
+    z-index 29
   .banner-js-container
     z-index 20
   .main-container
-    @extend .container
+    .main
+      @extend .container
   .banner-js-container
     margin-top -32px
     margin-bottom 42px
+  > .brands-container
+      margin-bottom 3px
+  .breadcrumbs-container
+    @extend .container
+    margin-bottom 13px
+  .menu-principal+.widget
+    text-align center
+    background #000
 
+
+/*
+* Module - Main
+*/
+.main
+  .col2-left-layout &
+    .col-left
+      width auto
+      max-width 220px
+      min-width 220px
+    .col-main
+      width auto
+      max-width 728px
+      margin-left 30px
 
 
 /*

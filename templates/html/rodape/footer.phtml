@@ -1,0 +1,34 @@
+<div class="footer-4cols">
+	<div class="col">
+    <div class="ftitle">A Empresa</div>
+		<div class="tele">{{config path="general/store_information/phone"}}</div>
+	</div>
+	<div class="col">
+    <div class="ftitle">D&uacute;vidas</div>
+		{{block type="menubuilder/output" identifier="tire-duvidas"}}
+	</div>
+	<div class="col">
+    <div class="ftitle">Minha Conta</div>
+		{{block type="menubuilder/output" identifier="acesse-conta"}}
+	</div>
+	<div class="col">
+    <div class="ftitle">Curta a CR Nutrition</div>
+		{{widget type="cms/widget_block" template="cms/widget/static_block/default.phtml" block_id="19"}}
+	</div>
+</div>
+
+
+<div class="footer-3cols">
+	<div class="col">
+		<div class="ftitle">Formas de Pagamento</div>
+		{{widget type="cms/widget_block" template="cms/widget/static_block/default.phtml" block_id="17"}}
+	</div>
+	<div class="col">
+		<div class="ftitle">Formas de Envio</div>
+		{{widget type="cms/widget_block" template="cms/widget/static_block/default.phtml" block_id="18"}}
+	</div>
+  <div class="col">
+		<div class="ftitle">Formas de Envio</div>
+		{{widget type="cms/widget_block" template="cms/widget/static_block/default.phtml" block_id="18"}}
+	</div>
+</div>
