@@ -16,6 +16,7 @@ regular = 400
 medium = 500
 semibold = 600
 bold = 700
+extra = 800
 
 /**
 * Mixins - Viewport
@@ -79,9 +80,31 @@ body
   position absolute
   left 0px
   top 100%
-  z-index 22
+  z-index 9999999
   width auto
 
+
+/*
+* Module - Buttons
+*/
+.button
+  height auto
+  border-radius 3px
+  box-shadow inset 0px -3px 0px 0px rgba(0, 0, 0, 0.2)
+  &.medium
+    font-size 20px
+    font-weight 800
+    font-style italic
+    line-height 15px
+    padding 9px 32px 11px 32px
+    span
+      line-height 15px
+  &.cta
+    background unquote($button_bg)
+    color #ffffff
+  &.sec
+    background unquote($color1_bg)
+    color #fff
 
 /*
 * Modules
@@ -401,6 +424,22 @@ header.header
       padding 0px
       > .list
           margin 0px
+  .brands
+    border none
+    .marca_nome
+      display none
+    img
+      max-width 100%
+  .wrapper > &
+    background #fff
+    border 1px solid #cccccc
+    border-width 1px 0px 1px 0px
+    box-shadow 0px 3px 0px 0px rgba(0, 0, 0, 0.07)
+    .brands
+      @extend .container
+      .item
+        max-width 190px
+        margin 0px 12px
   .menu-principal &
     .brands
       > .list
@@ -418,12 +457,7 @@ header.header
               border-right none
             &:nth-last-child(-n+4)
               border-bottom none
-  .brands
-    border none
-    .marca_nome
-      display none
-    img
-      max-width 100%
+
 
 
 /*
@@ -628,6 +662,7 @@ header.header
     .value, .num
       font-weight normal
       color #666666
+      text-transform uppercase
       span
         color inherit
     .upto
@@ -647,18 +682,41 @@ header.header
     .product-name
       margin-bottom 0px
 
+
 /*
 * Module - Link compare
 */
 .link-compare
-  border-radius 3px
-  box-shadow inset 0px -3px 0px 0px rgba(0, 0, 0, 0.2)
-  background unquote($color1_bg)
+  @extend.button
+  @extend.button.sec
   color #fff
   font-size 12px
+  line-height 10px
   font-weight bold
   text-transform uppercase
-  padding 0px 10px
+  padding 6px 25px 9px 25px
+  display flex
+  justify-content space-between
+  span
+    flex 0 0 84px
+  &:before
+    content ''
+    flex 0 0 18px
+    height 18px
+    display inline-block
+    background embedurl('../img/arrow-elipse.svg') no-repeat center center
+
+
+/*
+* Module - Bt Comprar
+* .product-collection & - Botão deve ser médio
+*/
+.btn-cart
+  @extend .button.cta
+  .product-collection &
+    background unquote($button_bg)
+    @extend .button
+    @extend .button.medium
 
 
 /*
@@ -666,14 +724,56 @@ header.header
 */
 .product-collection
   ul.list
+    /*
+    * li.item
+    * &:hover - Deve mostrar os botões e a imagem deve ficar mais clara
+    */
     li.item
       text-align center
+      &:hover
+        .actions
+          display block
+        .product-image
+          opacity 0.7
       article
         position relative
         .actions
+          display none
           position absolute
-          top 0px
-          width 100%
+          top 55px
+          left calc(50% - 80px)
+          max-width 160px
+          a, button
+            margin-bottom 5px
+
+
+/*
+* Module - Product collection container
+*/
+.product-collection-container
+  > header
+      border-bottom 1px solid #999999
+      padding-bottom 9px
+      .title
+        font-weight semibold
+        color #333333
+
+/*
+* Module - Home mini Banners
+*/
+.home-mini-banners
+  display block
+  .widget
+    display block
+    margin 0px
+    p
+      padding 0px
+      display flex
+      flex-flow row wrap
+      justify-content space-between
+      a
+        flex 0 0 480px
+
 
 /*
 * Layout
@@ -693,8 +793,17 @@ header.header
 .wrapper
   .header-container
     margin-bottom 25px
+  .menu-principal
+    position relative
+    z-index 30
+  .banner-js-container
+    z-index 20
   .main-container
     @extend .container
+  .banner-js-container
+    margin-top -32px
+    margin-bottom 42px
+
 
 
 /*
@@ -706,3 +815,20 @@ header.header
 * Theme
 * Customização do modulos ou layout, hacks !importants e etc
 */
+.owl-carousel
+  .owl-controls
+    .owl-buttons
+      .owl-prev, .owl-next
+        border-color #cccccc
+        border-style solid
+        width 25px
+        height 35px
+        &:before
+          line-height 35px
+          background embedurl('../img/arrow-owl.svg') no-repeat center center
+      .owl-prev
+        border-radius 0px 3px 3px 0px
+        border-width 1px 1px 1px 0px
+      .owl-next
+        border-radius 3px 0px 0px 3px
+        border-width 1px 0px 1px 1px

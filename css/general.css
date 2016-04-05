@@ -33,6 +33,7 @@ body {
 * Layout - Container
 */
 .container,
+.wrapper > .brands-container .brands,
 .header-container header.header,
 .wrapper .main-container {
   min-width: 0px;
@@ -55,8 +56,50 @@ body {
   position: absolute;
   left: 0px;
   top: 100%;
-  z-index: 22;
+  z-index: 9999999;
   width: auto;
+}
+/*
+* Module - Buttons
+*/
+.button,
+.link-compare,
+.product-collection .btn-cart {
+  height: auto;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0px -3px 0px 0px rgba(0,0,0,0.2);
+  box-shadow: inset 0px -3px 0px 0px rgba(0,0,0,0.2);
+}
+.button.medium,
+.link-compare.medium,
+.product-collection .btn-cart.medium,
+.product-collection .btn-cart {
+  font-size: 20px;
+  font-weight: 800;
+  font-style: italic;
+  line-height: 15px;
+  padding: 9px 32px 11px 32px;
+}
+.button.medium span,
+.link-compare.medium span,
+.product-collection .btn-cart.medium span,
+.product-collection .btn-cart span {
+  line-height: 15px;
+}
+.button.cta,
+.link-compare.cta,
+.product-collection .btn-cart.cta,
+.btn-cart {
+  background: #54BD2B;
+  color: #fff;
+}
+.button.sec,
+.link-compare.sec,
+.product-collection .btn-cart.sec,
+.link-compare {
+  background: #EA202C;
+  color: #fff;
 }
 /*
 * Modules
@@ -450,6 +493,26 @@ header.header .search-container {
 .brands-container.list .brands > .list {
   margin: 0px;
 }
+.brands-container .brands {
+  border: none;
+}
+.brands-container .brands .marca_nome {
+  display: none;
+}
+.brands-container .brands img {
+  max-width: 100%;
+}
+.wrapper > .brands-container {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-width: 1px 0px 1px 0px;
+  -webkit-box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.07);
+  box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.07);
+}
+.wrapper > .brands-container .brands .item {
+  max-width: 190px;
+  margin: 0px 12px;
+}
 .menu-principal .brands-container .brands > .list {
   -webkit-box-pack: start;
   -moz-box-pack: start;
@@ -479,15 +542,6 @@ header.header .search-container {
 }
 .menu-principal .brands-container .brands > .list .item:nth-last-child(-n+4) {
   border-bottom: none;
-}
-.brands-container .brands {
-  border: none;
-}
-.brands-container .brands .marca_nome {
-  display: none;
-}
-.brands-container .brands img {
-  max-width: 100%;
 }
 /*
 * Module - filter_menu
@@ -792,6 +846,7 @@ header.header .search-container {
 .price-box-parcelado .preco-parcelado .num {
   font-weight: normal;
   color: #666;
+  text-transform: uppercase;
 }
 .price-box-parcelado .preco-parcelado-sem-juros .value span,
 .price-box-parcelado .preco-parcelado .value span,
@@ -821,16 +876,53 @@ header.header .search-container {
 * Module - Link compare
 */
 .link-compare {
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  -webkit-box-shadow: inset 0px -3px 0px 0px rgba(0,0,0,0.2);
-  box-shadow: inset 0px -3px 0px 0px rgba(0,0,0,0.2);
-  background: #EA202C;
   color: #fff;
   font-size: 12px;
+  line-height: 10px;
   font-weight: 700;
   text-transform: uppercase;
-  padding: 0px 10px;
+  padding: 6px 25px 9px 25px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -o-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+.link-compare span {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 0 0 84px;
+  -ms-flex: 0 0 84px;
+  flex: 0 0 84px;
+}
+.link-compare:before {
+  content: '';
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 0 0 18px;
+  -ms-flex: 0 0 18px;
+  flex: 0 0 18px;
+  height: 18px;
+  display: inline-block;
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE4IiB2aWV3Qm94PSIwIDAgMTggMTgiPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuY2xzLTEgewogICAgICAgIGZpbGw6ICNmZmY7CiAgICAgICAgZmlsbC1ydWxlOiBldmVub2RkOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8cGF0aCBkPSJNOS4wMDAsMTguMDAwIEM0LjAyOSwxOC4wMDAgLTAuMDAwLDEzLjk3MCAtMC4wMDAsOS4wMDAgQy0wLjAwMCw0LjAyOSA0LjAyOSwwLjAwMCA5LjAwMCwwLjAwMCBDMTMuOTcxLDAuMDAwIDE4LjAwMCw0LjAyOSAxOC4wMDAsOS4wMDAgQzE4LjAwMCwxMy45NzAgMTMuOTcxLDE4LjAwMCA5LjAwMCwxOC4wMDAgWk05LjA1Nyw0LjQ5OCBDNy41MzcsNS45NDQgNi4wMTgsNy4zOTAgNC40OTgsOC44MzYgQzQuODcxLDkuMTkyIDUuMjQ1LDkuNTQ3IDUuNjE4LDkuOTAzIEM2LjQ0Myw5LjExNyA3LjI2OSw4LjMzMiA4LjA5NCw3LjU0NiBMOC4wOTQsMTIuNzUwIEw5LjkwNiwxMi43NTAgTDkuOTA2LDcuNDM4IEMxMC43MzEsOC4yMjMgMTEuNTU2LDkuMDA5IDEyLjM4Myw5Ljc5MyBDMTIuNzU1LDkuNDM4IDEzLjEyOSw5LjA4MyAxMy41MDIsOC43MjcgQzEyLjAxOSw3LjMxOCAxMC41MzgsNS45MDcgOS4wNTcsNC40OTggWiIgY2xhc3M9ImNscy0xIi8+Cjwvc3ZnPgo=") no-repeat center center;
+}
+/*
+* Module - Bt Comprar
+* .product-collection & - Botão deve ser médio
+*/
+.product-collection .btn-cart {
+  background: #54BD2B;
 }
 /*
 * Module - product-collection
@@ -838,13 +930,81 @@ header.header .search-container {
 .product-collection ul.list li.item {
   text-align: center;
 }
+.product-collection ul.list li.item:hover .actions {
+  display: block;
+}
+.product-collection ul.list li.item:hover .product-image {
+  opacity: 0.7;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  filter: alpha(opacity=70);
+}
 .product-collection ul.list li.item article {
   position: relative;
 }
 .product-collection ul.list li.item article .actions {
+  display: none;
   position: absolute;
-  top: 0px;
-  width: 100%;
+  top: 55px;
+  left: calc(50% - 80px);
+  max-width: 160px;
+}
+.product-collection ul.list li.item article .actions a,
+.product-collection ul.list li.item article .actions button {
+  margin-bottom: 5px;
+}
+/*
+* Module - Product collection container
+*/
+.product-collection-container > header {
+  border-bottom: 1px solid #999;
+  padding-bottom: 9px;
+}
+.product-collection-container > header .title {
+  font-weight: 600;
+  color: #333;
+}
+/*
+* Module - Home mini Banners
+*/
+.home-mini-banners {
+  display: block;
+}
+.home-mini-banners .widget {
+  display: block;
+  margin: 0px;
+}
+.home-mini-banners .widget p {
+  padding: 0px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -o-box-orient: horizontal;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  -o-box-lines: multiple;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -o-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+.home-mini-banners .widget p a {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 0 0 480px;
+  -ms-flex: 0 0 480px;
+  flex: 0 0 480px;
 }
 /*
 * Layout
@@ -859,6 +1019,17 @@ header.header .search-container {
 .wrapper .header-container {
   margin-bottom: 25px;
 }
+.wrapper .menu-principal {
+  position: relative;
+  z-index: 30;
+}
+.wrapper .banner-js-container {
+  z-index: 20;
+}
+.wrapper .banner-js-container {
+  margin-top: -32px;
+  margin-bottom: 42px;
+}
 /*
 * State
 * Estado global do Layout
@@ -867,3 +1038,25 @@ header.header .search-container {
 * Theme
 * Customização do modulos ou layout, hacks !importants e etc
 */
+.owl-carousel .owl-controls .owl-buttons .owl-prev,
+.owl-carousel .owl-controls .owl-buttons .owl-next {
+  border-color: #ccc;
+  border-style: solid;
+  width: 25px;
+  height: 35px;
+}
+.owl-carousel .owl-controls .owl-buttons .owl-prev:before,
+.owl-carousel .owl-controls .owl-buttons .owl-next:before {
+  line-height: 35px;
+  background: url("../img/arrow-owl.svg") no-repeat center center;
+}
+.owl-carousel .owl-controls .owl-buttons .owl-prev {
+  -webkit-border-radius: 0px 3px 3px 0px;
+  border-radius: 0px 3px 3px 0px;
+  border-width: 1px 1px 1px 0px;
+}
+.owl-carousel .owl-controls .owl-buttons .owl-next {
+  -webkit-border-radius: 3px 0px 0px 3px;
+  border-radius: 3px 0px 0px 3px;
+  border-width: 1px 0px 1px 1px;
+}
