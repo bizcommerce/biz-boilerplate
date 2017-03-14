@@ -69,6 +69,10 @@ body
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   background: url($body-bg)
+  &.locked
+    overflow-y: hidden
+  @media(max-width screen-sm)
+    padding-top 120px
 
 
 /*
@@ -109,7 +113,7 @@ input[type=text], input[type=password], input[type=search], input[type=email], i
   letter-spacing: 1px
   font-weight: regular
   color #999999
-  padding 0 22px
+  padding 0 0 0 22px
 
 
 select
@@ -118,6 +122,7 @@ select
   color #999999
   font-family: font2
   text-transform: uppercase
+
 
 
 /*
@@ -171,7 +176,7 @@ select
   border 2px solid rgba(#000, .1)
   top calc(100% + 11px)
   z-index: 2
-  display: none
+  transform: translateY(-3000px)
   &:before
     content ''
     display: block
@@ -182,7 +187,7 @@ select
     left 0
     top -20px
   &.active
-    display: block
+    transform: translateY(0px)
 
 
 /*
@@ -194,6 +199,7 @@ select
   height: auto
   line-height: initial
   text-align: center
+  padding 10px 20px
   &.sm
     padding 9px 27px
     font-size: 13px
@@ -203,6 +209,17 @@ select
     font-weight: bold
     padding 14px 35px
     line-height: initial
+  &.lg
+    font-size: 38px
+    padding 14px 50px
+    font-family: font3
+    color #fff
+    border-radius: 25px
+    font-weight: medium
+    span
+      display: table
+      margin 0 auto
+      line-height: 6px
   &.xl
     font-family: font3
     color #fff
@@ -227,7 +244,6 @@ select
     background: #ccc
 
 
-
 /*
 * Module - Container
 */
@@ -236,6 +252,8 @@ select
   max-width: unit(viewport,px)
   margin 0 auto
   width: auto
+  @media(max-width screen-sm)
+    padding 10px
 
 
 /*
@@ -363,6 +381,8 @@ select
 * Module - Categorias
 */
 .main-menu
+  nav
+    @extend .container
   &.normal
     position: static
     border-top 1px solid rgba(#fff, .1)
@@ -412,6 +432,54 @@ select
             @extend .dropdown-trigger.active
           div.level1
             @extend .dropdown-content.active
+    header.header &
+      border none
+      a.level0
+        line-height: initial
+        border-right: 1px solid #fff
+        padding 0 14px
+        .name
+          font-size: 13px
+      li.level0
+        &:last-child
+          a.level0
+            border 0
+        &.parent
+          a.level0
+            &:after
+              border-color: transparent transparent #fff transparent
+      div.level1
+        background: #fff
+      a.level1
+        color #003333
+        &:hover
+          color unquote($color2_bg_hover)
+    @media(max-width screen-sm)
+      background: unquote($color1_bg)
+      padding 10px 0
+      ul.level0
+        display: block
+        padding 0 20px
+      a.level0
+        .name
+          text-align: left
+      li.level0
+        &.parent
+          &:hover
+            a.level0
+              .name
+                color #fff
+              &:before
+              &:after
+                display: none
+          div.level1
+            transform translateY(0px)
+            &.promo
+              .promo-container
+                display: none
+
+
+
 
 
 /*
@@ -479,6 +547,7 @@ select
       border-radius: 0
       font-family: font2
       @extend .dropdown-trigger
+      background: none
       &:hover
         background: none
       .icon
@@ -526,6 +595,8 @@ select
       &:before
       &:after
         display: none
+    .empty-text
+      color #fff
     .tit
       color unquote($button_bg_hover)
       font-size: 13px
@@ -533,6 +604,33 @@ select
       font-weight: regular
     .mycart-totals
       margin-bottom: 22px
+  .scrolling &
+    .mycart
+      > a
+          .txt
+            display: none
+  @media(max-width screen-sm)
+    &:hover
+      .mycart
+        > a
+          &:before
+          &:after
+            display: none
+      .mycart-dropdown-container
+        display: none
+
+/*
+* Module - Login create
+*/
+.login-create-container
+  .login-create
+    height auto
+    a
+      color #fff
+      font-family: font2
+      font-weight medium
+      opacity: .7
+
 
 
 /*
@@ -575,11 +673,11 @@ select
 /*
 * Module - Collection container
 */
-.product-collection-container
+.product-collection-container, .collateral-products
   > header
       margin-bottom: 34px
       display: block
-      .title
+      .title, .block-title
         @extend .mytitle
         @extend .mytitle.lg
         color unquote($color2_bg)
@@ -589,6 +687,7 @@ select
           font-weight: bold
           font-size: 50px
           margin 0
+
 
 
 /*
@@ -606,6 +705,11 @@ select
       padding 12px
       position: relative
       background: #fff
+      .product-link
+        text-align: center
+      .product-image
+        margin: 0 auto
+        text-align: center
       .price-box
         margin-bottom 17px
       &:before
@@ -675,7 +779,7 @@ select
     padding 46px 10px 42px 10px
     display: flex
     justify-content: space-between
-    //flex-flow: row wrap
+    flex-flow: row wrap
     .message
       max-width: 387px
       flex 1 1 auto
@@ -692,7 +796,6 @@ select
         display: block
         width: 40px
         position: absolute
-        background: red
       .icon
         fill #fff
         width: 66px
@@ -721,6 +824,17 @@ select
           @extend .button
           @extend .button.md
           @extend .button.sec
+    @media(max-width screen-sm)
+      .message
+        margin-bottom: 10px
+      .form-news
+        display: block
+        input
+          margin-bottom: 10px
+        .submit
+          width: 100%
+          button
+            width: 100%
 
 
 /*
@@ -734,6 +848,9 @@ select
 
 .footer-1col, .footer-2cols, .footer-4cols
   border-bottom 1px solid #f2f2f2
+  @media(max-width screen-xs)
+    .col
+      flex 0 0 100%
 
 .footer-1col
   .col
@@ -741,11 +858,15 @@ select
     display: flex
     justify-content: center
     align-items: center
+  @media(max-width screen-sm)
+    .col
+      display: block
 
 .footer-copy
   p
     font-size: 13px
     color #666666
+
 
 /*
 * Module - Header
@@ -767,9 +888,74 @@ header.header
   .mycart-container
     order 6
   .main-menu
-    order 10
-    flex 0 0 100%
-    margin-top: 14px
+    order 5
+    display: none
+  .scrolling &
+    padding 19px 0
+    justify-content: flex-start
+    .logo-container
+      margin-right: 15px
+      max-width 104px
+    .before
+    .after
+      display: none
+    .search-container
+      margin-left: 0
+      margin-right: 40px
+      flex 0 0 270px
+    .mb-menu
+      display: none
+    .main-menu
+      display: block
+    #acesse-conta
+      order 8
+      display: block
+      .meus-pedidos
+        display: none
+      .minha-conta
+        a
+          padding 0
+          margin-right: 0
+          &:after
+            display: none
+        span
+          margin 0
+  @media(max-width screen-sm)
+    background: unquote($color1_bg)
+    .mb-menu
+      display: none
+    .logo-container
+      order 1
+      margin 0 0 10px 0
+    .mycart-container
+      order 2
+    .search-container
+      order 3
+      margin 0 10px 0 0
+    .before
+      display: none
+    .after
+      order 4
+      width: 40px
+      height: 40px
+      flex 0 0 40px
+      background: unquote($button_bg_hover)
+      text-align: center
+      display: flex
+      justify-content: center
+      align-items: center
+      &:before
+        content "\f0c9"
+        font-size: 20px
+        color unquote($color1_bg)
+        font-family: 'biz_icons'
+        text-align: center
+      &.active
+        &:before
+          content "\f00d"
+    .sobre-a-loja
+      display: none
+
 
 
 /*
@@ -782,6 +968,42 @@ header.header
   inset 0 -140px 0 #2C3257
   header.header
     @extend .container
+  > .main-menu
+      margin-top: 14px
+  .scrolling &
+    position: fixed
+    left 0
+    top 0
+    width: 100%
+    box-shadow:
+    inset 0 -4px 0 rgba(0,0,0,.7),
+    inset 0 -5px 0 rgba(255,255,255,.2),
+    inset 0 -140px 0 #2C3257
+    > .main-menu
+      display: none
+  @media(max-width screen-sm)
+    box-shadow: none
+    background: unquote($color1_bg)
+    > header.header
+      z-index: 20
+      position: relative
+      position: fixed
+      top 0
+      left 0
+      width: 100%
+    > .main-menu
+        transition: transform 0.5s
+        transform: translateY(-3000px)
+        position: fixed
+        width: 100vw
+        height: 100vh
+        top 106px
+        z-index: 15
+        overflow-y scroll
+        &.active
+          transform: translateY(0)
+
+
 
 /*
 * Module - Footer container
@@ -833,6 +1055,10 @@ header.header
     float right
   .category-description
     clear both
+  @media(max-width screen-sm)
+    .toolbar
+      width: 100%
+      clear: both
 
 
 /*
@@ -863,6 +1089,21 @@ header.header
     display: flex
     flex-flow: row wrap
     justify-content: space-between
+    @media(max-width screen-sm)
+      display: none
+      background: unquote($color1_bg)
+      padding 10px
+      color #fff
+      > .item
+          position: static
+          .filter-name
+            color #fff !important
+            margin: 10px 0 !important
+            display: block
+            padding: 0 10px
+          .the-filters
+            display: block
+            position: static
     > .item
         @extend .dropdown
         box-shadow: none
@@ -999,6 +1240,30 @@ header.header
   font-size: 12px
   font-weight: light
 
+
+/*
+* Module - Product video
+*/
+.product-video
+  .video-thumb
+    width: auto
+
+
+/*
+* Module - Product image
+*/
+.product-image-thumbs
+  .product-essential &
+    li
+      border-radius: 10px
+      box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1)
+      padding 2px
+      border 1px solid #e8e8e8
+      a.thumb-link
+        border 0
+
+
+
 /*
 * Module - Product image
 */
@@ -1008,6 +1273,11 @@ header.header
     justify-content: space-between
     .product-image
       order 1
+      margin-right: 20px
+      img
+        border 1px solid #e8e8e8
+        border-radius: 10px
+        box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1)
       .product-image-gallery
         box-shadow: none
         width: auto
@@ -1016,10 +1286,50 @@ header.header
       order 2
       position: static
       width: 100px
-      li
+      .product-image-thumbs
         margin 0
+      li
+        margin 0 0 5px 0
         width: 100%
 
+
+/*
+* Module - Product shop
+*/
+.product-shop
+  .availability
+    margin-bottom: 26px
+  .action-wrapper
+    display: flex
+    justify-content: space-between
+    align-items: center
+  .attributes-list
+    display: flex
+    flex-flow: row wrap
+    justify-content: space-between
+    border 1px solid #e5e5e5
+    border-left 0
+    border-right 0
+    padding 10px 0
+    margin-bottom: 20px
+    li
+      color #666666
+      font-size: 11px
+      text-transform: uppercase
+      padding-left: 24px
+      &.secure-store
+        background: url($lock-icon) no-repeat center left
+      &.garantee
+        background: url($satisfaction-icon) no-repeat center left
+
+
+/*
+* Module - Product image box
+*/
+.product-img-box
+  .product-essential &
+    .product-image-container
+      margin-bottom: 0
 
 /*
 * Module - Product essential
@@ -1030,12 +1340,32 @@ header.header
   padding 20px
   border-radius: 10px
   box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.1)
+  > form
+    display: flex
+    flex-flow: row wrap
+    justify-content: space-between
+  .product-img-box
+    width: auto
+    max-width: 520px
+  .product-shop
+    margin 0
+    width: auto
+    max-width:420px
+  @media(max-width screen-sm)
+    .product-img-box
+    .product-shop
+      width: 100%
+      max-width: 100%
+
 
 
 /*
 * Module - Abas
 */
-.collateral-tabs
+.collateraltabs
+  box-shadow: inset 0 40px 0 #fff, inset 0 41px 0 #ccc;
+  display: flex
+  flex-flow: row wrap
   box-shadow: none
   &:before
     display: block
@@ -1046,6 +1376,17 @@ header.header
     font-weight: regular
     margin-bottom: 20px
   dt.tab
+    cursor: pointer;
+    line-height: 40px;
+    padding: 0 40px;
+    background: #fafafa;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #333;
+    margin-right: 5px
+    order: 1
+    transition: all 100ms ease-in-out;
+    transform-origin: left bottom
     line-height: initial
     padding 0
     border 1px solid transparent
@@ -1065,12 +1406,19 @@ header.header
       z-index: 10
       font-weight: bold
   .tab-container
+    display: none;
+    padding: 30px;
+    max-width: 100%;
+    flex: 1 1 100%;
+    order: 2;
     border 1px solid #e6e6e7
     margin-top: -1px
     background: #fff
     padding 15px 28px 5px 28px
     border-radius: 0 10px 10px 10px
     box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.1)
+    &.on
+      display: block;
   &.about
     &:before
       content 'SOBRE O PRODUTO'
@@ -1155,6 +1503,7 @@ header.header
   .subtitle
     display: none
 
+
 /*
 * Module -  Reviews
 */
@@ -1190,17 +1539,217 @@ header.header
         @extend .button.sm
         @extend .button.sec
         max-width: 190px
+        margin-top 20px
+        cursor pointer
         &:before
           font-family: 'biz_icons'
+      button.button
+        @extend .button
+        @extend .button.md
+        @extend .button.cta
+
+
+/*
+* Module - Product collateral
+*/
+.product-collateral
+  .about
+    float left
+    max-width: 50%
+    padding-right: 10px
+  .table
+    float right
+    max-width: 50%
+    padding-left: 10px
+  .box-collateral
+    clear both
+  @media(max-width screen-sm)
+    .about
+    .table
+      max-width: 100%
+      float none
+      clear: both
+
+
+/*
+* Module - Product info
+*/
+.product-info
+  h2.name
+    font-size: 13px
+    color #666666
+    text-transform: uppercase
+    margin-bottom: 14px
+  .sku
+    display: none
+  .item-options
+    background: none
+    display: flex
+    flex-flow: row wrap
+    text-transform: uppercase
+    padding: 0
+    margin-top: 0
+    dt
+      margin-left 5px
+      margin-right: 5px
+      color #999999
+      font-weight: regular
+      line-height: 11px
+      &:first-child
+        margin-left: 0
+    dd
+      margin-bottom: 0
+      border-right 1px solid #999
+      padding-right: 5px
+      color #999999
+      line-height: 11px
+      &:last-child
+        border-right 0
+
+
+/*
+* Module - Product cart images
+*/
+.product-cart-image
+  .btn-remove
+    &:before
+      opacity: 1
+      content "\f00d"
+
+/*
+* Module - Cart price
+*/
+.product-cart-price
+.product-cart-total
+  .cart-price
+    color #666666
+    font-size: 14px
+
+
+/*
+* Module - Product cart actions
+*/
+.product-cart-actions
+  input
+    padding: 0
+
+/*
+* Module - Cart boxes
+*/
+.cart-boxes
+  border-radius: 0 0 10px 10px
+  box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.1)
+  flex-flow: row wrap
+  justify-content: space-between
+  align-items: flex-start
+  padding 20px
+  padding-top 0
+  .shipping
+    margin 0
+    padding 20px 0
+    max-width: 429px
+    .title
+      font-size: 14px
+      color #666666
+    .buttons-set
+      .button2
+        @extend .button
+        @extend .button.sm
+        @extend .button.sec
+    .co-shipping-form
+      border 0
+  .discount-coupon-form
+    margin 0
+    align-items: center
+    display: flex
+    align-items: center
+    flex-flow: row wrap
+    padding 20px 0
+    max-width: 409px
+    .title
+      font-size: 14px
+      color #666666
+      flex 0 0 100%
+    .discount-form
+      flex 0 0 100%
+      label
+        display: none
+  .cart-totals
+    flex 0 0 100%
+    display: flex
+    justify-content: flex-end
+    border-top 1px solid #e1e1e1
+    #shopping-cart-totals-table
+      max-width: 350px
+      td
+        border 0
+        font-weight: regular
+        font-size: 13px
+        text-transform: uppercase
+        padding 20px 0
+        strong
+          font-weight: regular
+          font-size: 13px
+          color #666666
+      tfoot
+        border-top 1px solid #e1e1e1
+        td
+          &:last-child
+            strong
+              font-size: 17px
+
+
+
+/*
+* Module - Cart product line
+*/
+.cart-product-line
+  .product-image
+    max-width: 50px
+
+
+/*
+* Module - Data table
+*/
+.cart-table
+  header
+    border-radius: 10px 10px 0 0
+    border 1px solid #e3e3e4
+    border-bottom 0
+    background: #fafafa
+    font-size: 11px
+    font-weight: medium
+    color #666666
+  main
+    border 1px solid #e3e3e4
+    background: #ffffff
+  footer
+    display: none
+
+
 
 /*
 * Module - Carrinho
 */
 .cart
+  .page-title
+    width: 100%
+    text-align: center
+    h1
+      font-size: 60px
   .cart-table
     clear both
     float none
 
+
+/*
+* Module - Wrap links
+*/
+.wrap-links
+  .btn-checkout
+    @extend .button
+    @extend .button.lg
+    @extend .button.cta
 
 
 /*
@@ -1212,8 +1761,11 @@ header.header
     @extend .container
 
 .wrapper
+  &.scrolling
+    padding-top 80px
   .main-container
     margin-bottom 200px
+
 
 
 .catalog-category-view
@@ -1232,3 +1784,85 @@ header.header
 * Theme
 * Customização do modulos ou layout, hacks !importants e etc
 */
+.box-reviews
+  .customers-ratings
+    li
+      width: 100% !important
+    .owl-item
+      li
+        width: 100% !important
+
+
+.col1-layout
+.col2-left-layout
+.col2-right-layout
+  .product-collection
+    li.item
+      width: calc(25% - 16px)
+      &:nth-child(5n+1)
+        clear none
+        margin 0 0 20px 20px
+      &:nth-child(4n+1)
+        clear left
+        margin-left 0
+    @media(max-width screen-xs)
+      li.item
+        header
+          margin-left 20px
+        width: 100%
+
+
+.owl-theme
+  .owl-buttons
+    width: 122px
+    display: flex
+    justify-content: space-between
+    div
+      height: 9px
+      width: 6px
+      background: none
+      border 0
+      box-shadow: none
+      font-size: 0
+      border-radius: 0
+      &:before
+        display: none
+      &.owl-next
+        background: url($pixel-arrow-right) center center
+        position: static
+      &.owl-prev
+        background: url($pixel-arrow-left) center center
+        position: static
+  .owl-page
+    margin 0
+    span
+      background: #000000
+      opacity: .1
+      border-radius: 0
+      width: 10px
+      height: 10px
+      margin: 0
+    &.active
+      span
+        background: unquote($button_bg_hover)
+        opacity: 1
+  .owl-pagination
+    width: 90px
+    display: flex
+    justify-content: space-between
+    position: absolute
+    left 16px
+    bottom -1px
+  .owl-controls
+    position: absolute
+    bottom 0
+    top auto
+    right 0
+    left auto
+
+
+
+.product-collection-container#featured
+  > header
+      .title
+        color unquote($color2_bg_hover)
