@@ -55,6 +55,39 @@ screen-lg = 1200px
   width: auto
 
 
+.button
+  border-radius: 0
+  box-shadow: none
+  border none
+  height: auto
+  span
+    display: table
+    margin 0 auto
+  &.sm
+    font-size: 15px
+    line-height: 15px
+    padding: 9px 13px
+    text-transform: uppercase
+  &.md
+    padding: 12px 17px
+    font-size: 16px
+    line-height: 12px
+    text-transform: uppercase
+  &.lg
+    font-size: 20px
+    padding: 18px 30px
+    line-height: 14px
+    text-transform: uppercase
+  &.cta
+    background-image: linear-gradient( 90deg, unquote($button_bg) 0%, unquote($button_bg_hover) 100%)
+    color #fff
+  &.flat
+    background: #000
+    color #fff
+
+
+
+
 /*
 * Base
 * Estilo base do elementos do Html
@@ -62,6 +95,18 @@ screen-lg = 1200px
 body
   font-family: 'Poppins', sans-serif
   background: #f5f5f5
+
+
+input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio]):not([type=file])
+  height: 36px
+  line-height: 36px
+  border-radius: 0 !important
+  box-shadow: none
+  border 1px solid #cccccc
+
+
+.btn, button, input[type=button], input[type=reset], input[type=submit]
+  //border 2px solid red
 
 
 /*
@@ -95,6 +140,54 @@ body
     color #f7be07
   }
 }
+
+
+/*
+* Component - Price box
+*/
+.price-box
+  font-size: 15px
+  .special-price
+  .regular-price
+    color unquote($color1_bg)
+    .label
+      color unquote($color1_bg)
+      display: none
+  .old-price
+    .label
+      display: none
+  .prod__shop &
+    .old-price
+      color #808080
+      font-size: 16px
+    .special-price
+    .regular-price
+      font-size: 26px
+      color #000
+
+
+
+/*
+* Module - Pricebox parcelado
+*/
+.price-box-parcelado
+  .preco-parcelado-sem-juros
+  .preco-parcelado
+    margin-bottom: 0
+    color #666666
+    font-size: 11px
+    .s-juros
+      display: none
+    .prod__shop &
+      color #808080
+      font-size: 16px
+      text-transform: uppercase
+      .num
+      .value
+      span
+        color #808080
+  .preco-parcelado
+    display: none
 
 
 
@@ -343,11 +436,86 @@ body
 
 
 /*
+* Module - Product name
+*/
+.product__name
+  color #000000
+  text-transform: uppercase
+  line-height: 16px
+  font-size: 13px
+
+
+/*
+* Module - Add to cart
+*/
+button.add-to-cart
+  @extend .button
+  @extend .button.sm
+  @extend .button.cta
+
+
+
+/*
+* Module - Product action
+*/
+.product__action
+  display: flex
+  flex-flow: row wrap
+  align-items: flex-end
+  > div
+      flex 1 1 50%
+  .price-box-parcelado
+    margin-bottom: 0
+  .add-to-cart
+    width: 100%
+    margin-bottom: 0
+  .price-box
+    margin-bottom: 10px
+
+
+/*
 * Module - Product case
 */
 .products__case
   background: none
   box-shadow: none
+
+
+.products
+  .products__title
+    margin-bottom: 60px
+
+
+/*
+* Module - Newsletter
+*/
+.newsletter
+  .footer &
+    padding: 12px 40px
+    box-shadow: none
+    background: #4c4c4c
+    .newsletter__text
+      margin-bottom: 0
+      margin-right: 22px
+      .title
+        font-size: 14px
+        color #dddddd
+    .newsletter__form
+      @extend .container
+      .newsletter__text
+        flex 0 0 auto
+      .newsletter__email
+        padding: 0
+        margin-right: 10px
+        max-width: 258px
+      .newsletter__btn
+        @extend .button
+        @extend .button.md
+        @extend .button.cta
+        max-width: 130px
+      .newsletter__submit
+        padding: 0
+
 
 
 /*
@@ -406,11 +574,258 @@ header.header
 
 
 /*
+* Module - Socials
+*/
+.socials
+  .socials__title
+    display: none
+
+
+
+.footer-container
+  padding-bottom:  0
+  .footer
+    width: 100%
+    max-width: 100%
+
+
+
+.footer__copyright
+  background: #484848
+  .textblock-copyright
+    @extend .container
+    display: flex
+    align-items: center
+    padding: 37px 0
+    p
+      flex 0 0 auto
+      color #fff
+      font-size: 14px
+      line-height: 14px
+      margin 0
+
+
+
+footer.footer
+  background: #f0f0f0
+  .std
+  .tele
+    color #666666
+    font-size: 18px
+  .textblock-horario-atendimento
+    color #666666
+    font-size: 14px
+  .email
+    padding-top: 0
+  a, .email
+    color #666666
+    font-size: 14px
+    &:hover
+      color unquote($color1_bg)
+  .newsletter
+    width: 100%
+  .flex
+    @extend .container
+    .title
+      color unquote($color1_bg)
+      opacity: 1
+      font-size: 20px
+      text-transform: uppercase
+
+
+.footer-links
+  display: flex
+  justify-content: center
+  flex-flow: row wrap
+  .f-col1
+    margin-right: 40px
+    > .flex
+        border-bottom 1px solid unquote($color3_bg)
+        margin-bottom: 30px
+  .footer__copyright
+    flex 0 0 100%
+
+
+/*
+* Module - Breadcrumb
+*/
+.breadcrumb__link
+  font-size: 14px
+  color #000000
+  &:before
+    display: none
+
+.breadcrumb__last
+  color #808080
+  font-size: 14px
+
+.breadcrumb
+  width: 100%
+  .breadcrumb__list
+    @extend .container
+
+
+/*
+* Module - Prod name
+*/
+.prod__name
+  h1
+    text-transform: uppercase
+    font-size: 30px
+    line-height: 33px
+  .sku
+    font-size: 14px
+    color #808080
+
+
+/*
+* Module - Prod short
+*/
+.prod__short-desc
+  font-size: 14px
+  color #808080
+
+
+/*
+* Module - Qty wrapper
+*/
+.qty-wrapper
+  .input-box
+    input.input-text
+      border-radius: 0 !important
+      box-shadow: none !important
+      border 1px solid #cccccc
+      height: 50px !important
+      line-height: 50px !important
+      background: #fdfdfd
+      padding: 0
+      color: #808080
+      font-size: 20px
+      width: 67px
+      padding-left: 30px
+  .bt-box
+    left: 8px
+    width: 14px
+    box-shadow: none
+    border-radius: 0
+    .bt
+      color #cccccc
+      border 0
+      box-shadow: none
+      font-size: 14px
+      &:hover
+        background: none
+        color #000
+        border 0
+        box-shadow: none
+
+
+/*
+* Module - Add to cart buttons
+*/
+.add-to-cart-buttons
+  background: 0
+  padding: 0
+  display: flex
+  align-items: center
+  .add-to-cart-btn
+    @extend .button
+    @extend .button.lg
+    @extend .button.flat
+    position: static
+  .qty-wrapper
+    position: static
+    margin-bottom: 0
+    margin-right: 10px
+    transform: none
+
+
+/*
+* Module - Frete
+*/
+.frete
+  border 1px solid #cccccc
+  background: #f0f0f0
+  padding: 25px 20px
+  .frete__title
+    border-radius: 0
+    box-shadow: none
+    font-size: 22px
+    padding: 0
+    text-transform: uppercase
+    color #000
+    background: none
+    justify-content: flex-start
+    margin-bottom: 20px
+  .ico
+    display: none
+  .frete__content
+    display: block
+  .cep
+    display: none
+  .input-box
+    margin-right: 8px
+  .frete__naosei
+    display: none
+  .btn
+    @extend .button
+    @extend .button.md
+    @extend .button.flat
+
+
+
+/*
+* Module - Configurable option
+*/
+.configurable
+  &:before
+    display: none
+  .configurable__caption
+    font-size: 16px
+  .configurable-swatch-list
+    a, img, svg
+      height: 30px
+      line-height: 30px
+      min-width: 30px
+      width: 30px
+    a
+      background: #fff
+      font-size: 16px
+      color #808080
+
+
+
+/*
+* Module - Product option
+*/
+.product-options
+  padding: 17px 26px
+  background: #f0f0f0
+  border 1px solid #cccccc
+
+
+
+/*
+* Module - Product shop
+*/
+.prod__shop
+  display: block
+  .product-rate
+    margin-bottom: 34px
+  .product__action
+    margin-bottom: 30px
+
+
+
+/*
 * Main- container
 */
 .main-container
   .main
     @extend .container
+  .breadcrumb
+    margin-top 40px
+    margin-bottom: 40px
 
 
 /*
@@ -422,3 +837,6 @@ header.header
 * Theme
 * Customização do modulos ou layout, hacks !importants e etc
 */
+
+.product-rate .rating-box .rating:before
+  color #666666
