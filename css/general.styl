@@ -661,6 +661,7 @@ footer.footer
 
 .breadcrumb
   width: 100%
+  padding-top 40px
   .breadcrumb__list
     @extend .container
 
@@ -761,10 +762,12 @@ footer.footer
     display: none
   .frete__content
     display: block
+    flex 0 0 100%
   .cep
     display: none
   .input-box
     margin-right: 8px
+    flex 1 1 auto
   .frete__naosei
     display: none
   .btn
@@ -788,6 +791,8 @@ footer.footer
       line-height: 30px
       min-width: 30px
       width: 30px
+      left 0
+      top 0
     a
       background: #fff
       font-size: 16px
@@ -804,6 +809,80 @@ footer.footer
   border 1px solid #cccccc
 
 
+/*
+* Module - Link wishlist
+*/
+.link-wishlist
+  display: flex
+  align-items: center
+  &:before
+    content url($wishlist-icon)
+    display: block
+    margin-right: 10px
+    height: 21px
+  a
+    box-shadow: none
+    border-radius: 0
+    font-size: 14px
+    text-align: left
+    padding: 0
+    background: none
+    color #808080
+    text-transform: lowercase
+    &:hover
+      background: none
+      color #000
+
+/*
+* Module - Email to friend
+*/
+.add-to-links
+  .email-to-friend
+    a
+      display: flex
+      border 0
+      box-shadow: none
+      padding: 0
+      background: none
+      border-radius: 0
+      font-size: 14px
+      color #808080
+      width: auto
+      justify-content: flex-start
+      align-items: center
+      text-transform: lowercase
+      span
+        display: block
+      &:before
+        content url($send-friend)
+        margin-right: 9px
+
+
+/*
+* Module - Compartilhar
+*/
+.sharing-links
+  .list
+    display: block
+    li
+      display: none
+      &.fb-share
+      &.tt-share
+      &.gp-share
+      &.email-to-friend
+        display: block
+    &:before
+      display: none
+
+
+/*
+* Module - Prod links
+*/
+.prod__links
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-between
+
 
 /*
 * Module - Product shop
@@ -814,18 +893,198 @@ footer.footer
     margin-bottom: 34px
   .product__action
     margin-bottom: 30px
+  .product-options
+    margin-bottom: 40px
+  .prod__short-desc
+    margin-bottom: 43px
 
+
+/*
+* Module - Product image gallery
+*/
+.product-image-thumbs
+  justify-content: center
+  .thumb-link
+    border-radius: 0
+    box-shadow: none
+
+
+/*
+* Module - Product image gallery
+*/
+.product-image-gallery
+  box-shadow: none
+
+
+/*
+* Module - Product image container
+*/
+.product-image-container
+  .product-image
+    margin-bottom: 20px
+
+/*
+* Module - Product image
+*/
+.prod__img
+  .product-image-container
+    margin-bottom: 70px
+
+
+/*
+* Module - Product essential
+*/
+.product-essential
+  border-bottom: 1px solid #cccccc
+  padding-bottom: 50px
+  .prod__img
+    margin-right: 60px
+
+
+/*
+* Module - Tabs
+*/
+.tabs
+  background: #000000
+  .tabs__tab
+    color #fff
+    font-size: 14px
+    box-shadow: none
+    border: 0
+    margin-top: 6px
+    &:hover
+    &.on
+      color #000
+      box-shadow: none
+      border: 0
+      top auto
+  .tabs__content
+    border 0
+
+
+/*
+* Module- Page title
+*/
+.page-title
+  border-bottom: 1px solid #cccccc
+  padding-bottom: 26px
+  .category-thumb
+    display: none
+  h1
+    line-height: 25px
+    font-size: 30px
+    text-transform: uppercase
+    color #000
+
+
+/*
+* Module - View mode
+*/
+.toolbar
+  justify-content: space-between
+  .view-mode
+    svg
+      height: 14px
+      width: 14px
+    strong
+      svg
+        fill #000
+    .list
+    .grid
+      display: flex
+      align-items: center
+    .grid
+      margin-right: 14px
+  .sort-by
+    label
+      display: none
+  .sorter
+    order 1
+    margin-left: 0
+  .limiter
+    display: none
+  .amount
+    order 5
+    flex 0 0 auto
+    color #ccc
+    opacity: 1
+    font-size: 10px
+
+
+/*
+* Module - Filters
+*/
+.filters
+  .title
+    display: none
+
+
+.filters__filter
+  box-shadow: none
+  border 1px solid #e6e6e6
+  .filters__name
+    font-size: 20px
+    text-transform: uppercase
+    color: #000
+  &:hover
+    box-shadow: none
+
+.filters__filter
+  padding: 20px
+  .label
+    color #808080
+    font-size: 16px
+
+.filters__filter
+  .li--0
+    &:not(:last-child)
+      border-bottom 1px solid #e6e6e6
+      margin-bottom: 0
+  .a--0
+    padding: 10px 0
+    line-height: 16px
+  .count
+    display: none
+
+
+
+.col-main
+  .page-title
+    margin-bottom: 20px
+
+
+.main
+  .col-left
+    max-width: 20.689%
+    flex 0 0 20.689%
+    padding: 0 27.5px
+    margin 0 0 0 -27.5px
+  .col-main
+    padding: 0 27.5px
+    margin 0 -27.5px 0 0
 
 
 /*
 * Main- container
 */
 .main-container
+  box-shadow: inset 0 450px 0 #fff
   .main
     @extend .container
   .breadcrumb
-    margin-top 40px
     margin-bottom: 40px
+
+/*
+* Module - Wrapper
+*/
+.wrapper
+  padding: 0
+  > .main-container
+      max-width: 100%
+      width: 100%
+
+.wrapper-container
+  padding-top: 9rem
 
 
 /*
