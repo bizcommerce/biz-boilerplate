@@ -202,11 +202,23 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
     flex-flow: row wrap
     align-items: flex-end
     height: auto
+    position: relative
+    min-height: 120px
+    padding: 0 33px
     img
+      filter: grayscale(1) invert(1);
+      opacity: 0.2
       margin-bottom: 14px
       margin-top: 20px
       margin 20px auto 14px auto
       order 1
+      max-height: 97px
+      line-height: 97px
+      height: 97px
+      //clip-path: circle(42px at top)
+      clip-path: inset(0 0 49px 0)
+      position: absolute
+      top 0
     &:after
       content ''
       flex 0 0 100%
@@ -238,6 +250,9 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
     &:hover
       .a--0
         background: none
+        img
+          clip-path: inset(49px 0 0 0)
+          top -49px
         &:before
           background: #454545
   .box--1
@@ -296,7 +311,7 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
     box-shadow: none
     background: none
     cursor pointer
-    height: 110px
+    height: 120px
   &.on
   &:hover
     .input-box
@@ -378,7 +393,7 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
     background: none
     border-radius: 0
     display: block
-  @media(max-width screen-sm)
+  @media(max-width screen-md)
     .mycart &
       .ico
         margin-right: 0
@@ -414,7 +429,14 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
     box-shadow: none
   .brands__item a
     border 0
+    height: auto
+    img
+      max-width: 146px
+      max-height: 126px
   &#marcas_home
+    margin-bottom: 38px
+    display: flex
+    flex-flow: column nowrap
     &:before
       content 'Grandes Marcas'
       display: block
@@ -423,6 +445,17 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
       text-transform: uppercase
       font-size: 30px
       font-weight: medium
+      order 1
+    &:after
+      content 'que acreditam e usam nossas soluções.'
+      display: block
+      font-size: 16px
+      color #666666
+      text-align: center
+      text-transform: uppercase
+      order 2
+    .brands__list
+      order 3
   &#partners
     &:before
       content 'Nossos parceiros'
@@ -507,6 +540,8 @@ button.add-to-cart
     margin-bottom: 0
   .price-box
     margin-bottom: 10px
+  .action1
+    padding-right: 5px
 
 
 /*
@@ -563,8 +598,16 @@ button.add-to-cart
         .newsletter__submit
           flex 0 0 100%
           max-width: 100%
-
-
+/*
+* Module - Myaccount
+*/
+.mymenu#myaccount
+  .a--0
+    color #b2b2b2
+    span
+      font-size: 11px
+      line-height: 9px
+      display: table
 
 /*
 * Module - Header
@@ -582,12 +625,15 @@ header.header
   .loginout
     order 3
     margin-right: 30px
-  .mycart
+  #myaccount
     order 4
+  .mycart
+    order 5
     height: auto
-  @media(max-width screen-sm)
+  @media(max-width screen-md)
     .textblock-sac
     .textblock-support
+    #myaccount
       display: none
 
 
@@ -621,9 +667,9 @@ header.header
       margin-right: 2px
   .search
     order 4
-    height: 110px
+    height: 120px
     margin-bottom: 0
-  @media(max-width screen-sm)
+  @media(max-width screen-md)
     .logo
       order 1
     &:before
@@ -641,11 +687,12 @@ header.header
 * Module - Services step
 */
 .services-step
+  background: #ed3454
+  padding-bottom 26px
   .steps
     display: flex
     flex-flow: row wrap
     justify-content: space-between
-    background: #ed3454
   .title_services
     color unquote($color1_bg)
     font-size: 20px
@@ -654,24 +701,57 @@ header.header
     text-align: center
     background: #fff
     padding 24px 0 20px 0
+    margin-bottom: 26px
+    text-transform: uppercase
+    position: relative
   .subtitle_services
     color #666666
     font-size: 20px
     line-height: 16px
+    text-transform: lowercase
   .step
     color #fff
     display: flex
     align-items: center
+    flex 1 1 auto
+    justify-content: center
+    transform: skewX(-13deg)
+    min-height: 156px
+    &:before
+      position: absolute
     &:not(:last-child)
-      border-right 1px solid #ff3e5f
+      border-right 3px solid #ff3e5f
     .num
       font-size: 50px
       font-weight: semibold
       margin-right: 7px
+      flex 0 0 auto
+      transform: skewX(13deg)
     .text
-      font-size: 20px
+      flex 1 1 auto
+      font-size: 19px
       line-height: 24px
-      font-weight: regular
+      font-weight: light
+      max-width: 130px
+      display: table
+      transform: skewX(13deg)
+    &.step-1
+      &:before
+        content url($visita-tecnica)
+        transform: skewX(13deg)
+    &.step-2
+      &:before
+        content: url($elaboracao)
+        transform: skewX(13deg)
+    &.step-3
+      &:before
+        content: url($instalacao)
+        transform: skewX(13deg)
+    &.step-4
+      &:before
+        content: url($treinamento)
+        transform: skewX(13deg)
+
 
 
 
@@ -681,17 +761,30 @@ header.header
 .socials
   .socials__title
     display: none
+  .socials__item
+    padding: 0
+    margin-right: 10px !important
+  .socials__link
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 40px
+    height: 40px
+    svg
+      max-height: 25px
+    path
+      fill #fff
+  .facebook
+    background: #3a5795
+  .twitter
+    background: #2aa9e0
+  .insta
+    background: #004879
 
 
-
-.footer-container
-  padding-bottom:  0
-  .footer
-    width: 100%
-    max-width: 100%
-
-
-
+/*
+* Module - Copyright
+*/
 .footer__copyright
   background: #484848
   .textblock-copyright
@@ -708,12 +801,17 @@ header.header
 
 
 
+/*
+* Module - Footer
+*/
 footer.footer
   background: #f0f0f0
   .std
   .tele
     color #666666
     font-size: 18px
+  .tele
+    margin-bottom: 27px
   .textblock-horario-atendimento
     color #666666
     font-size: 14px
@@ -737,7 +835,9 @@ footer.footer
     .newsletter
       margin 0 0 25px 0
 
-
+/*
+* Module - Footer links
+*/
 .footer-links
   display: flex
   justify-content: center
@@ -749,10 +849,20 @@ footer.footer
         margin-bottom: 30px
   .footer__copyright
     flex 0 0 100%
+  .footer__certificates
+    flex 0 0 100%
   @media(max-width screen-sm)
     .f-col1
       margin-right: 0
 
+/*
+*  Module - Footer containner
+*/
+.footer-container
+  padding-bottom:  0
+  .footer
+    width: 100%
+    max-width: 100%
 
 /*
 * Module - Breadcrumb
@@ -884,6 +994,12 @@ footer.footer
     @extend .button
     @extend .button.md
     @extend .button.flat
+  .frete__close
+    display: flex
+    &:before
+      margin-right: 10px
+  .frete__results
+    margin-top 10px
   @media(max-width screen-sm)
     .frete__title
       margin-bottom: 0
@@ -995,7 +1111,7 @@ footer.footer
 */
 .sharing-links
   .list
-    display: block
+    //display: block
     li
       display: none
       &.fb-share
@@ -1021,10 +1137,14 @@ footer.footer
 .prod__links
   display: flex
   flex-flow: row wrap
-  justify-content: space-between
+  justify-content: flex-start
+  align-items: center
+  .add-to-links
+    margin-right: 60px
   @media(max-width screen-sm)
     display: block
     .add-to-links
+      margin-right: 0
       margin-bottom: 20px !important
 
 
@@ -1217,6 +1337,14 @@ footer.footer
 .col-main
   .page-title
     margin-bottom: 20px
+  .services-step
+    width 100vw
+    position relative
+    left 50%
+    margin-left -50vw
+    margin-bottom: 0
+    .steps
+      @extend .container
 
 
 .main
@@ -1254,6 +1382,13 @@ footer.footer
   > .main-container
       max-width: 100%
       width: 100%
+  .cms-home &
+    > .main-container
+      margin-bottom: 0
+    > .banner
+      margin-bottom: 0
+    .footer-container
+      margin-top: 0
 
 
 .wrapper-container
@@ -1290,3 +1425,77 @@ footer.footer
 
 .brands .owl-wrapper-outer
   border 0
+
+
+#banner__hints
+  margin-bottom: 46px
+
+#banner__home_banner_mosaico
+  margin-bottom: 56px
+  &:before
+    content url($header-title)
+    display: block
+    margin-bottom: 50px
+  .banner__item
+    margin-bottom: 20px
+
+
+#banner__discount
+  margin-bottom: 40px
+  .banner__wrapper
+    position: relative
+    left: 50%
+    margin-left: -50vw
+
+
+#tire-duvidas
+  ul
+    column-count: 2
+  @media(max-width screen-sm)
+    ul
+      column-count: 1
+
+
+
+.footer__labels
+  .title
+    &:before
+      content url($cadeado-icon)
+      margin-right: 10px
+
+
+.brands
+  .owl-item
+    filter: grayscale(100%)
+    opacity: .5
+    &:hover
+      opacity: 1
+      filter: none
+
+
+.owl-buttons
+  .owl-prev
+    border-radius: 0
+    box-shadow: none
+    color #808080
+    background: none
+  .owl-next
+    border-radius: 0
+    box-shadow: none
+    color #808080
+    background: none
+
+
+.catalog-category-view
+  .product__action
+    .add-to-cart
+      background: #000
+      color #fff
+      border 1px solid transparent
+      &:hover
+        background: #fff
+        color #000
+        border 1px solid #000
+
+body
+  background: red
