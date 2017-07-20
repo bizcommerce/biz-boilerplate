@@ -204,10 +204,10 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
     height: auto
     position: relative
     min-height: 120px
-    padding: 0 33px
+    padding: 0 25px
     img
       filter: grayscale(1) invert(1);
-      opacity: 0.2
+      opacity: 0.4
       margin-bottom: 14px
       margin-top: 20px
       margin 20px auto 14px auto
@@ -225,9 +225,8 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
       order 2
     span
       order 3
-      color #fff
+      color #000
       font-size: 12px
-      text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);
       text-transform: uppercase
       min-height: 43px
       max-width: 117px
@@ -238,7 +237,7 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
       transform: skewX(-13deg)
       display: block
       background: unquote($color3_bg_hover)
-      border 1px solid #666666
+      border 1px solid #e7e7e7
       border-top 0
       height: 100%
       position: absolute
@@ -253,19 +252,33 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
         img
           clip-path: inset(49px 0 0 0)
           top -49px
+          filter: none
+          opacity: 1
+        span
+          color #000
         &:before
-          background: #454545
+          background: #fff
+      .box--1
+        background: #fff
+        box-shadow: none
+        border 1px solid #e7e7e7
+        border-top 0
+        margin-left: -13px
+        margin-top: -1px
   .box--1
     background: unquote($color2_bg_hover)
+    padding: 10px 0
   .a--1
     font-size: 14px
-    color unquote($color3_bg)
+    color #6b6b6b
     text-transform: uppercase
+    padding-left 15px
+    padding-right: 15px
   .li--1
     &:hover
       .a--1
-        background: #404040
-        color #fff
+        background: #f7f7f7
+        color #6b6b6b
   @media(max-width screen-sm)
     background: #484848
     .ul--0
@@ -282,7 +295,7 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
     content ''
     transform: skewX(-13deg)
     background: unquote($color3_bg_hover)
-    border 1px solid #666666
+    border 1px solid #e7e7e7
     height: 100%
     position: absolute
     border-right 0
@@ -312,12 +325,24 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
     background: none
     cursor pointer
     height: 120px
+    svg
+      fill #f83a5b
   &.on
   &:hover
     .input-box
       display: block
     &:before
       display: block
+  @media(max-width screen-sm)
+    position: static
+    .input-box
+      width: 250px
+      right: 0
+      padding-left 20px
+    &:before
+      max-width: 95%
+
+
 
 
 /*
@@ -325,9 +350,10 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
 */
 .loginout
   font-size: 11px
-  color #b2b2b2
+  color #fff
   display: flex
   flex-flow: row wrap
+  text-transform: uppercase
   a
     color #ffffff
   > div
@@ -341,7 +367,8 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
   font-size: 11px
   display: flex
   align-items: center
-  color #b2b2b2
+  color #fff
+  text-transform: uppercase
   &:before
     content url($sac_icon)
     margin-right: 5px
@@ -354,7 +381,8 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
   font-size: 11px
   display: flex
   align-items: center
-  color #b2b2b2
+  color #fff
+  text-transform: uppercase
   &:before
     content url($support_icon)
     margin-right: 5px
@@ -383,7 +411,7 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
     width: 18px
     height: 18px
     margin-right: 14px
-    fill unquote($color1_bg)
+    fill #fff
   .qtd
     position: static
     width: auto
@@ -403,6 +431,7 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
         background: none !important
       .qtd
         margin-left: 10px
+        color #f23757
 
 
 .mycart
@@ -603,25 +632,28 @@ button.add-to-cart
 */
 .mymenu#myaccount
   .a--0
-    color #b2b2b2
+    color #fff
+    text-transform: uppercase
     span
       font-size: 11px
       line-height: 9px
       display: table
 
+
 /*
 * Module - Header
 */
 header.header
-  justify-content: space-between
+  justify-content: center
   padding: 6px 0
+  background: #e5304f
   .textblock-sac
     order 1
     margin-right: 15px
   .textblock-support
     order 2
     align-self: flex-start
-    margin-right: auto
+    margin-right: 264px
   .loginout
     order 3
     margin-right: 30px
@@ -630,7 +662,11 @@ header.header
   .mycart
     order 5
     height: auto
+  @media(max-width screen-lg)
+    .textblock-support
+      margin-right: auto
   @media(max-width screen-md)
+    background: none
     .textblock-sac
     .textblock-support
     #myaccount
@@ -642,7 +678,7 @@ header.header
 * Module - Header container
 */
 .header-container
-  background #373737
+  background #fff
   display: flex
   flex-flow: row wrap
   justify-content: center
@@ -652,23 +688,28 @@ header.header
     order 1
     flex 0 0 100%
     margin-bottom: 0
+    max-width: 100%
   &:before
     content ''
     order 2
     flex 0 0 100%
-    border-top 1px solid #666666
   .logo
     order 2
     margin-bottom: 0
     margin-right: 35px
   .categories
     order 3
+    flex 1 1 auto
+    max-width: 900px
     &:not(.categories--mini)
       margin-right: 2px
   .search
     order 4
     height: 120px
     margin-bottom: 0
+  @media(max-width screen-lg)
+    .categories
+      max-width: 828px
   @media(max-width screen-md)
     .logo
       order 1
@@ -681,6 +722,7 @@ header.header
       order 3
     .categories__show
       order 4
+
 
 
 /*
@@ -1496,6 +1538,3 @@ footer.footer
         background: #fff
         color #000
         border 1px solid #000
-
-body
-  background: red

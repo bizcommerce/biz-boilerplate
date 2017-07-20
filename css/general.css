@@ -92,7 +92,7 @@ button.add-to-cart.cta,
 .frete .btn.cta,
 button.add-to-cart,
 .footer .newsletter .newsletter__form .newsletter__btn {
-  background-image: linear-gradient(90deg, #CA213E 0%, #FF3E5F 100%);
+  background-image: linear-gradient(90deg, @button(bg) 0%, @button(bg:hover) 100%);
   color: #fff;
 }
 .button.flat,
@@ -156,11 +156,11 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
 }
 .price-box .special-price,
 .price-box .regular-price {
-  color: #FF3E5F;
+  color: @bg(1);
 }
 .price-box .special-price .label,
 .price-box .regular-price .label {
-  color: #FF3E5F;
+  color: @bg(1);
   display: none;
 }
 .price-box .old-price .label {
@@ -219,11 +219,11 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
   height: auto;
   position: relative;
   min-height: 120px;
-  padding: 0 33px;
+  padding: 0 25px;
 }
 .categories--justify .a--0 img {
   filter: grayscale(1) invert(1);
-  opacity: 0.2;
+  opacity: 0.4;
   margin-bottom: 14px;
   margin-top: 20px;
   margin: 20px auto 14px auto;
@@ -242,9 +242,8 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
 }
 .categories--justify .a--0 span {
   order: 3;
-  color: #fff;
+  color: #000;
   font-size: 12px;
-  text-shadow: 0px 1px 1px rgba(0,0,0,0.4);
   text-transform: uppercase;
   min-height: 43px;
   max-width: 117px;
@@ -255,8 +254,8 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
   content: '';
   transform: skewX(-13deg);
   display: block;
-  background: #575757;
-  border: 1px solid #666;
+  background: @bg(3:hover);
+  border: 1px solid #e7e7e7;
   border-top: 0;
   height: 100%;
   position: absolute;
@@ -271,21 +270,37 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
 .categories--justify .li--0:hover .a--0 img {
   clip-path: inset(49px 0 0 0);
   top: -49px;
+  filter: none;
+  opacity: 1;
+}
+.categories--justify .li--0:hover .a--0 span {
+  color: #000;
 }
 .categories--justify .li--0:hover .a--0:before {
-  background: #454545;
+  background: #fff;
+}
+.categories--justify .li--0:hover .box--1 {
+  background: #fff;
+  box-shadow: none;
+  border: 1px solid #e7e7e7;
+  border-top: 0;
+  margin-left: -13px;
+  margin-top: -1px;
 }
 .categories--justify .box--1 {
-  background: #333333;
+  background: @bg(2:hover);
+  padding: 10px 0;
 }
 .categories--justify .a--1 {
   font-size: 14px;
-  color: #CCCCCC;
+  color: #6b6b6b;
   text-transform: uppercase;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .categories--justify .li--1:hover .a--1 {
-  background: #404040;
-  color: #fff;
+  background: #f7f7f7;
+  color: #6b6b6b;
 }
 @media (max-width: 768px) {
   .categories--justify {
@@ -304,8 +319,8 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
 .search:before {
   content: '';
   transform: skewX(-13deg);
-  background: #575757;
-  border: 1px solid #666;
+  background: @bg(3:hover);
+  border: 1px solid #e7e7e7;
   height: 100%;
   position: absolute;
   border-right: 0;
@@ -320,7 +335,7 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
   box-shadow: none;
   border: 0;
   font-size: 14px;
-  color: #CCCCCC;
+  color: @bg(3);
   height: 110px;
   padding: 0px 25px;
 }
@@ -339,6 +354,9 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
   cursor: pointer;
   height: 120px;
 }
+.search .search__button svg {
+  fill: #f83a5b;
+}
 .search.on .input-box,
 .search:hover .input-box {
   display: block;
@@ -347,14 +365,28 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
 .search:hover:before {
   display: block;
 }
+@media (max-width: 768px) {
+  .search {
+    position: static;
+  }
+  .search .input-box {
+    width: 250px;
+    right: 0;
+    padding-left: 20px;
+  }
+  .search:before {
+    max-width: 95%;
+  }
+}
 /*
 * Module - Login
 */
 .loginout {
   font-size: 11px;
-  color: #b2b2b2;
+  color: #fff;
   display: flex;
   flex-flow: row wrap;
+  text-transform: uppercase;
 }
 .loginout a {
   color: #fff;
@@ -369,10 +401,11 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
   font-size: 11px;
   display: flex;
   align-items: center;
-  color: #b2b2b2;
+  color: #fff;
+  text-transform: uppercase;
 }
 .textblock-sac:before {
-  content: url("/media/interface/images/sac-icon.png");
+  content: url("@img(sac-icon)");
   margin-right: 5px;
 }
 /*
@@ -382,10 +415,11 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
   font-size: 11px;
   display: flex;
   align-items: center;
-  color: #b2b2b2;
+  color: #fff;
+  text-transform: uppercase;
 }
 .textblock-support:before {
-  content: url("/media/interface/images/support-icon.png");
+  content: url("@img(support-icon)");
   margin-right: 5px;
 }
 /*
@@ -409,7 +443,7 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
   width: 18px;
   height: 18px;
   margin-right: 14px;
-  fill: #FF3E5F;
+  fill: #fff;
 }
 .mycart__header .qtd {
   position: static;
@@ -432,6 +466,7 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
   }
   .mycart .mycart__header .qtd {
     margin-left: 10px;
+    color: #f23757;
   }
 }
 .mycart:hover .mycart__header a {
@@ -502,7 +537,7 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
 */
 .products__title {
   font-size: 30px;
-  color: #FF3E5F;
+  color: @bg(1);
   text-transform: uppercase;
   font-weight: 500;
   display: flex;
@@ -633,7 +668,8 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
 * Module - Myaccount
 */
 .mymenu#myaccount .a--0 {
-  color: #b2b2b2;
+  color: #fff;
+  text-transform: uppercase;
 }
 .mymenu#myaccount .a--0 span {
   font-size: 11px;
@@ -644,8 +680,9 @@ input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio
 * Module - Header
 */
 header.header {
-  justify-content: space-between;
+  justify-content: center;
   padding: 6px 0;
+  background: #e5304f;
 }
 header.header .textblock-sac {
   order: 1;
@@ -654,7 +691,7 @@ header.header .textblock-sac {
 header.header .textblock-support {
   order: 2;
   align-self: flex-start;
-  margin-right: auto;
+  margin-right: 264px;
 }
 header.header .loginout {
   order: 3;
@@ -667,7 +704,15 @@ header.header .mycart {
   order: 5;
   height: auto;
 }
+@media (max-width: 1200px) {
+  header.header .textblock-support {
+    margin-right: auto;
+  }
+}
 @media (max-width: 992px) {
+  header.header {
+    background: none;
+  }
   header.header .textblock-sac,
   header.header .textblock-support,
   header.header #myaccount {
@@ -678,7 +723,7 @@ header.header .mycart {
 * Module - Header container
 */
 .header-container {
-  background: #373737;
+  background: #fff;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -688,12 +733,12 @@ header.header .mycart {
   order: 1;
   flex: 0 0 100%;
   margin-bottom: 0;
+  max-width: 100%;
 }
 .header-container:before {
   content: '';
   order: 2;
   flex: 0 0 100%;
-  border-top: 1px solid #666;
 }
 .header-container .logo {
   order: 2;
@@ -702,6 +747,8 @@ header.header .mycart {
 }
 .header-container .categories {
   order: 3;
+  flex: 1 1 auto;
+  max-width: 900px;
 }
 .header-container .categories:not(.categories--mini) {
   margin-right: 2px;
@@ -710,6 +757,11 @@ header.header .mycart {
   order: 4;
   height: 120px;
   margin-bottom: 0;
+}
+@media (max-width: 1200px) {
+  .header-container .categories {
+    max-width: 828px;
+  }
 }
 @media (max-width: 992px) {
   .header-container .logo {
@@ -742,7 +794,7 @@ header.header .mycart {
   justify-content: space-between;
 }
 .services-step .title_services {
-  color: #FF3E5F;
+  color: @bg(1);
   font-size: 20px;
   line-height: 22px;
   font-weight: 500;
@@ -791,19 +843,19 @@ header.header .mycart {
   transform: skewX(13deg);
 }
 .services-step .step.step-1:before {
-  content: url("/media/interface/images/visita-tecnica.png");
+  content: url("@img(visita-tecnica)");
   transform: skewX(13deg);
 }
 .services-step .step.step-2:before {
-  content: url("/media/interface/images/elaboracao.png");
+  content: url("@img(elaboracao)");
   transform: skewX(13deg);
 }
 .services-step .step.step-3:before {
-  content: url("/media/interface/images/instalacao.png");
+  content: url("@img(instalacao)");
   transform: skewX(13deg);
 }
 .services-step .step.step-4:before {
-  content: url("/media/interface/images/treinamento.png");
+  content: url("@img(treinamento)");
   transform: skewX(13deg);
 }
 /*
@@ -884,13 +936,13 @@ footer.footer .email {
 }
 footer.footer a:hover,
 footer.footer .email:hover {
-  color: #FF3E5F;
+  color: @bg(1);
 }
 footer.footer .newsletter {
   width: 100%;
 }
 footer.footer .flex .title {
-  color: #FF3E5F;
+  color: @bg(1);
   opacity: 1;
   font-size: 20px;
   text-transform: uppercase;
@@ -912,7 +964,7 @@ footer.footer .flex .title {
   margin-right: 40px;
 }
 .footer-links .f-col1 > .flex {
-  border-bottom: 1px solid #CCCCCC;
+  border-bottom: 1px solid @bg(3);
   margin-bottom: 30px;
 }
 .footer-links .footer__copyright {
@@ -1129,7 +1181,7 @@ footer.footer .flex .title {
   align-items: center;
 }
 .link-wishlist:before {
-  content: url("/media/interface/images/wishlist-icon.png");
+  content: url("@img(wishlist-icon)");
   display: block;
   margin-right: 10px;
   height: 21px;
@@ -1169,7 +1221,7 @@ footer.footer .flex .title {
   display: block;
 }
 .add-to-links .email-to-friend a:before {
-  content: url("/media/interface/images/send-friend.png");
+  content: url("@img(send-friend)");
   margin-right: 9px;
 }
 @media (max-width: 768px) {
@@ -1515,7 +1567,7 @@ footer.footer .flex .title {
   margin-bottom: 56px;
 }
 #banner__home_banner_mosaico:before {
-  content: url("/media/interface/images/header-products-title-bg.png");
+  content: url("@img(header-products-title-bg)");
   display: block;
   margin-bottom: 50px;
 }
@@ -1539,7 +1591,7 @@ footer.footer .flex .title {
   }
 }
 .footer__labels .title:before {
-  content: url("/media/interface/images/cadeado-icon.png");
+  content: url("@img(cadeado-icon)");
   margin-right: 10px;
 }
 .brands .owl-item {
@@ -1571,7 +1623,4 @@ footer.footer .flex .title {
   background: #fff;
   color: #000;
   border: 1px solid #000;
-}
-body {
-  background: #f00;
 }
