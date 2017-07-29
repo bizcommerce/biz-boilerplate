@@ -79,7 +79,8 @@ screen-lg = 1200px
     line-height: 14px
     text-transform: uppercase
   &.cta
-    background-image: linear-gradient( 90deg, unquote($button_bg) 0%, unquote($button_bg_hover) 100%)
+    //background-image: linear-gradient( 90deg, unquote($button_bg) 0%, unquote($button_bg_hover) 100%)
+    background: unquote($button_bg)
     color #fff
   &.flat
     background: #000
@@ -1540,8 +1541,7 @@ footer.footer
         border 1px solid #000
 
 
-#consultoria-instalacao
-  display: none
+
 
 
 /*
@@ -1551,16 +1551,56 @@ footer.footer
   display: flex
   flex-flow: row wrap
   justify-content: space-between
+  position: relative
+  align-items: center
+  background: #fff
+  padding-bottom: 36px
+  .form-more
+    flex 1 1 auto
   .instalation
+    flex 1 1 auto
+    padding-left 50px
     h3
       color unquote($color1_bg)
       font-size: 25px
       font-weight: bold
       text-transform: uppercase
+      margin-bottom: 41px
     ul
       column-count: 2
       li
         list-style: none !important
+        display: flex
+        flex-flow: row wrap
+        align-items: center
+        padding: 12px 0
+        margin -12px 0
+      .name
+        font-weight: semibold
+        font-size: 16px
+    .icon
+      width: 90px
+      height: 90px
+      border: 1px solid #666666
+      border-radius: 50%
+      display: flex
+      align-items: center
+      justify-content: center
+      margin-right: 10px
+      position: relative
+      &:before
+        content ''
+        display: block
+        background: #f7f7f7
+        border-radius: 50%
+        height: 78px
+        width: 78px
+        position: absolute
+        top 5px
+        left 5px
+      img
+        margin 0 auto
+        position: relative
   .price
     border-radius: 50%
     border 6px solid #cccccc
@@ -1568,54 +1608,305 @@ footer.footer
     height: 114px
     width: 114px
     background: #fff
+    position: absolute
+    right: 435px
+    top 12px
+    z-index: 40
     .up-to-price
       background: #e6e6e6
       border-radius: 50%
       height: 102px
       width: 102px
-      display: flex
-      align-items: center
+      border 1px solid #fdfdfd
       .label
         font-size: 12px
         text-transform: uppercase
+        line-height: 12px
+        text-align: center
+        display: block
+        flex 0 0 100%
+        height: auto
+        margin-top: 27px
+        margin-bottom: 6px
+      .value
+        font-weight: bold
+        font-size: 25px
+        flex 0 0 100%
+        text-align: center
+        margin 0 auto
+        display: block
+  .form-more
+    position: relative
+    width: 530px
+    overflow: hidden
+    padding: 30px 0 43px 0
+    z-index: 10
+    &:before
+      content: ''
+      display: block
+      background-image: linear-gradient( 90deg, rgb(102,102,102) 0%, rgb(153,153,153) 100%)
+      position: absolute
+      left 75px
+      top 0
+      width: 588px
+      height: 100%
+      transform: skewX(-20deg)
+      z-index: -1
+    h5
+      font-size: 20px
+      font-weight: semibold
+      text-transform: uppercase
+      text-align: center
+      margin: 0 60px 12px auto
+      color #fff
+      max-width: 400px
+    .subtitle
+      font-size: 14px
+      font-weight: medium
+      line-height: 16px
+      color #fff
+      max-width: 255px
+      text-align: center
+      margin: 0 60px 37px auto
+      max-width: 400px
+      padding: 0 70px
+    .forms
+      max-width: 400px
+      margin-left: auto
+      margin-right: 60px
+    label.required
+      display: none
+    .fields
+      padding: 0
+      margin 0
+    .field
+      padding: 0
+      width: 100%
+      margin-bottom: 10px
+    input
+      color #999999
+      font-size: 12px
+      border 0 !important
+      box-shadow: none
+    .forms__actions
+      .required
+        display: none
+      .forms__btn
+        width: 100%
+        @extend .button
+        @extend .button.md
+        @extend .button.cta
+
+
+
+.testimonials
+  background: #fff
+  padding-top: 50px
+  padding-bottom: 50px
+  .title
+    color #000000
+    font-size: 20px
+    font-weight: medium
+    text-transform: uppercase
+    text-align: center
+    line-height: 19px
+    margin: 0 auto 45px auto
+    max-width: 365px
+  .testimonial-list
+    display: flex
+    flex-flow: row wrap
+    justify-content: space-around
+    list-style: none
+    .testimonial-item
+      flex 0 0 auto
+      list-style: none !important
+      display: flex
+      flex-flow: row wrap
+      strong
+        color unquote($color1_bg)
+        font-size: 16px
+        margin-bottom: 22px
+        display: block
+      p
+        color #666666
+        line-height: 18px
+        max-width: 250px
 
 
 /*
-* Module - Formulario saiba mais
+* Module - Reasons
 */
-.form-more
-  position: relative
-  &:before
-    content: ''
-    display: block
-    background-image: linear-gradient( 90deg, rgb(102,102,102) 0%, rgb(153,153,153) 100%);
-    position: absolute
-    left 0
-    top 0
-    width: 100%
-    height: 100%
-    transform: skewX(-20deg)
-    z-index: -1
+.reasons
+  display: flex
+  justify-content: space-between
+  flex-flow: row wrap
+  align-items: stretch
+  padding-top: 60px
+  padding-bottom: 60px
+  border-bottom: 1px solid #e6e6e6
+  background: #fff
+  img
+    margin-bottom: 0
+  h5
+    font-size: 20px
+    text-transform: uppercase
+    color #000
+    font-weight: medium
+  .content
+    flex 1 1 440px
+    min-height: 270px
+    padding: 0 24px
+    display: flex
+    flex-flow: column nowrap
+    justify-content: flex-start
+    .description
+      color #666666
+      font-size: 13px
+      flex 1 1 auto
+    .more
+      max-width: 200px
+      justify-content: center
+      text-align: center
+  .vantagens
+    flex 1 1 255px
+    border-left: 1px solid #cccccc
+    padding-left: 40px
+    padding-right: 87px
+  .reasons-list
+    li
+      font-size: 18px
+      line-height: 22px
+      color #666666
+      list-style: none !important
+      display: flex
+      font-weight: regular
+      &:before
+        content '\25CF'
+        display: flex
+        align-items: flex-start
+        margin-right: 8px
+        font-size: 20px
+        color unquote($color1_bg)
+
+
+
+/*
+* Module - CMS page view
+*/
+.cms-page-view
+  .wrapper-container
+    padding-top: 8.4rem
+  .main-container
+    background: #f7f7f7
+    box-shadow: none
+    .banner--nojs .banner__wrapper
+      column-count: 1
+      .banner__link
+        &:after
+          display: none
+      img
+        margin 0 auto
+        width: 100%
+    .col-main
+      padding: 0
+    .breadcrumb
+      background: #fff
+      padding: 22px 0
+      margin-bottom: 0
+    .other-services
+      margin-top: 43px
+
+
+/*
+* Module - Outros serviços
+*/
+.other-services
+  display: flex
+  align-items: center
+  .text
+    font-size: 18px
+    text-transform: uppercase
+    flex 0 0 auto
+    max-width: 166px
+    margin-right: 18px
+    color #000
+    font-weight: medium
+  nav
+    flex 1 1 auto
+  .categories--justify .a--0:before
+    border-top 1px solid #e7e7e7
+
+.quer-mais-bottom
+  background: linear-gradient( 90deg, rgb(102,102,102) 0%, rgb(153,153,153) 100%);
+  padding: 28px 50px
+  .subtitle
+    line-height: 16px
+    font-weight: medium
+  .form-more
+    display: flex
+    flex-flow: row wrap
+    align-items: center
   h5
     font-size: 20px
     font-weight: semibold
     text-transform: uppercase
-    text-align: center
-    margin-bottom: 12px
+    margin-bottom: 13px
     color #fff
   .subtitle
     font-size: 14px
-    font-weight: medium
-    line-height: 16px
     color #fff
-  label.required
-    color #fff
-    opacity: 1
-    font-weight: regular
-  .field
-    width: 100%
+  label
+    display: none
+  input
+    font-size: 12px
+    color #999999
+  .text
+    max-width: 255px
+    margin-right: 58px
+  section.forms
+    flex 1 1 auto
   .forms__actions
     .required
       display: none
     .forms__btn
-      width: 100%
+      @extend .button
+      @extend .button.md
+      @extend .button.cta
+      min-width: 110px
+  .forms__form
+    display: flex
+    flex-flow: row wrap
+    align-items: center
+    justify-content: space-between
+    .forms__fieldset
+      flex 1 1 auto
+      margin-bottom: 0
+  .form-list
+    display: flex
+    align-items: center
+  .fields
+    display: flex
+    align-items: center
+    margin 0
+    padding: 0
+    flex 1 1 auto
+    &:last-child
+      margin-bottom: 0
+  .field
+    margin 0
+    padding: 0
+    input
+      width: 200px
+
+
+#consultoria-instalacao
+  display: none
+
+.footer__labels
+  .title
+    &:before
+      display: none
+
+.f-col1
+  .socials
+    display: none

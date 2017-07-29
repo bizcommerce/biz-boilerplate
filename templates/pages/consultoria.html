@@ -1,52 +1,61 @@
-<p><img id="e3t3aWRnZXQgdHlwZT0iYmFubmVyL3dpZGdldF9iYW5uZXIiIHRlbXBsYXRlPSJiYW5uZXIvYmFubmVyLnBodG1sIiBiYW5uZXI9InJhc3RyZWFtZW50by1iYW5uZXIifX0-" src="http://diprel.loja.biz/skin/adminhtml/default/biz/images/widget/default.gif" title="{widget type=&quot;banner/widget_banner&quot; template=&quot;banner/banner.phtml&quot; banner=&quot;rastreamento-banner&quot;}"
-    /></p>
+{{widget type="banner/widget_banner" template="banner/banner.phtml" banner="rastreamento-banner"}}
 <div class="specialist-wrapper">
     <div class="instalation">
         <h3>N&Oacute;S INSTALAMOS PARA VOC&Ecirc;!</h3>
         <ul>
-            <li><span class="icon"> <img alt="" /> </span> <span class="name">Manuten&ccedil;&atilde;o</span></li>
-            <li><span class="icon"> <img alt="" /> </span> <span class="name">Consultoria</span></li>
-            <li><span class="icon"> <img alt="" /> </span> <span class="name">Monitoramento</span></li>
-            <li><span class="icon"> <img alt="" /> </span> <span class="name">Instala&ccedil;&atilde;o</span></li>
+            <li><span class="icon"> <img alt="" src="{{media url="wysiwyg/manutencao-icon.png"}}" /> </span> <span class="name">Manuten&ccedil;&atilde;o</span></li>
+            <li><span class="icon"> <img alt="" src="{{media url="wysiwyg/consultoria-icon.png"}}" /> </span> <span class="name">Consultoria</span></li>
+            <li><span class="icon"> <img alt="" src="{{media url="wysiwyg/monitoramento-icon.png"}}" /> </span> <span class="name">Monitoramento</span></li>
+            <li><span class="icon"> <img alt="" src="{{media url="wysiwyg/instalacao-icon.png"}}" /> </span> <span class="name">Instala&ccedil;&atilde;o</span></li>
         </ul>
         <div class="price">
-            <div class="up-to-price"><span class="label">Produtos &agrave; partir</span> <span class="value"> <small>R$</small></span>89</div>
+            <div class="up-to-price"><span class="label">Produtos &agrave; partir</span> <span class="value"> <small>R$</small>89</span></div>
         </div>
     </div>
     <div class="form-more">
-        <h5>Quer saber mais</h5>
-        <div class="subtitle">Preencha o formul&aacute;rio para que um especialista entre em contato</div>
-        <img id="e3t3aWRnZXQgdHlwZT0id2ViZm9ybXMvZm9ybSIgd2ViZm9ybV9pZD0iMiIgdGVtcGxhdGU9IndlYmZvcm1zL2RlZmF1bHQucGh0bWwifX0-" src="http://diprel.loja.biz/skin/adminhtml/default/biz/images/widget/default.gif" title="{{widget type=&quot;webforms/form&quot; webform_id=&quot;2&quot; template=&quot;webforms/default.phtml&quot;}}" />
+      <h5>Quer saber mais</h5>
+      <div class="subtitle">Preencha o formul&aacute;rio para que um especialista entre em contato</div>
+      {{widget type="webforms/form" webform_id="2" template="webforms/default.phtml"}}
     </div>
 </div>
-<p><img id="e3t3aWRnZXQgdHlwZT0iaW50ZXJmYWNlL3dpZGdldF9zY3JpcHRzIiB0ZW1wbGF0ZT0iaW50ZXJmYWNlL3dpZGdldHMvc2NyaXB0cy5waHRtbCIgc2NyaXB0X2lkPSJzZXJ2aWNvcy1kYS1kaXByZWwiIGRpc2FibGVfY2FjaGU9IjEifX0-" src="http://diprel.loja.biz/skin/adminhtml/default/biz/images/widget/default.gif"
-        title="{widget type=&quot;interface/widget_scripts&quot; template=&quot;interface/widgets/scripts.phtml&quot; script_id=&quot;servicos-da-diprel&quot; disable_cache=&quot;1&quot;}" /></p>
-<div class="reasons"><img alt="" />
-    <h5>Porque usar?</h5>
-    <div class="description">
-        <p>Evite aquelas multas indesej&aacute;veis que chegam em casa. Com o rastreamento voc&ecirc; consegue estabelecer um limite de velocidade, assim voc&ecirc; &eacute; ajudado quando o limite for estabelecido por voc&ecirc;. Aproveite e acompanhe tudo
-            via app.</p>
-        <a href="more button cta">Quero saber mais</a></div>
-    <h5>Quais as vantagens?</h5>
-    <ul class="reasons-list">
-        <li>Proporciona mais privacidade</li>
-        <li>Instala&ccedil;&atilde;o simples</li>
-        <li>Controle total de acesso</li>
-        <li>Custo acess&iacute;vel</li>
-    </ul>
+{{widget type="interface/widget_scripts" template="interface/widgets/scripts.phtml" script_id="servicos-da-diprel" disable_cache="1"}}
+<div class="reasons"><img alt="" src="{{media url="wysiwyg/razao-rastreamento.png"}}" />
+    <div class="content">
+      <h5>Porque usar?</h5>
+      <p class="description">Evite aquelas multas indesej&aacute;veis que chegam em casa. Com o rastreamento voc&ecirc; consegue estabelecer um limite de velocidade, assim voc&ecirc; &eacute; ajudado quando o limite for estabelecido por voc&ecirc;. Aproveite e acompanhe tudo
+          via app.</p>
+      <a class="more button md cta" href="#">Quero saber mais</a>
+    </div>
+    <div class="vantagens">
+      <h5>Quais as vantagens?</h5>
+      <ul class="reasons-list">
+          <li>Proporciona mais privacidade</li>
+          <li>Instala&ccedil;&atilde;o simples</li>
+          <li>Controle total de acesso</li>
+          <li>Custo acess&iacute;vel</li>
+      </ul>
+    </div>
 </div>
 <div class="testimonials">
     <div class="title">Veja os depoimentos de clientes que j&aacute; utilizam nossos produtos</div>
     <ul class="testimonial-list">
-        <li class="testimonial-item"><img alt="" /> <strong>Nome do cliente</strong>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in commodo justo. Aliquam convallis neque ac sagittis facilisis. Duis ut magna id risus viverra viverra in at mauris.</p>
+        <li class="testimonial-item"><img alt="" src="{{media url="wysiwyg/cliente-feminina.png"}}" />
+            <div class="desc"><strong>Nome do cliente</strong>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in commodo justo. Aliquam convallis neque ac sagittis facilisis. Duis ut magna id risus viverra viverra in at mauris.</p>
+            </div>
         </li>
-        <li class="testimonial-item"><img alt="" /> <strong>Nome do cliente</strong>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in commodo justo. Aliquam convallis neque ac sagittis facilisis. Duis ut magna id risus viverra viverra in at mauris.</p>
+        <li class="testimonial-item"><img alt="" src="{{media url="wysiwyg/cliente-masculino.png"}}" />
+            <div class="desc"><strong>Nome do cliente</strong>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in commodo justo. Aliquam convallis neque ac sagittis facilisis. Duis ut magna id risus viverra viverra in at mauris.</p>
+            </div>
         </li>
     </ul>
 </div>
-<p>[Cole&ccedil;&atilde;o de produto]</p>
-<div class="others-services">
-    <div class="title">Veja nossos outros servi&ccedil;os</div>
-    [Menu categorias]</div>
+<div class="quer-mais-bottom">
+  <div class="form-more">
+    <h5>Quer saber mais</h5>
+    <div class="subtitle">Preencha o formul&aacute;rio para que um especialista entre em contato</div>
+    {{widget type="webforms/form" webform_id="2" template="webforms/default.phtml"}}
+  </div>
+</div>
+<div class="other-services"><strong class="text">Veja nossos outros servi&ccedil;os</strong> {{widget type="interface/widget_menu" template="interface/widgets/menu.phtml" identificador="nav_extra" exibicao="normal" transformar_mobile="1" breakpoint_pixels="1136" niveis="1"}}</div>
