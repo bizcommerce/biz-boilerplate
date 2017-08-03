@@ -9,8 +9,7 @@
     "gulp-if": "^2.0.0",
     "gulp-stylus": "<2.0.6",
     "gulp-svgmin": "^1.2.1",
-    "gulp-svg-sprite": "^1.2.10",
-    "nib": "^1.1.0"
+    "gulp-svg-sprite": "^1.2.10"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
