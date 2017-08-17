@@ -8,6 +8,7 @@ postcss                 = require('gulp-postcss'),
 autoprefixer            = require('autoprefixer'),
 pxtorem                 = require('postcss-pxtorem'),
 browserSync             = require('browser-sync').create(),
+path                    = require('path')
 
 // More complex configuration example
 config                  = {
@@ -58,7 +59,7 @@ var processors = [
 function loadbrowserSync(){
   browserSync.init({
     port: 8080,
-    proxy :'http://lojahotcoffee.dev.bizcommerce.com.br',
+    proxy :'http://'+ path.basename(__dirname) + '.dev.bizcommerce.com.br',
     serveStatic:[{
       route: '/media/interface/neon/css',
       dir: 'css'
@@ -89,8 +90,11 @@ gulp.task('prod', function() {
         'limit': false
       }
     }))
-    .pipe(postcss(processors))
     .pipe(gulp.dest('./css'));
+});
+
+gulp.task('postcss', function() {
+  gulp.src('./css/*.css').pipe(postcss(processors)).pipe(gulp.dest('./css'));
   gulp.src('css/general.css').pipe(clipboard());
 });
 
@@ -116,9 +120,16 @@ gulp.task('copy-css', function() {
 });
 
 gulp.task('watch', function() {
-  var watcher = gulp.watch('./css/*.styl', ['dev']);
+  var stylus = gulp.watch('./css/*.styl', ['dev']);
+  var css = gulp.watch('./css/*.css', ['postcss']);
   loadbrowserSync();
-  watcher.on('change', function(event) {
+
+  stylus.on('change', function(event) {
+    console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+  });
+  var stylus = gulp.watch('./css/*.styl', ['dev']);
+
+  css.on('change', function(event) {
     console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
   });
 });
