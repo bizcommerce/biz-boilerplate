@@ -4,7 +4,10 @@ clipboard               = require("gulp-clipboard"),
 stylus                  = require('gulp-stylus'),
 svgmin                  = require('gulp-svgmin'),
 gulpif                  = require('gulp-if'),
-//sprite                  = require('css-sprite').stream;
+postcss                 = require('gulp-postcss'),
+autoprefixer            = require('autoprefixer'),
+pxtorem                 = require('postcss-pxtorem'),
+browserSync             = require('browser-sync').create(),
 
 // More complex configuration example
 config                  = {
@@ -24,16 +27,44 @@ config                  = {
     }
 };
 
-// gulp.task('img-sprite', function () {
-//   return gulp.src('./img/sprites/*.png')
-//     .pipe(sprite({
-//       name: 'sprite',
-//       style: 'sprite.styl',
-//       cssPath: '../img/sprites',
-//       processor: 'stylus'
-//     }))
-//     .pipe(gulpif('*.png', gulp.dest('./img/sprites'), gulp.dest('./css')))
-// });
+var processors = [
+  autoprefixer({
+    browsers: ['last 2 version','ie >= 10']
+  }),
+  pxtorem({
+    rootValue: 16,
+    unitPrecision: 2,
+    propList: [
+      'font',
+      'font-size',
+      'line-height',
+      'letter-spacing',
+      'width',
+      'height',
+      'margin',
+      'margin*',
+      'padding*',
+      'top',
+      'right',
+      'bottom',
+      'left'
+    ],
+    mediaQuery: false,
+    minPixelValue: 0,
+    replace: true
+  })
+];
+
+function loadbrowserSync(){
+  browserSync.init({
+    port: 8080,
+    proxy :'http://lojahotcoffee.dev.bizcommerce.com.br',
+    serveStatic:[{
+      route: '/media/interface/neon/css',
+      dir: 'css'
+    }]
+  });
+}
 
 gulp.task('svg-min', function () {
   gulp.src('svg/*.svg').pipe(svgmin({
@@ -57,7 +88,9 @@ gulp.task('prod', function() {
         'name':'embedurl',
         'limit': false
       }
-    })).pipe(gulp.dest('./css'));
+    }))
+    .pipe(postcss(processors))
+    .pipe(gulp.dest('./css'));
   gulp.src('css/general.css').pipe(clipboard());
 });
 
@@ -71,7 +104,9 @@ gulp.task('dev', function() {
         'limit': false
       }
     }))
-    .pipe(gulp.dest('./css'));
+    .pipe(postcss(processors))
+    .pipe(gulp.dest('./css'))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('copy-css', function() {
@@ -82,6 +117,7 @@ gulp.task('copy-css', function() {
 
 gulp.task('watch', function() {
   var watcher = gulp.watch('./css/*.styl', ['dev']);
+  loadbrowserSync();
   watcher.on('change', function(event) {
     console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
   });

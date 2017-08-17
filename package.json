@@ -1,15 +1,15 @@
 {
   "name": "biz-skin",
   "version": "1.0.0",
-  "description": "Estrutura base para custoização de Layouts Biz4",
+  "description": "Estrutura base para custoizaÃ§Ã£o de Layouts Biz4",
   "main": "gulpfile.js",
   "dependencies": {
     "gulp": "^3.9.0",
     "gulp-clipboard": "^0.1.1",
     "gulp-if": "^2.0.0",
     "gulp-stylus": "<2.0.6",
-    "gulp-svgmin": "^1.2.1",
-    "gulp-svg-sprite": "^1.2.10"
+    "gulp-svg-sprite": "^1.2.10",
+    "gulp-svgmin": "^1.2.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -22,5 +22,12 @@
     "magento"
   ],
   "author": "Bizcommerce",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "browser-sync": "^2.18.13",
+    "gulp-postcss": "^7.0.0",
+    "postcss": "^6.0.9",
+    "postcss-pxtorem": "^4.0.1"
+  }
 }
