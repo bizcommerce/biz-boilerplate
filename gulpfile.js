@@ -59,7 +59,8 @@ var processors = [
 function loadbrowserSync(){
   browserSync.init({
     port: 8080,
-    proxy :'http://'+ path.basename(__dirname) + '.dev.bizcommerce.com.br',
+
+    proxy :'https://www.'+ path.basename(__dirname) + '.com.br',
     serveStatic:[{
       route: '/media/interface/neon/css',
       dir: 'css'
@@ -91,11 +92,11 @@ gulp.task('prod', function() {
       }
     }))
     .pipe(gulp.dest('./css'));
+    gulp.src('css/general.css').pipe(clipboard());
 });
 
 gulp.task('postcss', function() {
-  gulp.src('./css/*.css').pipe(postcss(processors)).pipe(gulp.dest('./css'));
-  gulp.src('css/general.css').pipe(clipboard());
+  gulp.src('./css/*.css').pipe(postcss(processors)).pipe(gulp.dest('./css')).pipe(browserSync.stream());
 });
 
 gulp.task('dev', function() {
@@ -110,7 +111,6 @@ gulp.task('dev', function() {
     }))
     .pipe(postcss(processors))
     .pipe(gulp.dest('./css'))
-    .pipe(browserSync.stream());
 });
 
 gulp.task('copy-css', function() {
