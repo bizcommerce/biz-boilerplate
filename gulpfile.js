@@ -8,7 +8,11 @@ postcss                 = require('gulp-postcss'),
 autoprefixer            = require('autoprefixer'),
 pxtorem                 = require('postcss-pxtorem'),
 browserSync             = require('browser-sync').create(),
-path                    = require('path')
+path                    = require('path');
+
+var config = require('./skin');
+var {rootValue, unitPrecision} = config.pxtorem;
+var {protocol, host, theme } = config;
 
 // More complex configuration example
 config                  = {
@@ -30,11 +34,11 @@ config                  = {
 
 var processors = [
   autoprefixer({
-    browsers: ['last 2 version','ie >= 10']
+    browsers: config.browsers
   }),
   pxtorem({
-    rootValue: 16,
-    unitPrecision: 2,
+    rootValue: rootValue,
+    unitPrecision: unitPrecision,
     propList: [
       'font',
       'font-size',
@@ -57,12 +61,13 @@ var processors = [
 ];
 
 function loadbrowserSync(){
+  var url = [protocol, host].join('://');
+
   browserSync.init({
     port: 8080,
-
-    proxy :'https://www.'+ path.basename(__dirname) + '.com.br',
+    proxy : url,
     serveStatic:[{
-      route: '/media/interface/neon/css',
+      route: '/media/interface/'+ theme +'/css',
       dir: 'css'
     }]
   });
@@ -109,7 +114,6 @@ gulp.task('dev', function() {
         'limit': false
       }
     }))
-    .pipe(postcss(processors))
     .pipe(gulp.dest('./css'))
 });
 
