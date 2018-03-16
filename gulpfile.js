@@ -8,7 +8,8 @@ postcss                 = require('gulp-postcss'),
 autoprefixer            = require('autoprefixer'),
 pxtorem                 = require('postcss-pxtorem'),
 browserSync             = require('browser-sync').create(),
-path                    = require('path');
+path                    = require('path'),
+backstop                = require('backstopjs');
 
 var config = require('./skin');
 var {rootValue, unitPrecision} = config.pxtorem;
@@ -72,6 +73,18 @@ function loadbrowserSync(){
     }]
   });
 }
+
+gulp.task('reference', function () {
+  return backstop('reference');
+});
+
+gulp.task('test', function () {
+  return backstop('test');
+});
+
+gulp.task('approve', function () {
+  return backstopjs('approve');
+});
 
 gulp.task('svg-min', function () {
   gulp.src('svg/*.svg').pipe(svgmin({
