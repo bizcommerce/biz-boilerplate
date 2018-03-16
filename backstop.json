@@ -2,36 +2,63 @@
   "id": "backstop_default",
   "viewports": [
     {
-      "label": "phone",
-      "width": 320,
-      "height": 480
+      "label": "desktop",
+      "width": 1680,
+      "height": 700
     },
     {
-      "label": "tablet",
-      "width": 1024,
-      "height": 768
+      "label": "iphone",
+      "width": 320,
+      "height": 480
     }
   ],
   "onBeforeScript": "chromy/onBefore.js",
   "onReadyScript": "chromy/onReady.js",
   "scenarios": [
     {
-      "label": "BackstopJS Homepage",
+      "label": "Homepage",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "https://garris.github.io/BackstopJS/",
+      "url": "http://lojaexemplo.bizcommerce.com.br",
       "referenceUrl": "",
       "readyEvent": "",
       "readySelector": "",
       "delay": 0,
       "hideSelectors": [],
-      "removeSelectors": [],
+      "removeSelectors": [".product-collection-container",".products", ".banner-js-container", ".banner", ".fb-page"],
       "hoverSelector": "",
       "clickSelector": "",
       "postInteractionWait": "",
-      "selectors": [],
-      "selectorExpansion": true,
-      "misMatchThreshold" : 0.1,
-      "requireSameDimensions": true
+      "selectors": ["viewport"],
+      "selectorExpansion": true
+    },
+    {
+      "label": "Header",
+      "url": "http://lojaexemplo.bizcommerce.com.br/conjunto-adulto-de-anestesia-baraka-latex-5-litros",
+      "removeSelectors": [".product-collection-container",".products", ".banner-js-container", ".banner", ".fb-page"],
+      "selectors": [".header-container"]
+    },
+    {
+      "label": "Footer",
+      "url": "http://lojaexemplo.bizcommerce.com.br//conjunto-adulto-de-anestesia-baraka-latex-5-litros",
+      "removeSelectors": [".product-collection-container",".products", ".banner-js-container", ".banner", ".fb-page"],
+      "selectors": [".footer-container"]
+    },
+    {
+      "label": "Produto",
+      "url": "http://lojaexemplo.bizcommerce.com.br/conjunto-adulto-de-anestesia-baraka-latex-5-litros",
+      "removeSelectors": [".product-collection-container",".products", ".banner-js-container", ".banner", ".fb-page"],
+      "selectors": [".main-container"]
+    },
+    {
+      "label": "Carrinho",
+      "url": "http://lojaexemplo.bizcommerce.com.br/conjunto-adulto-de-anestesia-baraka-latex-5-litros",
+      "removeSelectors": [".product-collection-container",".products", ".banner-js-container", ".banner", ".fb-page"],
+      "selectors": [".main-container"]
+    },
+    {
+      "label": "Catalogo",
+      "url": "http://lojaexemplo.bizcommerce.com.br/catalogsearch/result/?q=simples",
+      "selectors": [".main-container"]
     }
   ],
   "paths": {
