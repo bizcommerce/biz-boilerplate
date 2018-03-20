@@ -83,7 +83,7 @@ gulp.task('test', function () {
 });
 
 gulp.task('approve', function () {
-  return backstopjs('approve');
+  return backstop('approve');
 });
 
 gulp.task('svg-min', function () {
