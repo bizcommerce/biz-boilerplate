@@ -3,231 +3,503 @@ report({
   "tests": [
     {
       "pair": {
-        "reference": "../bitmaps_reference/backstop_default_Homepage_0_viewport_0_desktop.png",
-        "test": "../bitmaps_test/20180316-092727/backstop_default_Homepage_0_viewport_0_desktop.png",
-        "selector": "viewport",
-        "fileName": "backstop_default_Homepage_0_viewport_0_desktop.png",
-        "label": "Homepage",
-        "misMatchThreshold": 0.1,
         "diff": {
-          "isSameDimensions": true,
+          "isSameDimensions": "",
           "dimensionDifference": {
-            "width": 0,
-            "height": 0
+            "width": "",
+            "height": ""
           },
-          "misMatchPercentage": "0.00"
-        }
+          "misMatchPercentage": ""
+        },
+        "reference": "../..",
+        "test": "../..",
+        "selector": "",
+        "fileName": "",
+        "label": "",
+        "scenario": {
+          "label": "Homepage",
+          "cookiePath": "backstop_data/engine_scripts/cookies.json",
+          "url": "http://localhost:8080/",
+          "referenceUrl": "",
+          "readyEvent": "",
+          "readySelector": "",
+          "delay": 0,
+          "hideSelectors": [
+            ".banner-js-container",
+            ".banner"
+          ],
+          "removeSelectors": [
+            ".product-collection-container",
+            ".products",
+            ".fb-page"
+          ],
+          "hoverSelector": "",
+          "clickSelector": "",
+          "postInteractionWait": "",
+          "selectors": [
+            "viewport"
+          ],
+          "selectorExpansion": true,
+          "sIndex": 0
+        },
+        "viewport": {
+          "label": "desktop",
+          "width": 1680,
+          "height": 700,
+          "vIndex": 0
+        },
+        "msg": "Chromy error",
+        "error": "Chromy error: GotoTimeoutError. See scenario – Homepage (desktop)"
       },
-      "status": "pass"
+      "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/backstop_default_Homepage_0_viewport_1_iphone.png",
-        "test": "../bitmaps_test/20180316-092727/backstop_default_Homepage_0_viewport_1_iphone.png",
-        "selector": "viewport",
-        "fileName": "backstop_default_Homepage_0_viewport_1_iphone.png",
-        "label": "Homepage",
-        "misMatchThreshold": 0.1,
         "diff": {
-          "isSameDimensions": true,
+          "isSameDimensions": "",
           "dimensionDifference": {
-            "width": 0,
-            "height": 0
+            "width": "",
+            "height": ""
           },
-          "misMatchPercentage": "0.00"
-        }
+          "misMatchPercentage": ""
+        },
+        "reference": "../..",
+        "test": "../..",
+        "selector": "",
+        "fileName": "",
+        "label": "",
+        "scenario": {
+          "label": "Homepage",
+          "cookiePath": "backstop_data/engine_scripts/cookies.json",
+          "url": "http://localhost:8080/",
+          "referenceUrl": "",
+          "readyEvent": "",
+          "readySelector": "",
+          "delay": 0,
+          "hideSelectors": [
+            ".banner-js-container",
+            ".banner"
+          ],
+          "removeSelectors": [
+            ".product-collection-container",
+            ".products",
+            ".fb-page"
+          ],
+          "hoverSelector": "",
+          "clickSelector": "",
+          "postInteractionWait": "",
+          "selectors": [
+            "viewport"
+          ],
+          "selectorExpansion": true,
+          "sIndex": 0
+        },
+        "viewport": {
+          "label": "iphone",
+          "width": 320,
+          "height": 480,
+          "vIndex": 1
+        },
+        "msg": "Chromy error",
+        "error": "Chromy error: GotoTimeoutError. See scenario – Homepage (iphone)"
       },
-      "status": "pass"
+      "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/backstop_default_Header_0_header-container_0_desktop.png",
-        "test": "../bitmaps_test/20180316-092727/backstop_default_Header_0_header-container_0_desktop.png",
-        "selector": ".header-container",
-        "fileName": "backstop_default_Header_0_header-container_0_desktop.png",
-        "label": "Header",
-        "misMatchThreshold": 0.1,
         "diff": {
-          "isSameDimensions": true,
+          "isSameDimensions": "",
           "dimensionDifference": {
-            "width": 0,
-            "height": 0
+            "width": "",
+            "height": ""
           },
-          "misMatchPercentage": "0.00"
-        }
+          "misMatchPercentage": ""
+        },
+        "reference": "../..",
+        "test": "../..",
+        "selector": "",
+        "fileName": "",
+        "label": "",
+        "scenario": {
+          "label": "Header",
+          "url": "http://localhost:8080/produto-configuravel-teste",
+          "removeSelectors": [
+            ".product-collection-container",
+            ".products",
+            ".banner-js-container",
+            ".banner",
+            ".fb-page"
+          ],
+          "selectors": [
+            ".header-container"
+          ],
+          "sIndex": 1
+        },
+        "viewport": {
+          "label": "desktop",
+          "width": 1680,
+          "height": 700,
+          "vIndex": 0
+        },
+        "msg": "Chromy error",
+        "error": "Chromy error: GotoTimeoutError. See scenario – Header (desktop)"
       },
-      "status": "pass"
+      "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/backstop_default_Header_0_header-container_1_iphone.png",
-        "test": "../bitmaps_test/20180316-092727/backstop_default_Header_0_header-container_1_iphone.png",
-        "selector": ".header-container",
-        "fileName": "backstop_default_Header_0_header-container_1_iphone.png",
-        "label": "Header",
-        "misMatchThreshold": 0.1,
         "diff": {
-          "isSameDimensions": true,
+          "isSameDimensions": "",
           "dimensionDifference": {
-            "width": 0,
-            "height": 0
+            "width": "",
+            "height": ""
           },
-          "misMatchPercentage": "0.00"
-        }
+          "misMatchPercentage": ""
+        },
+        "reference": "../..",
+        "test": "../..",
+        "selector": "",
+        "fileName": "",
+        "label": "",
+        "scenario": {
+          "label": "Header",
+          "url": "http://localhost:8080/produto-configuravel-teste",
+          "removeSelectors": [
+            ".product-collection-container",
+            ".products",
+            ".banner-js-container",
+            ".banner",
+            ".fb-page"
+          ],
+          "selectors": [
+            ".header-container"
+          ],
+          "sIndex": 1
+        },
+        "viewport": {
+          "label": "iphone",
+          "width": 320,
+          "height": 480,
+          "vIndex": 1
+        },
+        "msg": "Chromy error",
+        "error": "Chromy error: GotoTimeoutError. See scenario – Header (iphone)"
       },
-      "status": "pass"
+      "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/backstop_default_Footer_0_footer-container_0_desktop.png",
-        "test": "../bitmaps_test/20180316-092727/backstop_default_Footer_0_footer-container_0_desktop.png",
-        "selector": ".footer-container",
-        "fileName": "backstop_default_Footer_0_footer-container_0_desktop.png",
-        "label": "Footer",
-        "misMatchThreshold": 0.1,
         "diff": {
-          "isSameDimensions": true,
+          "isSameDimensions": "",
           "dimensionDifference": {
-            "width": 0,
-            "height": 0
+            "width": "",
+            "height": ""
           },
-          "misMatchPercentage": "0.00"
-        }
+          "misMatchPercentage": ""
+        },
+        "reference": "../..",
+        "test": "../..",
+        "selector": "",
+        "fileName": "",
+        "label": "",
+        "scenario": {
+          "label": "Footer",
+          "url": "http://localhost:8080/produto-configuravel-teste",
+          "removeSelectors": [
+            ".product-collection-container",
+            ".products",
+            ".banner-js-container",
+            ".banner",
+            ".fb-page"
+          ],
+          "selectors": [
+            ".footer-container"
+          ],
+          "sIndex": 2
+        },
+        "viewport": {
+          "label": "desktop",
+          "width": 1680,
+          "height": 700,
+          "vIndex": 0
+        },
+        "msg": "Chromy error",
+        "error": "Chromy error: GotoTimeoutError. See scenario – Footer (desktop)"
       },
-      "status": "pass"
+      "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/backstop_default_Footer_0_footer-container_1_iphone.png",
-        "test": "../bitmaps_test/20180316-092727/backstop_default_Footer_0_footer-container_1_iphone.png",
-        "selector": ".footer-container",
-        "fileName": "backstop_default_Footer_0_footer-container_1_iphone.png",
-        "label": "Footer",
-        "misMatchThreshold": 0.1,
         "diff": {
-          "isSameDimensions": true,
+          "isSameDimensions": "",
           "dimensionDifference": {
-            "width": 0,
-            "height": 0
+            "width": "",
+            "height": ""
           },
-          "misMatchPercentage": "0.00"
-        }
+          "misMatchPercentage": ""
+        },
+        "reference": "../..",
+        "test": "../..",
+        "selector": "",
+        "fileName": "",
+        "label": "",
+        "scenario": {
+          "label": "Footer",
+          "url": "http://localhost:8080/produto-configuravel-teste",
+          "removeSelectors": [
+            ".product-collection-container",
+            ".products",
+            ".banner-js-container",
+            ".banner",
+            ".fb-page"
+          ],
+          "selectors": [
+            ".footer-container"
+          ],
+          "sIndex": 2
+        },
+        "viewport": {
+          "label": "iphone",
+          "width": 320,
+          "height": 480,
+          "vIndex": 1
+        },
+        "msg": "Chromy error",
+        "error": "Chromy error: GotoTimeoutError. See scenario – Footer (iphone)"
       },
-      "status": "pass"
+      "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/backstop_default_Produto_0_main-container_0_desktop.png",
-        "test": "../bitmaps_test/20180316-092727/backstop_default_Produto_0_main-container_0_desktop.png",
-        "selector": ".main-container",
-        "fileName": "backstop_default_Produto_0_main-container_0_desktop.png",
-        "label": "Produto",
-        "misMatchThreshold": 0.1,
         "diff": {
-          "isSameDimensions": true,
+          "isSameDimensions": "",
           "dimensionDifference": {
-            "width": 0,
-            "height": 0
+            "width": "",
+            "height": ""
           },
-          "misMatchPercentage": "0.00"
-        }
+          "misMatchPercentage": ""
+        },
+        "reference": "../..",
+        "test": "../..",
+        "selector": "",
+        "fileName": "",
+        "label": "",
+        "scenario": {
+          "label": "Produto",
+          "url": "http://localhost:8080/produto-configuravel-teste",
+          "removeSelectors": [
+            ".product-collection-container",
+            ".products",
+            ".banner-js-container",
+            ".banner",
+            ".fb-page"
+          ],
+          "selectors": [
+            ".main-container"
+          ],
+          "sIndex": 3
+        },
+        "viewport": {
+          "label": "desktop",
+          "width": 1680,
+          "height": 700,
+          "vIndex": 0
+        },
+        "msg": "Chromy error",
+        "error": "Chromy error: GotoTimeoutError. See scenario – Produto (desktop)"
       },
-      "status": "pass"
+      "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/backstop_default_Produto_0_main-container_1_iphone.png",
-        "test": "../bitmaps_test/20180316-092727/backstop_default_Produto_0_main-container_1_iphone.png",
-        "selector": ".main-container",
-        "fileName": "backstop_default_Produto_0_main-container_1_iphone.png",
-        "label": "Produto",
-        "misMatchThreshold": 0.1,
         "diff": {
-          "isSameDimensions": true,
+          "isSameDimensions": "",
           "dimensionDifference": {
-            "width": 0,
-            "height": 0
+            "width": "",
+            "height": ""
           },
-          "misMatchPercentage": "0.00"
-        }
+          "misMatchPercentage": ""
+        },
+        "reference": "../..",
+        "test": "../..",
+        "selector": "",
+        "fileName": "",
+        "label": "",
+        "scenario": {
+          "label": "Produto",
+          "url": "http://localhost:8080/produto-configuravel-teste",
+          "removeSelectors": [
+            ".product-collection-container",
+            ".products",
+            ".banner-js-container",
+            ".banner",
+            ".fb-page"
+          ],
+          "selectors": [
+            ".main-container"
+          ],
+          "sIndex": 3
+        },
+        "viewport": {
+          "label": "iphone",
+          "width": 320,
+          "height": 480,
+          "vIndex": 1
+        },
+        "msg": "Chromy error",
+        "error": "Chromy error: GotoTimeoutError. See scenario – Produto (iphone)"
       },
-      "status": "pass"
+      "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/backstop_default_Carrinho_0_main-container_0_desktop.png",
-        "test": "../bitmaps_test/20180316-092727/backstop_default_Carrinho_0_main-container_0_desktop.png",
-        "selector": ".main-container",
-        "fileName": "backstop_default_Carrinho_0_main-container_0_desktop.png",
-        "label": "Carrinho",
-        "misMatchThreshold": 0.1,
         "diff": {
-          "isSameDimensions": true,
+          "isSameDimensions": "",
           "dimensionDifference": {
-            "width": 0,
-            "height": 0
+            "width": "",
+            "height": ""
           },
-          "misMatchPercentage": "0.00"
-        }
+          "misMatchPercentage": ""
+        },
+        "reference": "../..",
+        "test": "../..",
+        "selector": "",
+        "fileName": "",
+        "label": "",
+        "scenario": {
+          "label": "Carrinho",
+          "url": "http://localhost:8080/produto-configuravel-teste",
+          "removeSelectors": [
+            ".product-collection-container",
+            ".products",
+            ".banner-js-container",
+            ".banner",
+            ".fb-page"
+          ],
+          "selectors": [
+            ".main-container"
+          ],
+          "sIndex": 4
+        },
+        "viewport": {
+          "label": "desktop",
+          "width": 1680,
+          "height": 700,
+          "vIndex": 0
+        },
+        "msg": "Chromy error",
+        "error": "Chromy error: GotoTimeoutError. See scenario – Carrinho (desktop)"
       },
-      "status": "pass"
+      "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/backstop_default_Carrinho_0_main-container_1_iphone.png",
-        "test": "../bitmaps_test/20180316-092727/backstop_default_Carrinho_0_main-container_1_iphone.png",
-        "selector": ".main-container",
-        "fileName": "backstop_default_Carrinho_0_main-container_1_iphone.png",
-        "label": "Carrinho",
-        "misMatchThreshold": 0.1,
         "diff": {
-          "isSameDimensions": true,
+          "isSameDimensions": "",
           "dimensionDifference": {
-            "width": 0,
-            "height": 0
+            "width": "",
+            "height": ""
           },
-          "misMatchPercentage": "0.00"
-        }
+          "misMatchPercentage": ""
+        },
+        "reference": "../..",
+        "test": "../..",
+        "selector": "",
+        "fileName": "",
+        "label": "",
+        "scenario": {
+          "label": "Carrinho",
+          "url": "http://localhost:8080/produto-configuravel-teste",
+          "removeSelectors": [
+            ".product-collection-container",
+            ".products",
+            ".banner-js-container",
+            ".banner",
+            ".fb-page"
+          ],
+          "selectors": [
+            ".main-container"
+          ],
+          "sIndex": 4
+        },
+        "viewport": {
+          "label": "iphone",
+          "width": 320,
+          "height": 480,
+          "vIndex": 1
+        },
+        "msg": "Chromy error",
+        "error": "Chromy error: GotoTimeoutError. See scenario – Carrinho (iphone)"
       },
-      "status": "pass"
+      "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/backstop_default_Catalogo_0_main-container_0_desktop.png",
-        "test": "../bitmaps_test/20180316-092727/backstop_default_Catalogo_0_main-container_0_desktop.png",
-        "selector": ".main-container",
-        "fileName": "backstop_default_Catalogo_0_main-container_0_desktop.png",
-        "label": "Catalogo",
-        "misMatchThreshold": 0.1,
         "diff": {
-          "isSameDimensions": true,
+          "isSameDimensions": "",
           "dimensionDifference": {
-            "width": 0,
-            "height": 0
+            "width": "",
+            "height": ""
           },
-          "misMatchPercentage": "0.00"
-        }
+          "misMatchPercentage": ""
+        },
+        "reference": "../..",
+        "test": "../..",
+        "selector": "",
+        "fileName": "",
+        "label": "",
+        "scenario": {
+          "label": "Catalogo",
+          "url": "http://localhost:8080/catalogsearch/result/?q=simples",
+          "selectors": [
+            ".main-container"
+          ],
+          "sIndex": 5
+        },
+        "viewport": {
+          "label": "desktop",
+          "width": 1680,
+          "height": 700,
+          "vIndex": 0
+        },
+        "msg": "Chromy error",
+        "error": "Chromy error: Error. See scenario – Catalogo (desktop)"
       },
-      "status": "pass"
+      "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/backstop_default_Catalogo_0_main-container_1_iphone.png",
-        "test": "../bitmaps_test/20180316-092727/backstop_default_Catalogo_0_main-container_1_iphone.png",
-        "selector": ".main-container",
-        "fileName": "backstop_default_Catalogo_0_main-container_1_iphone.png",
-        "label": "Catalogo",
-        "misMatchThreshold": 0.1,
         "diff": {
-          "isSameDimensions": true,
+          "isSameDimensions": "",
           "dimensionDifference": {
-            "width": 0,
-            "height": 0
+            "width": "",
+            "height": ""
           },
-          "misMatchPercentage": "0.00"
-        }
+          "misMatchPercentage": ""
+        },
+        "reference": "../..",
+        "test": "../..",
+        "selector": "",
+        "fileName": "",
+        "label": "",
+        "scenario": {
+          "label": "Catalogo",
+          "url": "http://localhost:8080/catalogsearch/result/?q=simples",
+          "selectors": [
+            ".main-container"
+          ],
+          "sIndex": 5
+        },
+        "viewport": {
+          "label": "iphone",
+          "width": 320,
+          "height": 480,
+          "vIndex": 1
+        },
+        "msg": "Chromy error",
+        "error": "Chromy error: Error. See scenario – Catalogo (iphone)"
       },
-      "status": "pass"
+      "status": "fail"
     }
   ],
   "id": "backstop_default"
