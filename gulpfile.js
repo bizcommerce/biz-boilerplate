@@ -253,7 +253,7 @@ gulp.task('prod', function() {
       }
     }))
     .pipe(gulp.dest('./css'));
-    gulp.src('css/general.css').pipe(clipboard());
+    gulp.src('css/one.css').pipe(clipboard());
 });
 
 gulp.task('postcss', function() {
@@ -274,7 +274,7 @@ gulp.task('dev', function() {
 });
 
 gulp.task('copy-css', function() {
-  gulp.src("./css/general.css")
+  gulp.src("./css/one.css")
       .pipe(clipboard())
       .pipe(gulp.dest("./dist"));
 });

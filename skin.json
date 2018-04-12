@@ -1,6 +1,6 @@
 {
-  "protocol": "http",
-  "host": "lojaexemplo.com.br",
+  "protocol": "https",
+  "host": "lojaexemplos.bizcommerce.com.br",
   "browsers": [
     "last 2 version",
     "ie >= 10"
@@ -9,7 +9,7 @@
     "rootValue": 16,
     "unitPrecision": 2
   },
-  "theme": "neon",
+  "theme": "basis",
   "backstop": {
     "id": "backstop_default",
     "viewports": [
