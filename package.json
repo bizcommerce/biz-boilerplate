@@ -4,7 +4,7 @@
   "description": "Estrutura base para custoizaÃ§Ã£o de Layouts Biz4",
   "main": "gulpfile.js",
   "dependencies": {
-    "backstopjs": "^3.1.19",
+    "backstopjs": "^3.2.9",
     "gulp": "^3.9.0",
     "gulp-clipboard": "^0.1.1",
     "gulp-if": "^2.0.0",
