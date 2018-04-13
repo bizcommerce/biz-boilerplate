@@ -49,7 +49,7 @@ report({
           "vIndex": 0
         },
         "msg": "Chromy error",
-        "error": "Chromy error: GotoTimeoutError. See scenario – Homepage (desktop)"
+        "error": "Chromy error: WaitTimeoutError. See scenario – Homepage (desktop)"
       },
       "status": "fail"
     },
@@ -101,7 +101,7 @@ report({
           "vIndex": 1
         },
         "msg": "Chromy error",
-        "error": "Chromy error: GotoTimeoutError. See scenario – Homepage (iphone)"
+        "error": "Chromy error: WaitTimeoutError. See scenario – Homepage (iphone)"
       },
       "status": "fail"
     },
@@ -142,7 +142,7 @@ report({
           "vIndex": 0
         },
         "msg": "Chromy error",
-        "error": "Chromy error: GotoTimeoutError. See scenario – Header (desktop)"
+        "error": "Chromy error: WaitTimeoutError. See scenario – Header (desktop)"
       },
       "status": "fail"
     },
@@ -183,7 +183,7 @@ report({
           "vIndex": 1
         },
         "msg": "Chromy error",
-        "error": "Chromy error: GotoTimeoutError. See scenario – Header (iphone)"
+        "error": "Chromy error: WaitTimeoutError. See scenario – Header (iphone)"
       },
       "status": "fail"
     },
@@ -224,7 +224,7 @@ report({
           "vIndex": 0
         },
         "msg": "Chromy error",
-        "error": "Chromy error: GotoTimeoutError. See scenario – Footer (desktop)"
+        "error": "Chromy error: WaitTimeoutError. See scenario – Footer (desktop)"
       },
       "status": "fail"
     },
@@ -265,7 +265,7 @@ report({
           "vIndex": 1
         },
         "msg": "Chromy error",
-        "error": "Chromy error: GotoTimeoutError. See scenario – Footer (iphone)"
+        "error": "Chromy error: WaitTimeoutError. See scenario – Footer (iphone)"
       },
       "status": "fail"
     },
@@ -306,7 +306,7 @@ report({
           "vIndex": 0
         },
         "msg": "Chromy error",
-        "error": "Chromy error: GotoTimeoutError. See scenario – Produto (desktop)"
+        "error": "Chromy error: WaitTimeoutError. See scenario – Produto (desktop)"
       },
       "status": "fail"
     },
@@ -347,7 +347,7 @@ report({
           "vIndex": 1
         },
         "msg": "Chromy error",
-        "error": "Chromy error: GotoTimeoutError. See scenario – Produto (iphone)"
+        "error": "Chromy error: WaitTimeoutError. See scenario – Produto (iphone)"
       },
       "status": "fail"
     },
@@ -388,7 +388,7 @@ report({
           "vIndex": 0
         },
         "msg": "Chromy error",
-        "error": "Chromy error: GotoTimeoutError. See scenario – Carrinho (desktop)"
+        "error": "Chromy error: WaitTimeoutError. See scenario – Carrinho (desktop)"
       },
       "status": "fail"
     },
@@ -429,7 +429,7 @@ report({
           "vIndex": 1
         },
         "msg": "Chromy error",
-        "error": "Chromy error: GotoTimeoutError. See scenario – Carrinho (iphone)"
+        "error": "Chromy error: WaitTimeoutError. See scenario – Carrinho (iphone)"
       },
       "status": "fail"
     },
@@ -463,7 +463,7 @@ report({
           "vIndex": 0
         },
         "msg": "Chromy error",
-        "error": "Chromy error: Error. See scenario – Catalogo (desktop)"
+        "error": "Chromy error: WaitTimeoutError. See scenario – Catalogo (desktop)"
       },
       "status": "fail"
     },
@@ -497,7 +497,7 @@ report({
           "vIndex": 1
         },
         "msg": "Chromy error",
-        "error": "Chromy error: Error. See scenario – Catalogo (iphone)"
+        "error": "Chromy error: WaitTimeoutError. See scenario – Catalogo (iphone)"
       },
       "status": "fail"
     }
