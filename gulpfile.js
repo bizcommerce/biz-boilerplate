@@ -55,8 +55,8 @@ backstopConfig = Object.assign(backstopConfig, {
     "ci_report": "backstop_data/ci_report"
   },
   "report": ["browser"],
-  "engine": "chrome",
-  "engineFlags": [],
+  "engine": "puppeteer",
+  "engineFlags": ['--ignore-certificate-errors'],
   "asyncCaptureLimit": 5,
   "asyncCompareLimit": 50,
   "debug": false,

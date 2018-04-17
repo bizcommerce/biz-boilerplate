@@ -1,6 +1,6 @@
 {
   "protocol": "http",
-  "host": "wdtecstore.loja.biz",
+  "host": "lojaexemplo.bizcommerce.com.br",
   "browsers": [
     "last 2 version",
     "ie >= 10"
@@ -36,41 +36,75 @@
         "readySelector": "",
         "delay": 0,
         "hideSelectors": [".banner-js-container", ".banner"],
-        "removeSelectors": [".product-collection-container",".products", ".fb-page"],
+        "removeSelectors": [".fb-page", "#__bs_notify__"],
         "hoverSelector": "",
         "clickSelector": "",
         "postInteractionWait": "",
-        "selectors": ["viewport"],
+        "selectors": [],
         "selectorExpansion": true
       },
       {
         "label": "Header",
-        "url": "/produto-configuravel-teste",
-        "removeSelectors": [".product-collection-container",".products", ".banner-js-container", ".banner", ".fb-page"],
+        "cookiePath": "backstop_data/engine_scripts/cookies.json",
+        "url": "/",
+        "removeSelectors": [".fb-page", "#__bs_notify__"],
         "selectors": [".header-container"]
       },
       {
+        "label": "Meu carrinho",
+        "cookiePath": "backstop_data/engine_scripts/cookies.json",
+        "url": "/",
+        "hoverSelector": ".mycart",
+        "removeSelectors": [".fb-page", "#__bs_notify__"]
+      },
+      {
+        "label": "Categorias",
+        "cookiePath": "backstop_data/engine_scripts/cookies.json",
+        "url": "/",
+        "hoverSelector": ".li--0:last-child",
+        "removeSelectors": [".fb-page", "#__bs_notify__"]
+      },
+      {
+        "label": "Todas as categorias",
+        "cookiePath": "backstop_data/engine_scripts/cookies.json",
+        "url": "/",
+        "hoverSelector": ".categories__all",
+        "removeSelectors": [".fb-page", "#__bs_notify__"]
+      },
+      {
+        "label": "Minha conta",
+        "cookiePath": "backstop_data/engine_scripts/cookies.json",
+        "url": "/",
+        "hoverSelector": ".myaccount",
+        "removeSelectors": [".fb-page", "#__bs_notify__"]
+      },
+      {
         "label": "Footer",
-        "url": "/produto-configuravel-teste",
-        "removeSelectors": [".product-collection-container",".products", ".banner-js-container", ".banner", ".fb-page"],
+        "cookiePath": "backstop_data/engine_scripts/cookies.json",
+        "url": "/",
+        "removeSelectors": [".banner-js-container", ".banner", ".fb-page", "#__bs_notify_"],
         "selectors": [".footer-container"]
       },
       {
         "label": "Produto",
-        "url": "/produto-configuravel-teste",
-        "removeSelectors": [".product-collection-container",".products", ".banner-js-container", ".banner", ".fb-page"],
+        "cookiePath": "backstop_data/engine_scripts/cookies.json",
+        "url": "/produto-simples-2",
+        "removeSelectors": [".banner-js-container", ".banner", ".fb-page", "#__bs_notify_"],
         "selectors": [".main-container"]
       },
       {
         "label": "Carrinho",
-        "url": "/produto-configuravel-teste",
-        "removeSelectors": [".product-collection-container",".products", ".banner-js-container", ".banner", ".fb-page"],
+        "cookiePath": "backstop_data/engine_scripts/cookies.json",
+        "url": "/cart",
+        "removeSelectors": [".banner-js-container", ".banner", ".fb-page", "#__bs_notify_"],
         "selectors": [".main-container"]
       },
       {
         "label": "Catalogo",
-        "url": "/catalogsearch/result/?q=simples",
-        "selectors": [".main-container"]
+        "cookiePath": "backstop_data/engine_scripts/cookies.json",
+        "url": "/cameras",
+        "selectors": [".main-container"],
+        "removeSelectors": [".banner-js-container", ".banner", ".fb-page", "#__bs_notify_"]
       }
     ]
   }
