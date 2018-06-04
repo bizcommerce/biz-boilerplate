@@ -261,7 +261,7 @@ gulp.task('prod', function() {
 });
 
 gulp.task('postcss', function() {
-  gulp.src('./css/*.css').pipe(postcss(processors)).pipe(gulp.dest('./css')).pipe(browserSync.stream());
+  gulp.src('./css/*.css').pipe(postcss(processors)).pipe(gulp.dest('./css')).pipe(browserSync.reload({ stream: true}));
 });
 
 gulp.task('dev', function() {

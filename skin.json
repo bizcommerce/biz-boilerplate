@@ -1,6 +1,6 @@
 {
   "protocol": "http",
-  "host": "lojaexemplo.com.br",
+  "host": "lojaexemplo.bizcommerce.com.br",
   "browsers": [
     "last 2 version",
     "ie >= 10"
