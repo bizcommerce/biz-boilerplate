@@ -13,7 +13,7 @@ cd nome-sua-loja
 npm install .
 
 ## Começando seu projeto
-gulp watch
+npx gulp watch
 ```
 
 ## Estrutura
@@ -42,7 +42,7 @@ gulp watch
 ## Stack
 O framework **Biz Boilerplate** abraça o conceito "convention over configuration" e espera que os usuários familiarizem-se com as seguintes tecnologias:
 
-### [Stylus](https://learnboost.github.io/stylus/)
+## [Stylus](https://learnboost.github.io/stylus/)
 
 Um preprocessador extremamente versátil, permite que você escreva as folhas de estilo usando chaves, ou apenas identação significativa.
 
@@ -50,7 +50,7 @@ O arquivo general.styl possui um exemplo da sintaxe sugerida, mas sinta-se a von
 
 Você pode compilar o arquivo stylus utilizando ferramenta de linha de comando global do stylus, mas recomendamos a utlização dos comandos locais ```gulp dev```, ```gulp prod``` e ```gulp watch```. Veja mais na sessão comandos gulp.
 
-### [Gulp](http://gulpjs.com/)
+## [Gulp](http://gulpjs.com/)
 Escolhemos o Gulp como ferramenta de automatizações de tarefas, por causa de sua simplicidade e abundância de modulos.
 As tarefas do Gulp estão declaradas no arquivo "gulpfile.js" e suas dependências encontram-se em "package.json"
 
