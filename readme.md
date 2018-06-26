@@ -15,9 +15,10 @@ npm install .
 npx gulp watch
 ```
 
+## Guia
 * [Estrutura](#estrutura)
-* [Stack](#stack)
 * [Variáveis](#variaveis)
+* [Stack](#stack)
 * [Gulp Tasks](#gulp-tasks)
 
 ## Estrutura
@@ -42,29 +43,6 @@ npx gulp watch
 │   ├── svg               (SVG sprites do skin gerados via gulp svg)
 ├── i18n                  (Arquivos de internacionalização da loja)
 ```
-
-## Stack
-O framework **Biz Boilerplate** abraça o conceito "convention over configuration" e espera que os usuários familiarizem-se com as seguintes tecnologias:
-
-## [Stylus](https://learnboost.github.io/stylus/)
-
-Um preprocessador extremamente versátil, permite que você escreva as folhas de estilo usando chaves, ou apenas identação significativa.
-
-O arquivo general.styl possui um exemplo da sintaxe sugerida, mas sinta-se a vontade para escrever como preferir, seguindo a documentação do [Stylus](https://learnboost.github.io/stylus/).
-
-Você pode compilar o arquivo stylus utilizando ferramenta de linha de comando global do stylus, mas recomendamos a utlização dos comandos locais ```gulp dev```, ```gulp prod``` e ```gulp watch```. Veja mais na sessão comandos gulp.
-
-## [Gulp](http://gulpjs.com/)
-Escolhemos o Gulp como ferramenta de automatizações de tarefas, por causa de sua simplicidade e abundância de modulos.
-As tarefas do Gulp estão declaradas no arquivo "gulpfile.js" e suas dependências encontram-se em "package.json"
-
-Comandos disponíveis:
-
-* gulp dev
-* gulp prod
-* gulp watch
-* gulp svg-min
-* gulp svg
 
 ## Variáveis
 ### 🔸🔹 Cores 🔹🔸
@@ -126,6 +104,30 @@ $color1_font_hover = '@color(1:hover)'
 
 Este projeto está preparado para utilizar varíáveis com valores regulares da web durante o desenvolvimento, sem a necessidade de colar o código no editor da biz.
 Para mais informações confira a pasta **/vars/dev.styl**.
+
+
+## Stack
+O framework **Biz Boilerplate** abraça o conceito "convention over configuration" e espera que os usuários familiarizem-se com as seguintes tecnologias:
+
+## [Stylus](https://learnboost.github.io/stylus/)
+
+Um preprocessador extremamente versátil, permite que você escreva as folhas de estilo usando chaves, ou apenas identação significativa.
+
+O arquivo general.styl possui um exemplo da sintaxe sugerida, mas sinta-se a vontade para escrever como preferir, seguindo a documentação do [Stylus](https://learnboost.github.io/stylus/).
+
+Você pode compilar o arquivo stylus utilizando ferramenta de linha de comando global do stylus, mas recomendamos a utlização dos comandos locais ```gulp dev```, ```gulp prod``` e ```gulp watch```. Veja mais na sessão comandos gulp.
+
+## [Gulp](http://gulpjs.com/)
+Escolhemos o Gulp como ferramenta de automatizações de tarefas, por causa de sua simplicidade e abundância de modulos.
+As tarefas do Gulp estão declaradas no arquivo "gulpfile.js" e suas dependências encontram-se em "package.json"
+
+Comandos disponíveis:
+
+* gulp dev
+* gulp prod
+* gulp watch
+* gulp svg-min
+* gulp svg
 
 ## Gulp tasks
 Confira agora as tarefas automatizadas disponíveis neste boilerplate.
