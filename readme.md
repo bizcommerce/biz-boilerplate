@@ -97,8 +97,8 @@ gulp svg
 
 ## Variáveis
 ### 🔸🔹 Cores 🔹🔸
-O painel do biz 4 é capaz de renderizar seu css utilizando cores previamente definidas em "Design -> Configurações rápidas -> Cores".
-[img](https://www.bizcommerce.com.br/wp-content/uploads/2017/09/CoresLoja3.png)
+O painel do biz 4 é capaz de renderizar seu css utilizando cores previamente definidas em **"Design -> Configurações rápidas -> Cores"**.
+![Configurando cores da loja](https://www.bizcommerce.com.br/wp-content/uploads/2017/09/CoresLoja3.png)
 https://www.bizcommerce.com.br/recursos/cores/
 
 Você pode utilizar cores configuradas no tema através de varíáveis disponíveis no [editor css](https://www.bizcommerce.com.br/recursos/editor-de-css/) da biz.
