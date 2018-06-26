@@ -101,6 +101,7 @@ O painel do biz 4 é capaz de renderizar seu css utilizando cores previamente de
 
 ![Configurando cores da loja](https://www.bizcommerce.com.br/wp-content/uploads/2017/09/CoresLoja3.png)
 
+### Opções
 Você pode utilizar cores configuradas no tema através de varíáveis disponíveis no [editor css](https://www.bizcommerce.com.br/recursos/editor-de-css/) da biz.
 
 * @bg(1)
@@ -110,7 +111,7 @@ Você pode utilizar cores configuradas no tema através de varíáveis disponív
 * @bg(3)
 * @bg_hover(3)
 
-Exemplo:
+### Exemplo
 O Seguinte código adicionado no editor css do painel biz
 
 ```css
