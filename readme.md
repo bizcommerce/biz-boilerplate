@@ -1,6 +1,7 @@
-# Biz Boilerplate
-Aqui você encontrará um framework que auxilia no desenvolvimento de skins para o BIZ4.
+![Biz boilerplate logo](https://github.com/bizcommerce/biz-boilerplate/raw/master/img/boilerplate-logo.png)
 
+# Biz Boilerplate
+Framework para customização de temas Bizcommerce
 Saiba mais sobre como é [desenvolver para o Biz4](http://biz4treinamento.dev.bizcommerce.com.br).
 
 ## Comece agora
