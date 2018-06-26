@@ -62,39 +62,6 @@ Comandos disponíveis:
 * gulp svg-min
 * gulp svg
 
-### gulp dev
-O comando gulp dev gera o arquivo css final  utilizando as **varíaveis de desenvolvimento** e copia o resultado para o clipboard.
-```shell
-gulp dev
-```
-
-### gulp prod
-O comando gulp prod gera o arquivo css final utilizando as **varíaveis de produção** e copia o resultado para o clipboard.
-```shell
-gulp prod
-```
-
-### gulp watch
-O comando mais recomendado para longas manutenções ou desenvolvimentos de novos temas. Gera o arquivo css de desenvolvimento toda vez que o arquivo é alterado. (Não copia para o clipboard)
-```shell
-gulp watch
-```
-
-### gulp svg-min
-Esta função otimiza os arquivos da pasta svg, removendo espaços em branco e atributos de estilo do vector.
-
-```shell
-gulp svg-min
-```
-
-### gulp svg
-gulp svg é o commando responsável por gerar um svg-sprite do padrão symbol utilizando arquivos svgs dentro da pasta ```svg```.
-O commando copia o svg sprite para o clipboard e salva o resultado em ```templates/symbol/svg/sprite.symbol.svg```
-
-```shell
-gulp svg
-```
-
 ## Variáveis
 ### 🔸🔹 Cores 🔹🔸
 O painel do biz 4 é capaz de renderizar seu css utilizando cores previamente definidas em **["Design -> Configurações rápidas -> Cores"](https://www.bizcommerce.com.br/recursos/cores/)**.
@@ -127,8 +94,70 @@ body {
 }
 ```
 
-
 ### Images
+Além de cores pre-definidas você também pode utilizar variáveis de imagens em seu CSS.
+Após o upload de uma imagem no painel biz as imagens estão diponíveis em forma de variáveis.
+```css
+body{
+  background-image: url(@img(gatinho))
+}
+```
+Resultará em:
+```css
+body{
+  background-image: url('/media/gatinho.png')
+}
+```
+
+### Pré-processadores
+As "biz vars" só funcionam no editor de css em seu painel biz, ao clicar em salvar as variáveis serão compiladas para arquivo de modo que possam ser visualizadas na web.
+
+Para utilizar as variáveis biz em seu preprocessador, pode-se utilizar a sintaxe de variáveis de sua própria linguagem como "alias" para as "biz vars".
+
+Veja um exemplo utilizando **Stylus**
+```stylus
+$color1_font = '@color(1)'
+$color1_font_hover = '@color(1:hover)'
+```
+
+Este projeto está preparado para utilizar varíáveis com valores regulares da web durante o desenvolvimento, sem a necessidade de colar o código no editor da biz.
+Para mais informações confira a pasta **/vars/dev.styl**.
+
+## Gulp tasks
+Confira agora as tarefas automatizadas disponíveis neste boilerplate.
+
+### gulp dev
+O comando gulp dev gera o arquivo css final  utilizando as **varíaveis de desenvolvimento** e copia o resultado para o clipboard.
+```shell
+gulp dev
+```
+
+### gulp prod
+O comando gulp prod gera o arquivo css final utilizando as **varíaveis de produção** e copia o resultado para o clipboard.
+```shell
+gulp prod
+```
+
+### gulp watch
+O comando mais recomendado para longas manutenções ou desenvolvimentos de novos temas. Gera o arquivo css de desenvolvimento toda vez que o arquivo é alterado. (Não copia para o clipboard)
+```shell
+gulp watch
+```
+
+### gulp svg-min
+Esta função otimiza os arquivos da pasta svg, removendo espaços em branco e atributos de estilo do vector.
+
+```shell
+gulp svg-min
+```
+
+### gulp svg
+gulp svg é o commando responsável por gerar um svg-sprite do padrão symbol utilizando arquivos svgs dentro da pasta ```svg```.
+O commando copia o svg sprite para o clipboard e salva o resultado em ```templates/symbol/svg/sprite.symbol.svg```
+
+```shell
+gulp svg
+```
 
 ## Setup
 ```shell
