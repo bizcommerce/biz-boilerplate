@@ -1,7 +1,6 @@
 ![Biz boilerplate logo](https://github.com/bizcommerce/biz-boilerplate/raw/master/img/boilerplate-logo.png)
 
-Framework para customização de temas Bizcommerce
-Saiba mais sobre como é [desenvolver para o Biz4](http://biz4treinamento.dev.bizcommerce.com.br).
+> Framework para customização de temas Bizcommerce. Saiba mais sobre como é [desenvolver para o Biz4](http://biz4treinamento.dev.bizcommerce.com.br).
 
 # Comece agora
 ```shell
@@ -16,10 +15,10 @@ npm install .
 npx gulp watch
 ```
 
-* Estrutura
-* Stack
-* Variáveis
-* Gulp Tasks
+* [Estrutura](#estrutura)
+* [Stack](#stack)
+* [Variáveis](#variaveis)
+* [Gulp Tasks](#gulp-tasks)
 
 ## Estrutura
 ```
