@@ -1,10 +1,9 @@
 ![Biz boilerplate logo](https://github.com/bizcommerce/biz-boilerplate/raw/master/img/boilerplate-logo.png)
 
-# Biz Boilerplate
 Framework para customização de temas Bizcommerce
 Saiba mais sobre como é [desenvolver para o Biz4](http://biz4treinamento.dev.bizcommerce.com.br).
 
-## Comece agora
+# Comece agora
 ```shell
 ## Clonando o projeto
 git clone https://github.com/bizcommerce/biz-boilerplate.git nome-sua-loja
@@ -16,6 +15,11 @@ npm install .
 ## Começando seu projeto
 npx gulp watch
 ```
+
+* Estrutura
+* Stack
+* Variáveis
+* Gulp Tasks
 
 ## Estrutura
 ```
@@ -158,16 +162,4 @@ O commando copia o svg sprite para o clipboard e salva o resultado em ```templat
 
 ```shell
 gulp svg
-```
-
-## Setup
-```shell
-## Clonando o projeto
-git clone --depth 1 https://github.com/bizcommerce/biz-boilerplate.git nome-sua-loja
-
-## Instalando dependências
-npm install .
-
-## Começando seu projeto
-gulp watch
 ```
