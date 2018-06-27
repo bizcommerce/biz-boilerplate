@@ -1,27 +1,27 @@
 <template id="cart-item">
     <li class="mycart__item item li--0">
-        <a href="${link}" title="${name}"
+        <a href="${data.link}" title="${data.name}"
             class="mycart__thumb">
             <span class="imgcase" style="background-image:url(${img})">
-                <img src="${img}"
-                    width="100" height="100" alt="Kit TAG Curadoria - junho de 2018">
+                <img src="${data.img}"
+                    width="100" height="100" alt="${data.name}">
             </span>
         </a>
         <div class="mycart__details">
             <div class="mycart__name">
-                <a href="${link}">
-                    <span>${name}</span>
+                <a href="${data.link}">
+                    <span>${data.name}</span>
                 </a>
             </div>
     
             <div class="mycart__qtd">
                 <span class="label">Qtd.:</span>
-                <span class="num">${qtd}</span>
+                <span class="num">${data.qtd}</span>
             </div>
     
-            <span class="price">${price}</span>
+            <span class="price">${data.price}</span>
     
-            <a href="${deleteUrl}"
+            <a href="${data.deleteUrl}"
                 title="Remover Este Item" onclick="return confirm('Deseja realmente remover este produto?');" class="mycart__remove btn btn--remove btn--outline">
                 <span>Remover Este Item</span>
             </a>
@@ -50,6 +50,7 @@
             <span class="label">Por:</span>
             <span class="price">R$94,60</span>
         </div>
+        <!---
         <div class="price-box-parcelado">
             em até
             <span class="num">
@@ -60,6 +61,7 @@
             </span>
             <span class="juros">2,84% a.m. </span>
         </div>
+        -->
     </div>
 </template>
 
