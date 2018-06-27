@@ -4,7 +4,8 @@
   "description": "Estrutura base para custoizaÃ§Ã£o de Layouts Biz4",
   "main": "gulpfile.js",
   "dependencies": {
-    "backstopjs": "^3.2.9",
+    "babel-cli": "^6.26.0",
+    "backstopjs": "^3.2.19",
     "gulp": "^3.9.0",
     "gulp-clipboard": "^0.1.1",
     "gulp-if": "^2.0.0",
@@ -25,10 +26,11 @@
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^7.1.2",
-    "babel-cli": "^6.26.0",
-    "browser-sync": "^2.23.6",
+    "babel-cli": "7.0.0-beta.0",
+    "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.24.5",
     "gulp-postcss": "^7.0.0",
-    "postcss": "^6.0.9",
+    "postcss": "^6.0.23",
     "postcss-pxtorem": "^4.0.1"
   }
 }
