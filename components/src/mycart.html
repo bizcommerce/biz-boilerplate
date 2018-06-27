@@ -1,0 +1,76 @@
+<template id="cart-item">
+    <li class="mycart__item item li--0">
+        <a href="${link}" title="${name}"
+            class="mycart__thumb">
+            <span class="imgcase" style="background-image:url(${img})">
+                <img src="${img}"
+                    width="100" height="100" alt="Kit TAG Curadoria - junho de 2018">
+            </span>
+        </a>
+        <div class="mycart__details">
+            <div class="mycart__name">
+                <a href="${link}">
+                    <span>${name}</span>
+                </a>
+            </div>
+    
+            <div class="mycart__qtd">
+                <span class="label">Qtd.:</span>
+                <span class="num">${qtd}</span>
+            </div>
+    
+            <span class="price">${price}</span>
+    
+            <a href="${deleteUrl}"
+                title="Remover Este Item" onclick="return confirm('Deseja realmente remover este produto?');" class="mycart__remove btn btn--remove btn--outline">
+                <span>Remover Este Item</span>
+            </a>
+        </div>
+    </li>
+</template>
+
+<template id="cart-action">
+    <div class="mycart__actions">
+        <a href="/checkout/cart/" class="editar" title="Editar Carrinho">
+            <span>Editar Carrinho</span>
+        </a>
+        <a href="/checkout/onepage/" class="finalizar" title="Finalizar">
+            <span>Finalizar</span>
+        </a>
+    </div>
+</template>
+
+<template id="cart-totals">
+    <div class="mycart__totals">
+        <div class="title title--sm">
+            <span>Total</span>
+        </div>
+
+        <div class="regular-price">
+            <span class="label">Por:</span>
+            <span class="price">R$94,60</span>
+        </div>
+        <div class="price-box-parcelado">
+            em até
+            <span class="num">
+                <span class="parcels">5x</span>
+            </span> de
+            <span class="value">
+                <span class="price">R$21,76</span>
+            </span>
+            <span class="juros">2,84% a.m. </span>
+        </div>
+    </div>
+</template>
+
+
+<div class="mycart__content">
+    <div class="title title--sm">
+        <div class="title title--sm title-cart">resumo da compra</div>
+    </div>
+    <ul class="mycart__list list level0">
+        <---cart-item->
+    </ul>
+    <---cart-total->
+    <---cart-action->
+</div>

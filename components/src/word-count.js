@@ -1,4 +1,5 @@
-class WordCount extends HTMLParagraphElement {
+
+class WordCount extends HTMLElement {
     constructor() {
         // Always call super first in constructor
         super();
@@ -44,4 +45,4 @@ class WordCount extends HTMLParagraphElement {
         wrapper.appendChild(info);
     }
 }
-customElements.define('popup-info', PopUpInfo);
+customElements.define('popup-info', WordCount);

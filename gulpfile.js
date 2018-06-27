@@ -133,6 +133,10 @@ function loadbrowserSync(){
       {
         route: '/backstop',
         dir: 'backstop_data'
+      },
+      {
+        route: '/media/files',
+        dir: ['components/src', 'img', 'svg']
       }
     ],
     middleware: [
