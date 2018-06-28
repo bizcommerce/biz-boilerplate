@@ -1,14 +1,15 @@
-export default class CartTotals extends HTMLElement {
+import CartElement from './cart-element.js';
+
+export default class CartTotals extends CartElement {
     
     constructor(opts) {
         // Always call super first in constructor
         super();
         const data = Object.assign({
-            total:  this.getAttribute('name')
+            total:  this.getAttribute('total')
         }, opts);
-        this.innerHTML = this.render(data);
 
-        return this;
+        this.innerHTML = this.render(data);
     }
 
     render(data){
