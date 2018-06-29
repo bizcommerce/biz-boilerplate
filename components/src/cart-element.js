@@ -24,7 +24,7 @@ export default class CartElement extends HTMLElement {
                     img:        $link.find('img').attr('src'),
                     price:      $el.find('.product-cart-price').text(),
                     quantity:   $el.find('.qty-wrapper .qty').attr('value'),
-                    removeUrl:  $el.find('.btn-remove').attr('href')
+                    id:  $el.find('a.btn-remove').attr('href')
                 }
                 return data;
             }).toArray();

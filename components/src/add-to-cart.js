@@ -1,28 +1,26 @@
 import CartItem from './cart-item.js';
 import CartTotals from './cart-totals.js';
+import CartList from './cart-list.js';
 import CartElement from './cart-element.js';
 
-class CartList extends CartElement {
-    constructor(items) {
-        // Always call super first in constructor
-        super();
-        this.innerHTML = this.render(items);
-    }
 
+class CartHeader extends CartElement {
+    constructor() {
+        super();
+    }
     render(items){
-        const itemsTemplates = items.map((item) => `
-            <cart-item name="${item.name}" link="${item.link}" img="${item.img}" qty="${item.quantity}" price="${item.price}">
-            </cart-item>
-        `);
         return `
-            <ul class="mycart__list list level0">
-                ${itemsTemplates.join('')}
-            </ul>
+            <div class="mycart__header">
+                <a href="/checkout/cart/" title="Ver carrinho">
+                    <svg class="ico"><use xlink:href="#cart"></use></svg>
+                    <span class="qtd cart__info">${items.length}</span>
+                    <span class="text">Meu Carrinho</span>
+                </a>
+            </div>
         `
- 
     }
 }
-customElements.define('cart-list', CartList);
+
 
 /*
 * @example
@@ -34,40 +32,18 @@ customElements.define('cart-list', CartList);
 *    <span name="empty">Navegue por nossa loja e <strong>encha seu carrinho com as melhores ofertas!</strong></span>
 * </cart-content>
 */
-class CartComponent extends CartElement {
-
-    constructor() {
-        // Always call super first in constructor
+class CartContent extends CartElement {
+    constructor(){
         super();
-        
-        this.reload( data => {
-            console.log(data);
-              //https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots
-            //https://alligator.io/web-components/composing-slots-named-slots/
-            const {items, totals} = data;
-            const template = document.createElement('template');
-            template.innerHTML = `
-                <div class="std">
-                    <slot name="empty"></slot>
-                </div>
-            `
-            this.attachShadow({ mode: 'open' });
-            this.shadowRoot.appendChild(template.content.cloneNode(true));
-
-            //this.innerHTML = this.render(items, totals);
-        });
-    }
-
-    connectedCallback(){
-        console.log('Connected');
     }
 
     emptyContent(text){
-      
         return `
-            <div class="title title--sm"><div class="title title--sm">Seu carrinho está vazio</div></div>
-            <div class="std" slot="empty">
-                <slot></slot>
+            <div class="title title--sm">
+                <slot name="empty-title"></slot>
+            </div>
+            <div class="std">
+                <slot name="empty"></slot>
             </div>
         `
     }
@@ -95,21 +71,51 @@ class CartComponent extends CartElement {
         if(!items.length){
             return `
                 <div class="mycart__content">
+                    <link rel="stylesheet" type="text/css" href="/media/interface/0/neon/css/one.css" media="all" />
                     ${this.emptyContent(empty)}     
                 </div>
             `
         } else {
             return `
+                
                 <div class="mycart__content">
+                    <link rel="stylesheet" type="text/css" href="/media/interface/0/neon/css/one.css" media="all" />
                     ${this.fullContent(items, totals)}     
                 </div>
             `
         }
-        
     }
 }
-customElements.define('cart-content', CartComponent);
+customElements.define('cart-content', CartContent);
 
+
+class CartComponent extends CartElement {
+    constructor() {
+        // Always call super first in constructor
+        super();
+        
+        this.reload( data => {
+            //https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots
+            //https://alligator.io/web-components/composing-slots-named-slots/
+            const {items, totals} = data;
+            const template = document.createElement('template');
+            template.innerHTML = this.render(items, totals);
+
+            this.attachShadow({ mode: 'open' });
+            this.shadowRoot.appendChild(template.content.cloneNode(true));
+
+            //this.innerHTML = this.render(items, totals);
+        });
+    }
+
+    render(data){
+        
+    }
+
+    connectedCallback(){
+        console.log('Connected');
+    }
+}
 /*
 jQuery(() => {
     document.body.appendChild(document.createElement('cart-content'));

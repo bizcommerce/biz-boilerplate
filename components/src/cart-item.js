@@ -21,7 +21,8 @@ export default class CartItem extends HTMLElement {
             link:       this.getAttribute('link'),
             img:        this.getAttribute('img'),
             quantity:   this.getAttribute('qty'),
-            price:      this.getAttribute('price')
+            price:      this.getAttribute('price'),
+            removeUrl:  this.getAttribute('remove')
         }, opts);
         this.innerHTML = this.render(data);
         
@@ -51,7 +52,7 @@ export default class CartItem extends HTMLElement {
             
                     <span class="price">${data.price}</span>
             
-                    <a href="${data.deleteUrl}"
+                    <a href="${data.removeUrl}"
                         title="Remover Este Item" onclick="return confirm('Deseja realmente remover este produto?');" class="mycart__remove btn btn--remove btn--outline">
                         <span>Remover Este Item</span>
                     </a>
