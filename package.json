@@ -13,7 +13,9 @@
     "gulp-svgmin": "^1.2.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cart:bundle": "rollup ./components/src/add-to-cart.js --f umd -o ./components/dist/cart-bundle.es6.js",
+    "cart:transpile": "babel ./components/dist/cart-bundle.es6.js"
   },
   "keywords": [
     "bizcommerce",
