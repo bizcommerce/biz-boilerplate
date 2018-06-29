@@ -20,7 +20,7 @@ class CartHeader extends CartElement {
         `
     }
 }
-
+customElements.define('cart-header', CartHeader);
 
 /*
 * @example
@@ -94,7 +94,7 @@ class CartComponent extends CartElement {
         // Always call super first in constructor
         super();
         
-        this.reload( data => {
+        this.load( data => {
             //https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots
             //https://alligator.io/web-components/composing-slots-named-slots/
             const {items, totals} = data;
@@ -108,14 +108,20 @@ class CartComponent extends CartElement {
         });
     }
 
-    render(data){
-        
+    render(items, totals){
+        const main = new CartHeader().render(items, totals) + new CartContent().render(items, totals);
+        return `
+            <section class="mycart mycart--empty drop--right drop--top" id="carrinho">
+                ${main}
+            </section>
+        `
     }
 
     connectedCallback(){
         console.log('Connected');
     }
 }
+customElements.define('cart-component', CartComponent);
 /*
 jQuery(() => {
     document.body.appendChild(document.createElement('cart-content'));

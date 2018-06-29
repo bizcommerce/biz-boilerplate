@@ -6,7 +6,7 @@ export default class CartElement extends HTMLElement {
         this.client = jQuery;
     }
 
-    reload(callback){
+    load(callback){
         this.getCart(($raw) => {
             const self =        this;
             const $container =  $raw.find('.cart');
