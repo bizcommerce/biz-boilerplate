@@ -14,8 +14,13 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cart:bundle": "rollup ./components/src/add-to-cart.js --f umd -o ./components/dist/cart-bundle.es6.js",
-    "cart:transpile": "babel ./components/dist/cart-bundle.es6.js"
+    "cart:bundle": "rollup components/src/cart-component.js --o components/dist/cart-bundle.es6.js --format umd --output.name=cart-bundle.es6.js",
+    "cart:transpile": "babel ./components/dist/cart-bundle.es6.js -o ./components/dist/cart-bundle.es5.js",
+    "button:bundle": "rollup components/src/add-to-cart.js  --o components/dist/add-to-cart.es6.js --format umd --output.name=add-to-cart.es6.js",
+    "button:transpile": "babel ./components/dist/add-to-cart.es6.js -o ./components/dist/add-to-cart.es5.js",
+    "button": "npm run button:bundle && npm run button:transpile",
+    "cart": "npm run cart:bundle && npm run cart:transpile",
+    "components": "npm run cart && npm run button"
   },
   "keywords": [
     "bizcommerce",

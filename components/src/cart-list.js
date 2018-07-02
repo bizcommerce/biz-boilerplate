@@ -1,4 +1,5 @@
 import CartElement from './cart-element.js';
+import CartItem from './cart-item.js';
 
 export default class CartList extends CartElement {
     constructor(items) {

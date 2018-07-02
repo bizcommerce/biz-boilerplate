@@ -136,7 +136,7 @@ function loadbrowserSync(){
       },
       {
         route: '/media/files',
-        dir: ['components/src', 'img', 'svg']
+        dir: ['components/src', 'components/dist', 'img', 'svg']
       }
     ],
     middleware: [

@@ -1,7 +1,7 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory() :
+    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
     typeof define === 'function' && define.amd ? define(factory) :
-    (factory());
+    (global['cart-bundle'] = global['cart-bundle'] || {}, global['cart-bundle'].es6 = global['cart-bundle'].es6 || {}, global['cart-bundle'].es6.js = factory());
 }(this, (function () { 'use strict';
 
     /**
@@ -77,7 +77,7 @@
             this.client = jQuery;
         }
 
-        reload(callback){
+        load(callback){
             this.getCart(($raw) => {
                 const $container =  $raw.find('.cart');
 
@@ -244,10 +244,67 @@
         }
     }
     customElements.define('cart-content', CartContent);
-    /*
-    jQuery(() => {
-        document.body.appendChild(document.createElement('cart-content'));
-    })
-    */
+
+    class CartHeader extends CartElement {
+        constructor() {
+            super();
+        }
+        render(items){
+            return `
+            <div class="mycart__header">
+                <a href="/checkout/cart/" title="Ver carrinho">
+                    <slot name="icon"></slot>
+                    <span class="qtd cart__info">${items.length}</span>
+                    <span class="text">Meu Carrinho</span>
+                </a>
+            </div>
+        `
+        }
+    }
+    customElements.define('cart-header', CartHeader);
+
+    alert('ok');
+    class CartComponent extends CartElement {
+        constructor() {
+            // Always call super first in constructor
+            super();
+            this.run();
+        }
+
+        run(){
+            this.load( data => {
+                //https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots
+                //https://alligator.io/web-components/composing-slots-named-slots/
+                const {items, totals} = data;
+                const template = document.createElement('template');
+                template.innerHTML = this.render(items, totals);
+
+                try {
+                    this.attachShadow({ mode: 'open' });
+                } catch(error){
+                    const root = this.shadowRoot.querySelector('.mycart');
+                    this.shadowRoot.removeChild(root);
+                }
+                
+                this.shadowRoot.appendChild(template.content.cloneNode(true));
+            });
+        }
+
+        render(items, totals){
+            const main = new CartHeader().render(items, totals) + new CartContent().render(items, totals);
+            return `
+            <section class="mycart mycart--empty drop--right drop--top" id="carrinho">
+                ${main}
+            </section>
+        `
+        }
+
+        connectedCallback(){
+            console.log('Connected');
+        }
+    }
+    customElements.define('cart-component', CartComponent);
+
+    return CartComponent;
 
 })));
