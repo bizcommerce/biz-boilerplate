@@ -6,7 +6,7 @@ jQuery(() => {
 /*
 * @example <add-to-cart><span>Comprar</span></add-to-cart>
 */
-export default class AddToCart extends HTMLElement {
+class AddToCart extends HTMLElement {
     constructor(id){
         super();
         this.id = id || this.getAttribute('product-id');

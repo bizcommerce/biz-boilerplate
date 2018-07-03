@@ -1,7 +1,7 @@
 import CartContent from './cart-content.js';
 import CartHeader from './cart-header.js';
 import CartElement from './cart-element.js';
-alert('ok');
+
 export default class CartComponent extends CartElement {
     constructor() {
         // Always call super first in constructor
