@@ -1,5 +1,5 @@
 {
-  "name": "biz-skin",
+  "name": "biz-boilerplate",
   "version": "1.0.1",
   "description": "Estrutura base para custoizaÃ§Ã£o de Layouts Biz4",
   "main": "gulpfile.js",
