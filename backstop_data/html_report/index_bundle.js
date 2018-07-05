@@ -4830,6 +4830,13 @@ var showScrubberRefImage = exports.showScrubberRefImage = function showScrubberR
   };
 };
 
+var showScrubberDiffImage = exports.showScrubberDiffImage = function showScrubberDiffImage(value) {
+  return {
+    type: 'SHOW_SCRUBBER_DIFF_IMAGE',
+    value: value
+  };
+};
+
 var showScrubber = exports.showScrubber = function showScrubber(value) {
   return {
     type: 'SHOW_SCRUBBER',
@@ -13238,11 +13245,11 @@ var _styledComponents = __webpack_require__(5);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
-var _DiffDetails = __webpack_require__(272);
+var _DiffDetails = __webpack_require__(273);
 
 var _DiffDetails2 = _interopRequireDefault(_DiffDetails);
 
-var _UrlDetails = __webpack_require__(273);
+var _UrlDetails = __webpack_require__(274);
 
 var _UrlDetails2 = _interopRequireDefault(_UrlDetails);
 
@@ -13376,7 +13383,8 @@ var TextDetails = function (_React$Component) {
             _react2.default.createElement(
               Value,
               null,
-              label
+              label,
+              ' '
             ),
             _react2.default.createElement(
               Label,
@@ -13386,7 +13394,8 @@ var TextDetails = function (_React$Component) {
             _react2.default.createElement(
               Value,
               null,
-              selector
+              selector,
+              ' '
             )
           ),
           _react2.default.createElement(
@@ -13400,7 +13409,8 @@ var TextDetails = function (_React$Component) {
             _react2.default.createElement(
               Value,
               null,
-              fileName
+              fileName,
+              ' '
             )
           ),
           _react2.default.createElement(
@@ -13509,7 +13519,7 @@ exports.show = show;
 exports.documentNotReadyOrSSRTesting = documentNotReadyOrSSRTesting;
 exports.resetForTesting = resetForTesting;
 
-var _warning = __webpack_require__(286);
+var _warning = __webpack_require__(287);
 
 var _warning2 = _interopRequireDefault(_warning);
 
@@ -13618,7 +13628,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.canUseDOM = undefined;
 
-var _exenv = __webpack_require__(288);
+var _exenv = __webpack_require__(289);
 
 var _exenv2 = _interopRequireDefault(_exenv);
 
@@ -27228,6 +27238,7 @@ var tests = function tests() {
           })
         });
       }
+      return state;
 
     default:
       return state;
@@ -27333,6 +27344,8 @@ function getPosFromImgId(imgId) {
       return 100;
     case 'testImage':
       return 0;
+    case 'diffImage':
+      return -1;
     default:
       return 50;
   }
@@ -27369,6 +27382,11 @@ var scrubber = function scrubber() {
     case 'SHOW_SCRUBBER_REF_IMAGE':
       return Object.assign({}, state, {
         position: getPosFromImgId('refImage')
+      });
+
+    case 'SHOW_SCRUBBER_DIFF_IMAGE':
+      return Object.assign({}, state, {
+        position: getPosFromImgId('diffImage')
       });
 
     case 'SHOW_SCRUBBER':
@@ -27416,7 +27434,7 @@ var _List = __webpack_require__(270);
 
 var _List2 = _interopRequireDefault(_List);
 
-var _ScrubberModal = __webpack_require__(280);
+var _ScrubberModal = __webpack_require__(281);
 
 var _ScrubberModal2 = _interopRequireDefault(_ScrubberModal);
 
@@ -27429,6 +27447,9 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+// ESLint
+/* eslint-disable no-unused-vars */
+
 
 var Wrapper = _styledComponents2.default.section(_templateObject);
 
@@ -29952,7 +29973,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  width: 100%;\n  padding: 10px 30px;\n  background: ', ';\n  height: 70px;\n  display: flex;\n  box-sizing: border-box;\n'], ['\n  width: 100%;\n  padding: 10px 30px;\n  background: ', ';\n  height: 70px;\n  display: flex;\n  box-sizing: border-box;\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  width: 100%;\n  padding: 10px 30px;\n  background: ', ';\n  height: 70px;\n  display: flex;\n  box-sizing: border-box;\n  \n  @media print {\n    display: none;\n  }\n'], ['\n  width: 100%;\n  padding: 10px 30px;\n  background: ', ';\n  height: 70px;\n  display: flex;\n  box-sizing: border-box;\n  \n  @media print {\n    display: none;\n  }\n']);
 
 var _react = __webpack_require__(3);
 
@@ -30918,7 +30939,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  position: relative;\n  margin: 5px auto;\n  padding: 10px 30px;\n  background-color: ', ';\n  box-shadow: ', ';\n  min-height: 40px;\n  break-inside: avoid;\n\n  &:before {\n    content: \'\';\n    display: block;\n    width: 8px;\n    height: 100%;\n    background-color: ', ';\n    position: absolute;\n    top: 0;\n    left: 0;\n  }\n'], ['\n  position: relative;\n  margin: 5px auto;\n  padding: 10px 30px;\n  background-color: ', ';\n  box-shadow: ', ';\n  min-height: 40px;\n  break-inside: avoid;\n\n  &:before {\n    content: \'\';\n    display: block;\n    width: 8px;\n    height: 100%;\n    background-color: ', ';\n    position: absolute;\n    top: 0;\n    left: 0;\n  }\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  position: relative;\n  margin: 5px auto;\n  padding: 10px 30px;\n  background-color: ', ';\n  box-shadow: ', ';\n  min-height: 40px;\n  break-inside: avoid;\n\n  &:before {\n    content: \'\';\n    display: block;\n    width: 8px;\n    height: 100%;\n    background-color: ', ';\n    position: absolute;\n    top: 0;\n    left: 0;\n  }\n  @media print {\n    box-shadow: none;\n  }\n'], ['\n  position: relative;\n  margin: 5px auto;\n  padding: 10px 30px;\n  background-color: ', ';\n  box-shadow: ', ';\n  min-height: 40px;\n  break-inside: avoid;\n\n  &:before {\n    content: \'\';\n    display: block;\n    width: 8px;\n    height: 100%;\n    background-color: ', ';\n    position: absolute;\n    top: 0;\n    left: 0;\n  }\n  @media print {\n    box-shadow: none;\n  }\n']);
 
 var _react = __webpack_require__(3);
 
@@ -30930,19 +30951,23 @@ var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
 var _styles = __webpack_require__(6);
 
+var _ErrorMessages = __webpack_require__(272);
+
+var _ErrorMessages2 = _interopRequireDefault(_ErrorMessages);
+
 var _TextDetails = __webpack_require__(105);
 
 var _TextDetails2 = _interopRequireDefault(_TextDetails);
 
-var _NavButtons = __webpack_require__(274);
+var _NavButtons = __webpack_require__(275);
 
 var _NavButtons2 = _interopRequireDefault(_NavButtons);
 
-var _TestImages = __webpack_require__(277);
+var _TestImages = __webpack_require__(278);
 
 var _TestImages2 = _interopRequireDefault(_TestImages);
 
-var _ScrubberButton = __webpack_require__(279);
+var _ScrubberButton = __webpack_require__(280);
 
 var _ScrubberButton2 = _interopRequireDefault(_ScrubberButton);
 
@@ -30990,7 +31015,8 @@ var TestCard = function (_React$Component) {
         !onlyText && _react2.default.createElement(_NavButtons2.default, { currentId: this.props.numId, lastId: this.props.lastId }),
         _react2.default.createElement(_TextDetails2.default, { info: info }),
         _react2.default.createElement(_ScrubberButton2.default, { info: info, onlyText: onlyText }),
-        _react2.default.createElement(_TestImages2.default, { info: info, status: status })
+        _react2.default.createElement(_TestImages2.default, { info: info, status: status }),
+        _react2.default.createElement(_ErrorMessages2.default, { info: info, status: status })
       );
     }
   }]);
@@ -31002,6 +31028,103 @@ exports.default = TestCard;
 
 /***/ }),
 /* 272 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _templateObject = _taggedTemplateLiteral(['\n  background: transparent;\n  display: ', ';\n  padding: 10px;\n  font-family: ', ';\n  color: ', ';\n'], ['\n  background: transparent;\n  display: ', ';\n  padding: 10px;\n  font-family: ', ';\n  color: ', ';\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  word-wrap: break-word;\n  font-family: monospace;\n  background: rgb(251, 234, 234);\n  padding: 2ex;\n  color: brown;\n  display: ', ';\n'], ['\n  word-wrap: break-word;\n  font-family: monospace;\n  background: rgb(251, 234, 234);\n  padding: 2ex;\n  color: brown;\n  display: ', ';\n']);
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(10);
+
+var _styledComponents = __webpack_require__(5);
+
+var _styledComponents2 = _interopRequireDefault(_styledComponents);
+
+var _styles = __webpack_require__(6);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var DetailsPanel = _styledComponents2.default.div(_templateObject, function (props) {
+  return !!props.display ? 'block' : 'none';
+}, _styles.fonts.latoRegular, _styles.colors.secondaryText);
+
+var ErrorMsg = _styledComponents2.default.p(_templateObject2, function (props) {
+  return !!props.display ? 'block' : 'none';
+});
+
+var ErrorMessages = function (_React$Component) {
+  _inherits(ErrorMessages, _React$Component);
+
+  function ErrorMessages(props) {
+    _classCallCheck(this, ErrorMessages);
+
+    var _this = _possibleConstructorReturn(this, (ErrorMessages.__proto__ || Object.getPrototypeOf(ErrorMessages)).call(this, props));
+
+    _this.state = {};
+    return _this;
+  }
+
+  _createClass(ErrorMessages, [{
+    key: 'render',
+    value: function render() {
+      var backstopError = this.props.info.error;
+      var engineError = this.props.info.engineErrorMsg;
+      var display = !!engineError || !!backstopError;
+
+      return _react2.default.createElement(
+        DetailsPanel,
+        { display: display },
+        _react2.default.createElement(
+          ErrorMsg,
+          { display: engineError },
+          'ENGINE ERROR: ',
+          engineError
+        ),
+        _react2.default.createElement(
+          ErrorMsg,
+          { display: backstopError },
+          'BACKSTOP ERROR: ',
+          backstopError
+        )
+      );
+    }
+  }]);
+
+  return ErrorMessages;
+}(_react2.default.Component);
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    settings: state.layoutSettings
+  };
+};
+
+var ErrorMessagesContainer = (0, _reactRedux.connect)(mapStateToProps)(ErrorMessages);
+
+exports.default = ErrorMessagesContainer;
+
+/***/ }),
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31071,7 +31194,8 @@ var DiffDetails = function (_React$Component) {
         _react2.default.createElement(
           Value,
           null,
-          diff.misMatchPercentage
+          diff.misMatchPercentage,
+          ' '
         ),
         _react2.default.createElement(
           Label,
@@ -31081,7 +31205,8 @@ var DiffDetails = function (_React$Component) {
         _react2.default.createElement(
           Value,
           null,
-          diff.dimensionDifference.width
+          diff.dimensionDifference.width,
+          ' '
         ),
         _react2.default.createElement(
           Label,
@@ -31091,7 +31216,8 @@ var DiffDetails = function (_React$Component) {
         _react2.default.createElement(
           Value,
           null,
-          diff.dimensionDifference.height
+          diff.dimensionDifference.height,
+          ' '
         )
       );
     }
@@ -31103,7 +31229,7 @@ var DiffDetails = function (_React$Component) {
 exports.default = DiffDetails;
 
 /***/ }),
-/* 273 */
+/* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31179,12 +31305,12 @@ var DiffDetails = function (_React$Component) {
           _react2.default.createElement(
             Link,
             { href: url, target: '_blank' },
-            'TEST'
+            'test'
           ),
           referenceUrl && _react2.default.createElement(
             Link,
             { withSeperator: true, href: referenceUrl, target: '_blank' },
-            'REFERENCE'
+            'reference'
           )
         )
       );
@@ -31197,7 +31323,7 @@ var DiffDetails = function (_React$Component) {
 exports.default = DiffDetails;
 
 /***/ }),
-/* 274 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31220,13 +31346,13 @@ var _styledComponents = __webpack_require__(5);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
-var _jump = __webpack_require__(275);
+var _jump = __webpack_require__(276);
 
 var _jump2 = _interopRequireDefault(_jump);
 
 var _styles = __webpack_require__(6);
 
-var _iconDown = __webpack_require__(276);
+var _iconDown = __webpack_require__(277);
 
 var _iconDown2 = _interopRequireDefault(_iconDown);
 
@@ -31298,7 +31424,7 @@ var NavButtons = function (_React$Component) {
 exports.default = NavButtons;
 
 /***/ }),
-/* 275 */
+/* 276 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31473,13 +31599,13 @@ var singleton = jumper();
 
 
 /***/ }),
-/* 276 */
+/* 277 */
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAICAYAAADwdn+XAAAABGdBTUEAALGPC/xhBQAAAPdJREFUKBVjZMABEhISOB4/frwcJC0rKxu5YMGCH9iUMmIT9PPz4/369eum////P2NkZPwPVCPNzc3tt2nTps/o6pnQBXx9fUWAmvcBxa/t3bs3Zs+ePbEgNkgMJIeuHsUAJycn6W/fvh0C2roTqDkbZDsIQ9k7QXIgNciGMMM47u7uKkAn7wfyZwI1tMLEYfS9e/f2KSkpcQD5M9TU1LbevXv3HUgObICzs7Pev3//9gD5TUDNU0ES2MD9+/ePAw35AlS7CEjvAfJfMgI1WwIVrwfiHKDmNdg0oosB9YQAxaYAcSAoDKYxMTHFEasZZBhILUgPSC8A/Zdrp6hdBGQAAAAASUVORK5CYII="
 
 /***/ }),
-/* 277 */
+/* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31507,7 +31633,7 @@ var _actions = __webpack_require__(25);
 
 var _styles = __webpack_require__(6);
 
-var _ImagePreview = __webpack_require__(278);
+var _ImagePreview = __webpack_require__(279);
 
 var _ImagePreview2 = _interopRequireDefault(_ImagePreview);
 
@@ -31621,7 +31747,7 @@ var TestImagesContainer = (0, _reactRedux.connect)(mapStateToProps, mapDispatchT
 exports.default = TestImagesContainer;
 
 /***/ }),
-/* 278 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31732,7 +31858,7 @@ var ImagePreviewContainer = (0, _reactRedux.connect)(mapStateToProps)(ImagePrevi
 exports.default = ImagePreviewContainer;
 
 /***/ }),
-/* 279 */
+/* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31745,7 +31871,7 @@ Object.defineProperty(exports, "__esModule", {
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _templateObject = _taggedTemplateLiteral(['\n  display: block;\n'], ['\n  display: block;\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n  position: absolute;\n  top: 15px;\n  right: ', ';\n  padding: 10px 20px;\n  background-color: ', ';\n  color: ', ';\n  border-radius: 3px;\n  text-transform: uppercase;\n  font-family: ', ';\n  text-align: center;\n  font-size: 12px;\n  border: none;\n\n  &:focus {\n    outline: none;\n  }\n\n  &:hover {\n    cursor: pointer;\n  }\n'], ['\n  position: absolute;\n  top: 15px;\n  right: ', ';\n  padding: 10px 20px;\n  background-color: ', ';\n  color: ', ';\n  border-radius: 3px;\n  text-transform: uppercase;\n  font-family: ', ';\n  text-align: center;\n  font-size: 12px;\n  border: none;\n\n  &:focus {\n    outline: none;\n  }\n\n  &:hover {\n    cursor: pointer;\n  }\n']);
+    _templateObject2 = _taggedTemplateLiteral(['\n  position: absolute;\n  top: 15px;\n  right: ', ';\n  padding: 10px 20px;\n  background-color: ', ';\n  color: ', ';\n  border-radius: 3px;\n  text-transform: uppercase;\n  font-family: ', ';\n  text-align: center;\n  font-size: 12px;\n  border: none;\n\n  &:focus {\n    outline: none;\n  }\n\n  &:hover {\n    cursor: pointer;\n  }\n  \n  @media print {\n    display: none;\n  }\n'], ['\n  position: absolute;\n  top: 15px;\n  right: ', ';\n  padding: 10px 20px;\n  background-color: ', ';\n  color: ', ';\n  border-radius: 3px;\n  text-transform: uppercase;\n  font-family: ', ';\n  text-align: center;\n  font-size: 12px;\n  border: none;\n\n  &:focus {\n    outline: none;\n  }\n\n  &:hover {\n    cursor: pointer;\n  }\n  \n  @media print {\n    display: none;\n  }\n']);
 
 var _react = __webpack_require__(3);
 
@@ -31836,7 +31962,7 @@ var ScrubberButtonContainer = (0, _reactRedux.connect)(mapStateToProps, mapDispa
 exports.default = ScrubberButtonContainer;
 
 /***/ }),
-/* 280 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31862,7 +31988,7 @@ var _styledComponents = __webpack_require__(5);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
-var _reactModal = __webpack_require__(281);
+var _reactModal = __webpack_require__(282);
 
 var _reactModal2 = _interopRequireDefault(_reactModal);
 
@@ -31870,7 +31996,7 @@ var _actions = __webpack_require__(25);
 
 var _styles = __webpack_require__(6);
 
-var _close = __webpack_require__(289);
+var _close = __webpack_require__(290);
 
 var _close2 = _interopRequireDefault(_close);
 
@@ -31882,7 +32008,7 @@ var _TextDetails = __webpack_require__(105);
 
 var _TextDetails2 = _interopRequireDefault(_TextDetails);
 
-var _ImageScrubber = __webpack_require__(290);
+var _ImageScrubber = __webpack_require__(291);
 
 var _ImageScrubber2 = _interopRequireDefault(_ImageScrubber);
 
@@ -31945,6 +32071,7 @@ var ScrubberModal = function (_React$Component) {
           closeModal = _props.closeModal,
           showScrubberTestImage = _props.showScrubberTestImage,
           showScrubberRefImage = _props.showScrubberRefImage,
+          showScrubberDiffImage = _props.showScrubberDiffImage,
           showScrubber = _props.showScrubber;
 
 
@@ -31969,10 +32096,12 @@ var ScrubberModal = function (_React$Component) {
           _react2.default.createElement(_ImageScrubber2.default, {
             testImage: testImage,
             refImage: refImage,
+            diffImage: diffImage,
             position: position,
             showButtons: diffImage && diffImage.length > 0,
             showScrubberTestImage: showScrubberTestImage,
             showScrubberRefImage: showScrubberRefImage,
+            showScrubberDiffImage: showScrubberDiffImage,
             showScrubber: showScrubber
           })
         )
@@ -32000,6 +32129,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     showScrubberRefImage: function showScrubberRefImage(val) {
       dispatch((0, _actions.showScrubberRefImage)(val));
     },
+    showScrubberDiffImage: function showScrubberDiffImage(val) {
+      dispatch((0, _actions.showScrubberDiffImage)(val));
+    },
     showScrubber: function showScrubber(val) {
       dispatch((0, _actions.showScrubber)(val));
     }
@@ -32011,7 +32143,7 @@ var ScrubberModalContainer = (0, _reactRedux.connect)(mapStateToProps, mapDispat
 exports.default = ScrubberModalContainer;
 
 /***/ }),
-/* 281 */
+/* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32021,7 +32153,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _Modal = __webpack_require__(282);
+var _Modal = __webpack_require__(283);
 
 var _Modal2 = _interopRequireDefault(_Modal);
 
@@ -32031,7 +32163,7 @@ exports.default = _Modal2.default;
 module.exports = exports["default"];
 
 /***/ }),
-/* 282 */
+/* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32058,7 +32190,7 @@ var _propTypes = __webpack_require__(20);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _ModalPortal = __webpack_require__(283);
+var _ModalPortal = __webpack_require__(284);
 
 var _ModalPortal2 = _interopRequireDefault(_ModalPortal);
 
@@ -32281,7 +32413,7 @@ Modal.defaultStyles = {
 exports.default = Modal;
 
 /***/ }),
-/* 283 */
+/* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32305,11 +32437,11 @@ var _propTypes = __webpack_require__(20);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _focusManager = __webpack_require__(284);
+var _focusManager = __webpack_require__(285);
 
 var focusManager = _interopRequireWildcard(_focusManager);
 
-var _scopeTab = __webpack_require__(285);
+var _scopeTab = __webpack_require__(286);
 
 var _scopeTab2 = _interopRequireDefault(_scopeTab);
 
@@ -32321,7 +32453,7 @@ var _refCount = __webpack_require__(108);
 
 var refCount = _interopRequireWildcard(_refCount);
 
-var _bodyClassList = __webpack_require__(287);
+var _bodyClassList = __webpack_require__(288);
 
 var bodyClassList = _interopRequireWildcard(_bodyClassList);
 
@@ -32687,7 +32819,7 @@ module.exports = exports["default"];
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 284 */
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32787,7 +32919,7 @@ function teardownScopedFocus() {
 }
 
 /***/ }),
-/* 285 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32868,7 +33000,7 @@ function scopeTab(node, event) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 286 */
+/* 287 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32936,7 +33068,7 @@ module.exports = warning;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 287 */
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32973,7 +33105,7 @@ function remove(bodyClass) {
 }
 
 /***/ }),
-/* 288 */
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -33020,13 +33152,13 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 
 /***/ }),
-/* 289 */
+/* 290 */
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAzZJREFUeAHlm89q20AQhyv5lBAo+FJCn6GF3nostm+GkIv7kPEll1yMMbnm2pBHKL0ZAkkKubjzE96yUSxpZ2dm9ccLQmtpd2e+T5JtVmz2gcpisTjZbrc/qXq22+2uN5vNbxwfWplMJp+zLLskrqfxeHy1XC7/Znv4OwL/AmBq8IhG6/X6Fp+HUmaz2Q9cXNo+gokYf5GE7zmuvIPHCTSg7QYd8HkIZQ9/4+DBRPWvYM+pflaGpJOnQ5HgwZ+WOcGeE+g1bvvyySFIqIMHM9hzfOHhmaftZUgSGuBfwFywO+iADvO+fDFyWDInAHtOR79fl+pchjcC+i6BCw/edwL6KiEGvlJA3yTEwtcK6IsECXyjgK5LkMIHCeiqBA34YAFdk6AFzxLQFQma8GwBbUvQho8S0JYEC/hoAaklWMGLBKSSYAkvFmAtwRpeRYCVhBTwagK0JaSCVxWgJSElvLoAqYTU8CYCYiW0AW8mgCuhLXhTAaES0A7vIDANj7pfMFNNm+lk7MEpMT8Jab3p6mL8tuAR21wAgtRJwPlySXHlXcwkAhAsVEJKeOSVTECIhNTwyAkvR4+6JLsDjvoRCIV3t2LKR8H8EaiD34M+O3C3x88i/hugrztmtTd9BALg5wADbFv/BcwEhMC71+2cttp3gomAGKCYPhoy1AVIQCR9Y2WoCtAA0BiDI0NNgGbimmM1yVARYJGwxZiHZIgFWCZqObaTIRKQIkHrGNECrBNzVwh7y1hRAiwT8sH9ulVMtgCrRHzYqrpFbJYAiwSqYKuOa+cQLEA7cBVgyHHNXIIEaAYMAQxpo5VTowCtQCFQ3DYaudUK0AjAheK2l+ZYKUA6MBdE0l6S60EBkgElIJK+sTm/ExA7kCR5rb4xub8REDOAVvJa43AZ/gvgdtRK2GIcDkshgNPBImGLMZuYRqPRZLVa3WX75aQPNC1drKj0k0n5gsKPq1VvkPCH4nzLCfJyiPCQiGl34pvjQpalEvM5Hb/Am6Gn8kl0QEc3b18+36fPDRJec6yiJth7B0V1LJ4eBLxjggQ888SF274oVMfi6aviS/BYls9Pp9NPBH5Bt/8r4LF8/h8bZl9WdQoucwAAAABJRU5ErkJggg=="
 
 /***/ }),
-/* 290 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33053,7 +33185,7 @@ var _styledComponents = __webpack_require__(5);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
-var _backstopTwentytwenty = __webpack_require__(291);
+var _backstopTwentytwenty = __webpack_require__(292);
 
 var _backstopTwentytwenty2 = _interopRequireDefault(_backstopTwentytwenty);
 
@@ -33117,9 +33249,11 @@ var ImageScrubber = function (_React$Component) {
           position = _props.position,
           refImage = _props.refImage,
           testImage = _props.testImage,
+          diffImage = _props.diffImage,
           showButtons = _props.showButtons,
           showScrubberTestImage = _props.showScrubberTestImage,
           showScrubberRefImage = _props.showScrubberRefImage,
+          showScrubberDiffImage = _props.showScrubberDiffImage,
           showScrubber = _props.showScrubber;
 
 
@@ -33157,7 +33291,17 @@ var ImageScrubber = function (_React$Component) {
             _react2.default.createElement(
               ScrubberViewBtn,
               {
-                selected: position !== 100 && position !== 0,
+                selected: position === -1,
+                onClick: function onClick() {
+                  showScrubberDiffImage();
+                }
+              },
+              'DIFF'
+            ),
+            _react2.default.createElement(
+              ScrubberViewBtn,
+              {
+                selected: position !== 100 && position !== 0 && position !== -1,
                 onClick: function onClick() {
                   showScrubber();
                 }
@@ -33169,6 +33313,14 @@ var ImageScrubber = function (_React$Component) {
         _react2.default.createElement('img', {
           className: 'testImage',
           src: testImage,
+          style: {
+            margin: 'auto',
+            display: dontUseScrubberView ? 'block' : 'none'
+          }
+        }),
+        _react2.default.createElement('img', {
+          className: 'diffImage',
+          src: diffImage,
           style: {
             margin: 'auto',
             display: dontUseScrubberView ? 'block' : 'none'
@@ -33195,7 +33347,7 @@ var ImageScrubber = function (_React$Component) {
               src: refImage,
               onError: this.handleLoadingError
             }),
-            _react2.default.createElement('img', { className: 'testImage', src: testImage }),
+            _react2.default.createElement('img', { className: 'testImage', src: position === -1 ? diffImage : testImage }),
             _react2.default.createElement(SliderBar, { className: 'slider' })
           )
         )
@@ -33219,7 +33371,7 @@ var ImageScrubber = function (_React$Component) {
 exports.default = ImageScrubber;
 
 /***/ }),
-/* 291 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
