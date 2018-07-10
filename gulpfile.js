@@ -12,7 +12,6 @@ path                    = require('path'),
 backstop                = require('backstopjs'),
 url                     = require('url')
 
-
 var config = require('./skin');
 var {rootValue, unitPrecision} = config.pxtorem;
 var {protocol, host, theme } = config;
@@ -44,7 +43,7 @@ var processors = [
     replace: true
   })
 ];
-
+console.log('static', require('./server/static'));
 function loadbrowserSync(){
   browserSync.init({
     port: 8080,

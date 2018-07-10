@@ -3,6 +3,7 @@ let config = skin.backstop;
 const url = require('url');
 
 config = Object.assign(config, {
+  "theme": skin.theme,
   "paths": {
     "bitmaps_reference": "backstop_data/bitmaps_reference",
     "bitmaps_test": "backstop_data/bitmaps_test",
