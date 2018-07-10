@@ -43,13 +43,15 @@ var processors = [
     replace: true
   })
 ];
-console.log('static', require('./server/static'));
+
 function loadbrowserSync(){
   browserSync.init({
     port: 8080,
     proxy : [protocol, host].join('://'),
     serveStatic: require('./server/static'),
     middleware: require('./server/routes')
+  }, function(){
+    console.log('Altere o arquivo css/theme/one.styl para testar');
   });
 }
 
