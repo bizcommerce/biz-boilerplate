@@ -21,5 +21,3 @@ module.exports = [
         handle: approve
     }
 ];
-
-console.log('rotas:', module.exports);

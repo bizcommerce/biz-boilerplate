@@ -12,7 +12,6 @@ path                    = require('path'),
 backstop                = require('backstopjs'),
 url                     = require('url')
 
-
 var config = require('./skin');
 var {rootValue, unitPrecision} = config.pxtorem;
 var {protocol, host, theme } = config;
@@ -51,6 +50,8 @@ function loadbrowserSync(){
     proxy : [protocol, host].join('://'),
     serveStatic: require('./server/static'),
     middleware: require('./server/routes')
+  }, function(){
+    console.log('Altere o arquivo css/theme/one.styl para testar');
   });
 }
 
