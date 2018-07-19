@@ -11,7 +11,7 @@
   },
   "theme": "neon",
   "backstop": {
-    "local": true,
+    "local": false,
     "id": "backstop_default",
     "viewports": [
       {
