@@ -1,6 +1,6 @@
 {
   "protocol": "http",
-  "host": "lojabasev4.dev.bizcommerce.com.br",
+  "host": "engenhariaedesenho.loja.biz",
   "browsers": [
     "last 2 version",
     "ie >= 10"
@@ -11,7 +11,7 @@
   },
   "theme": "neon",
   "backstop": {
-    "local": false,
+    "local": true,
     "id": "backstop_default",
     "viewports": [
       {
