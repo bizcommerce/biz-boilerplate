@@ -1,11 +1,19 @@
 icon(i)
-   font-family: "biz_icons";
-   content: i
+  font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  content: i
+   
 
 /**
 * Tema:     Neon
 * VersÃ£o:   2.0
-* Update:   03/2018
+* Update:   07/2018
 */
 
 /* Geral */
@@ -268,9 +276,15 @@ button:hover .ico { fill: unquote($color2_font_hover) }
   color: #fff;
   cursor: not-allowed;
 }
-.btn--remove:before { icon("\f014") }
+.btn--remove:before { 
+  display: block;
+  icon("\f014") 
+}
 .btn--remove span { display: none }
-.btn--close:before { icon("\f00d") }
+.btn--close:before { 
+  display: block;
+  icon("\f00d")
+}
 .btn--close span { display: none }
 .btn--back {
   display: flex;

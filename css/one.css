@@ -336,11 +336,33 @@ button:hover .ico {
   color: #fff;
   cursor: not-allowed;
 }
-.btn--remove:before,
+.btn--remove:before {
+  display: block;
+  font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  content: "\f014";
+}
 .btn--remove span {
   display: none;
 }
-.btn--close:before,
+.btn--close:before {
+  display: block;
+  font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  content: "\f00d";
+}
 .btn--close span {
   display: none;
 }
@@ -357,6 +379,13 @@ button:hover .ico {
 }
 .btn--back:before {
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: "\f104";
   margin-right: 1rem;
 }
@@ -574,6 +603,13 @@ button:hover .ico {
 .search__filter .label:before {
   margin-right: 1rem;
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: "\f0b0";
   color: rgba(0,0,0,0.2);
 }
@@ -830,6 +866,13 @@ form.searchautocomplete {
 }
 .breadcrumb__home .breadcrumb__link:before {
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: "\f015";
   margin-right: 0.5rem;
 }
@@ -951,11 +994,25 @@ form.searchautocomplete {
 }
 .newsletter .male-label:before {
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: "\f183";
   margin-right: 0.5em;
 }
 .newsletter .female-label:before {
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: "\f182";
   margin-right: 0.5em;
 }
@@ -1369,6 +1426,13 @@ form.searchautocomplete {
 .positivo .testimonials__rating:before {
   color: #000000;
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: '\f164';
 }
 .poll__content {
@@ -1690,6 +1754,13 @@ form.searchautocomplete {
 }
 .glossary__term-link:before {
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: "\f105";
   margin-right: 0.5rem;
   vertical-align: middle;
@@ -3031,6 +3102,13 @@ body:not(.mobile) .categories .ul--1 {
   width: 100%;
   text-align: center;
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: "\f053";
   font-size: 1rem;
   text-indent: 0;
@@ -3060,6 +3138,13 @@ body.ie .owl-next:before {
 .owl-page span {
   background: #000000;
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: '\f054';
 }
 .feeds__list {
@@ -3596,6 +3681,13 @@ body.ie .owl-next:before {
 }
 .col-main .note-msg:before {
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: "\f119";
   margin-bottom: 1rem;
   opacity: 0.5;
@@ -3745,6 +3837,13 @@ body.ie .owl-next:before {
   display: block;
   line-height: 2rem;
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: '\f054';
 }
 .pager a.previous:before,
@@ -4338,6 +4437,13 @@ body.ie .owl-next:before {
   color: #FFFFFF;
   font-size: 1rem;
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: "\f003";
 }
 .sharing-links span {
@@ -5118,6 +5224,13 @@ body.safari .product-image-thumbs .thumb-link {
   margin-left: 0.25rem;
   color: #000000;
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: "\f00c";
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
@@ -5539,6 +5652,13 @@ tr.bundle:before {
   color: rgba(0,0,0,0.4);
   margin-right: 0.25rem;
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: "\f017";
 }
 .downloadable {
@@ -5620,6 +5740,13 @@ tr.bundle:before {
   font-size: 0.8rem;
   margin-right: 0.25rem;
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: "\f01a";
 }
 .downloadable-sample-link .sep {
@@ -5652,6 +5779,13 @@ tr.bundle:before {
   font-size: 1.2rem;
   margin-right: 0.5rem;
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: "\f01a";
 }
 .downloadable__sample .link:hover {
@@ -5836,6 +5970,13 @@ tr.bundle:before {
 }
 .reviews__return.success:before {
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: "\f00c";
   display: block;
   margin: 0 auto 1rem;
@@ -5845,6 +5986,13 @@ tr.bundle:before {
 }
 .reviews__return.error:before {
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: "\f00d";
   display: block;
   margin: 0 auto 1rem;
@@ -5890,6 +6038,13 @@ tr.bundle:before {
 }
 .review-summary label:before {
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: "\f005";
   display: block;
   color: rgba(0,0,0,0.1);
@@ -6728,6 +6883,13 @@ table .price-box {
   margin-right: 1rem;
   color: #999;
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: '\f0e0';
 }
 .success-content .print:before {
@@ -6737,6 +6899,13 @@ table .price-box {
   margin-right: 1rem;
   color: #999;
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: '\f02f';
 }
 .success-content .print a {
@@ -6766,6 +6935,13 @@ table .price-box {
 }
 .success-content .pagto a.boleto:before {
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: '\f02a';
   margin-right: 1rem;
 }
@@ -6890,6 +7066,13 @@ table .price-box {
 }
 .accountlogin__new li:before {
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: '\f00c';
   margin-right: 0.5rem;
   color: #000000;
@@ -7180,6 +7363,13 @@ table .price-box {
   display: block;
   line-height: 2rem;
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: '\f054';
   color: #4D4D4D;
 }
@@ -7390,6 +7580,13 @@ table .price-box {
 }
 .data-range:after {
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: "\f073";
   margin-left: 0.5rem;
   -webkit-box-flex: 0;
@@ -7424,6 +7621,13 @@ table .price-box {
 }
 .tweeter a:before {
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: "\f099";
   color: #00aced;
 }
@@ -7599,6 +7803,13 @@ table .price-box {
   font-size: 1rem;
   color: #CA213E;
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: '\f00c';
 }
 .order-status.state-holded strong {
@@ -7845,6 +8056,13 @@ table .price-box {
 }
 .order-date:before {
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: '\f133';
   font-size: 1rem;
   margin-right: 0.5rem;
@@ -7978,6 +8196,13 @@ dl.order-info dt {
   top: -0.13rem;
   font-size: 1.25rem;
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: '\f02a';
   vertical-align: middle;
   margin-right: 0.63rem;
@@ -8032,6 +8257,13 @@ dl.order-info dt {
 }
 .order-items a.link-print:before {
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: '\f02f';
   margin-right: 0.31rem;
 }
@@ -8193,6 +8425,13 @@ table.tracking-table tbody td {
 }
 .my-account .btn-update:before {
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: "\f021";
   margin-right: -0.13rem;
 }
@@ -8204,6 +8443,13 @@ table.tracking-table tbody td {
 }
 .my-account .link-edit:before {
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: "\f040";
   margin-right: -0.13rem;
 }
@@ -8494,6 +8740,13 @@ table.tracking-table tbody td {
 }
 .block-gift-list .title:before {
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: "\f06b";
   margin-right: 0.31rem;
   color: #000000;
@@ -8836,6 +9089,13 @@ body.page-popup {
 }
 .blogfeed_share a:before {
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: "\f09a";
   color: #fff;
   margin: auto;
@@ -9020,6 +9280,13 @@ body.page-popup {
   top: -0.13rem;
   margin-right: 0.63rem;
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: '\f023';
 }
 .all-brands-list {
@@ -9320,6 +9587,13 @@ body.page-popup {
   opacity: 0.5;
   font-size: 1.25rem;
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: '\f014';
   font-family: "biz_icons", sans-serif;
   speak: none;
@@ -9398,6 +9672,13 @@ body.page-popup {
 }
 .cotacao .qty-wrapper .qquantity-button:before {
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: '\f021';
   font-size: 0.88rem;
   font-family: 'biz_icons';
@@ -9443,6 +9724,13 @@ body.page-popup {
 #quotelist .btn-remove:before {
   font-size: 1rem;
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: "\f014";
 }
 .qquoteadv .introduction,
@@ -9574,6 +9862,13 @@ body.page-popup {
 }
 #onepage-checkout-shipping-method-additional-load h3:before {
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: "\f06b";
   color: #000000;
   position: absolute;
@@ -9734,6 +10029,13 @@ label[for='allow_gift_messages']:hover {
 }
 #change-product-content .quick-search:before {
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: "\f002";
   margin-right: 1rem;
   color: #000000;
@@ -9855,6 +10157,13 @@ table .change-product-link {
 }
 table .change-product-link:before {
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: "\f021";
   margin-right: 0.25rem;
   display: inline-block;
@@ -10380,6 +10689,13 @@ table .change-product-link:hover {
   right: calc(100% + 0.63rem);
   top: calc(50% - 0.63rem);
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: '\f060';
   display: block;
   width: 1.25rem;
@@ -10483,6 +10799,13 @@ table .change-product-link:hover {
 }
 .revendaslist .telmail li:before {
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: '\f095';
   margin-right: 0.44rem;
 }
@@ -10560,6 +10883,13 @@ table .change-product-link:hover {
 }
 .arevenda .dados .contato li:before {
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: '\f095';
   margin-right: 0.44rem;
 }
@@ -10728,6 +11058,13 @@ table .change-product-link:hover {
 .case-detail-content .bx-controls-direction a:before {
   display: block;
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: '\f053';
   font-size: 1rem;
   text-indent: 0;
@@ -10888,6 +11225,13 @@ table .change-product-link:hover {
 #checkout-payment-method-load > dt label:after {
   color: #CA213E;
   font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   content: "\f00c";
 }
 #checkout-payment-method-load > dt label:hover {
@@ -11215,6 +11559,13 @@ table .change-product-link:hover {
   }
   .categories__show:before {
     font-family: "biz_icons";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
     content: "\f0c9";
     position: relative;
     left: 0.09rem;
@@ -11996,6 +12347,13 @@ table .change-product-link:hover {
   }
   .tabs__tab:after {
     font-family: "biz_icons";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
     content: "\f105";
     margin-left: auto;
   }
@@ -12049,6 +12407,13 @@ table .change-product-link:hover {
   .jointsales__title:after,
   .upsell__title:after {
     font-family: "biz_icons";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
     content: "\f105";
     margin-left: auto;
   }
@@ -12165,6 +12530,13 @@ table .change-product-link:hover {
   }
   .reviews__title:after {
     font-family: "biz_icons";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
     content: "\f123";
     margin-left: auto;
   }
