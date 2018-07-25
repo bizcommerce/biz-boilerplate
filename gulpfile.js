@@ -18,7 +18,9 @@ var {protocol, host, theme } = config;
 
 var processors = [
   autoprefixer({
-    browsers: config.browsers
+    browsers: config.browsers,
+    grid: true,
+    cascade: false
   }),
   pxtorem({
     rootValue: rootValue,

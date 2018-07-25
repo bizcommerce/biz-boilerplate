@@ -1,10 +1,7 @@
 {
   "protocol": "http",
   "host": "lojaexemplo.bizcommerce.com.br",
-  "browsers": [
-    "last 2 version",
-    "ie >= 10"
-  ],
+  "browsers": [">1%"],
   "pxtorem": {
     "rootValue": 16,
     "unitPrecision": 2
