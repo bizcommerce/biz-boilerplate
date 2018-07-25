@@ -656,6 +656,7 @@ button:hover .ico {
 .search__filter li {
   display: block;
   width: 100%;
+  page-break-inside: avoid;
   -webkit-column-break-inside: avoid;
           break-inside: avoid-column;
   padding: 0.5rem;
@@ -1399,7 +1400,18 @@ form.searchautocomplete {
   padding-top: 1rem;
   display: none;
 }
-.testimonials__form .refresh-captcha:before,
+.testimonials__form .refresh-captcha:before {
+  display: inline;
+  font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  content: "\f021";
+}
 .testimonials__form .refresh-captcha .svg-loader {
   width: 2rem;
   height: 2rem;
@@ -1419,7 +1431,18 @@ form.searchautocomplete {
   float: left;
   margin-right: 1rem;
 }
-.testimonials__rating:before,
+.testimonials__rating:before {
+  display: inline-block;
+  font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  content: "\f165";
+}
 .testimonials__rating span {
   display: none;
 }
@@ -2961,6 +2984,7 @@ body:not(.mobile) .categories .ul--1 {
           column-gap: 1rem;
 }
 .categories--mini .li--2 {
+  page-break-inside: avoid;
   -webkit-column-break-inside: avoid;
           break-inside: avoid-column;
   display: block;
@@ -3243,6 +3267,7 @@ body.ie .owl-next:before {
 }
 .feeds--content .feeds__post {
   padding: 0 0 8rem;
+  page-break-inside: avoid;
   -webkit-column-break-inside: avoid;
           break-inside: avoid-column;
   display: block;
@@ -3512,6 +3537,7 @@ body.ie .owl-next:before {
 }
 .banner--nojs .banner__item {
   display: block;
+  page-break-inside: avoid;
   -webkit-column-break-inside: avoid;
           break-inside: avoid-column;
   overflow: hidden;
@@ -3846,7 +3872,18 @@ body.ie .owl-next:before {
   -webkit-font-smoothing: antialiased;
   content: '\f054';
 }
-.pager a.previous:before,
+.pager a.previous:before {
+  display: inline;
+  font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  content: '\f053';
+}
 .toolbar-bottom .pager {
   display: block;
 }
@@ -4297,7 +4334,18 @@ body.ie .owl-next:before {
   color: #222;
   font-size: 0.6rem;
 }
-.qty-wrapper .bt:before,
+.qty-wrapper .bt:before {
+  display: block;
+  font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  content: '\f077';
+}
 .qty-wrapper .bt:hover {
   background: #ddd;
 }
@@ -4307,14 +4355,36 @@ body.ie .owl-next:before {
 .qty-wrapper .bt.less {
   border-radius: 0 0 1rem 1rem;
 }
-.qty-wrapper .bt.less:before,
+.qty-wrapper .bt.less:before {
+  display: block;
+  font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  content: '\f078';
+}
 .qty-wrapper .bt.type {
   display: none;
   border-radius: 1rem;
   height: 2rem;
   line-height: 2rem;
 }
-.qty-wrapper .bt.type:before,
+.qty-wrapper .bt.type:before {
+  display: inline;
+  font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  content: '\f00c';
+}
 .qty-wrapper .typing .bt {
   display: none;
 }
@@ -5108,7 +5178,7 @@ body.safari .product-image-thumbs .thumb-link {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 100%;
           flex: 1 1 100%;
-  content: 'Escolha as opÃ§Ãµes:';
+  content: 'Escolha as opÃƒÂ§ÃƒÂµes:';
   display: block;
   margin-bottom: 1rem;
   padding: 0 0.5rem;
@@ -5474,8 +5544,30 @@ tr.bundle:before {
 .grouped__option:not(.out-of-stock):hover .grouped__check {
   color: #000000;
 }
-.grouped__check:before,
-.added .grouped__check:before,
+.grouped__check:before {
+  display: inline;
+  font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  content: "\f067";
+}
+.added .grouped__check:before {
+  display: inline;
+  font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  content: '\f00c';
+}
 .grouped .grouped-images {
   max-height: 5rem;
   margin-right: 1rem;
@@ -6135,7 +6227,18 @@ tr.bundle:before {
   -webkit-transform: scale(2.5);
           transform: scale(2.5);
 }
-.jointsales .more:before,
+.jointsales .more:before {
+  display: block;
+  font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  content: "\f067";
+}
 .jointsales__items {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 70%;
@@ -6802,7 +6905,7 @@ table tbody .bundle.child td {
 }
 table tbody .bundle.child th:first-child:before,
 table tbody .bundle.child td:first-child:before {
-  content: 'â€¢ ';
+  content: 'Ã¢â‚¬Â¢ ';
 }
 table tbody .bundle.child th div,
 table tbody .bundle.child td div {
@@ -7373,7 +7476,18 @@ table .price-box {
   content: '\f054';
   color: #4D4D4D;
 }
-.my-account .pager ol li a.previous:before,
+.my-account .pager ol li a.previous:before {
+  display: inline;
+  font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  content: '\f053';
+}
 .my-orders {
   margin: 0 -0.5rem -1rem;
   display: -webkit-box;
@@ -7444,7 +7558,7 @@ table .price-box {
   font-size: 0.7rem;
   color: #FFFFFF;
   background: #CCCCCC;
-  content: 'Ãšltimo pedido';
+  content: 'ÃƒÅ¡ltimo pedido';
 }
 .my-orders header {
   margin-bottom: 1rem;
@@ -8419,7 +8533,18 @@ table.tracking-table tbody td {
   background: #990000;
   color: #FFFFFF;
 }
-.my-account .btn-share:before,
+.my-account .btn-share:before {
+  display: inline;
+  font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  content: "\f1e0";
+}
 .my-account .btn-share span {
   display: none;
 }
@@ -9113,11 +9238,33 @@ body.page-popup {
 .blogfeed_share a.tt-bt {
   background: #00aced;
 }
-.blogfeed_share a.tt-bt:before,
+.blogfeed_share a.tt-bt:before {
+  display: inline;
+  font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  content: '\f099';
+}
 .blogfeed_share a.gp-bt {
   background: #dd4b39;
 }
-.blogfeed_share a.gp-bt:before,
+.blogfeed_share a.gp-bt:before {
+  display: inline;
+  font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  content: '\f0d5';
+}
 .blogfeed_share a span {
   display: none;
 }
@@ -10574,7 +10721,7 @@ table .change-product-link:hover {
   font-size: 0.88rem;
   text-shadow: 0 1px 1px rgba(0,0,0,0.2);
   z-index: 9999;
-  content: 'Este estado nÃ£o possui nenhuma revenda.';
+  content: 'Este estado nÃƒÂ£o possui nenhuma revenda.';
   text-align: center;
   padding: 0.31rem 0.94rem;
   background: #000000;
@@ -10809,7 +10956,18 @@ table .change-product-link:hover {
   content: '\f095';
   margin-right: 0.44rem;
 }
-.revendaslist .telmail li.mail:before,
+.revendaslist .telmail li.mail:before {
+  display: inline;
+  font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  content: '\f003';
+}
 .revendaslist .telmail a {
   color: #4D4D4D;
 }
@@ -10893,7 +11051,18 @@ table .change-product-link:hover {
   content: '\f095';
   margin-right: 0.44rem;
 }
-.arevenda .dados .contato li.mail:before,
+.arevenda .dados .contato li.mail:before {
+  display: inline;
+  font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  content: '\f003';
+}
 .arevenda .dados a {
   color: #4D4D4D;
 }
@@ -10916,6 +11085,7 @@ table .change-product-link:hover {
 .arevenda .galeria-nav li {
   padding-bottom: 0.63rem;
   display: block;
+  page-break-inside: avoid;
   -webkit-column-break-inside: avoid;
           break-inside: avoid-column;
 }
@@ -11076,7 +11246,18 @@ table .change-product-link:hover {
   left: auto;
   right: -1.25rem;
 }
-.case-detail-content .bx-controls-direction a.bx-next:before,
+.case-detail-content .bx-controls-direction a.bx-next:before {
+  display: inline;
+  font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  content: '\f054';
+}
 .case-detail-content .bx-controls-direction a:hover {
   color: #000000;
 }
@@ -11207,7 +11388,18 @@ table .change-product-link:hover {
 .step-title a {
   color: #4D4D4D;
 }
-.step-title a:before,
+.step-title a:before {
+  display: inline;
+  font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  content: "\f040";
+}
 .step-title a:hover {
   background: #4D4D4D;
   color: #FFFFFF;
@@ -11303,7 +11495,18 @@ table .change-product-link:hover {
 .osc-steps .opc-block-progress dt a {
   color: #4D4D4D;
 }
-.osc-steps .opc-block-progress dt a:before,
+.osc-steps .opc-block-progress dt a:before {
+  display: inline;
+  font-family: "biz_icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  content: "\f040";
+}
 .osc-steps .opc-block-progress dt a:hover {
   background: #4D4D4D;
   color: #FFFFFF;
@@ -11728,7 +11931,18 @@ table .change-product-link:hover {
     -webkit-box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.3);
             box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.3);
   }
-  .filters .title:before,
+  .filters .title:before {
+    display: inline;
+    font-family: "biz_icons";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    content: "\f1de";
+  }
   .filters .title span {
     display: none;
   }
@@ -11765,7 +11979,18 @@ table .change-product-link:hover {
     border-radius: 0;
     width: 100vw;
   }
-  .filters.on .title:before,
+  .filters.on .title:before {
+    display: block;
+    font-family: "biz_icons";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    content: "\f00d";
+  }
   .filters__filter:not(:last-child) {
     margin-bottom: 2rem;
   }
@@ -12171,7 +12396,18 @@ table .change-product-link:hover {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .parcelamento .title:after,
+  .parcelamento .title:after {
+    display: block;
+    font-family: "biz_icons";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    content: "\f105";
+  }
   .parcelamento ul {
     position: fixed;
     top: 0;
@@ -12623,7 +12859,18 @@ table .change-product-link:hover {
   .add-to-links a:after {
     margin-left: auto;
   }
-  .add-to-links .link-wishlist a:after,
+  .add-to-links .link-wishlist a:after {
+    display: inline;
+    font-family: "biz_icons";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    content: "\f004";
+  }
   .add-to-links .link-compare a:after {
     content: "\f012";
   }

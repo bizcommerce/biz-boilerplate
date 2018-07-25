@@ -35,7 +35,7 @@
     "@babel/core": "7.0.0-beta.44",
     "@babel/preset-env": "7.0.0-beta.44",
     "@webcomponents/webcomponentsjs": "^2.0.0",
-    "autoprefixer": "^7.1.2",
+    "autoprefixer": "^9.0.1",
     "browser-sync": "^2.24.5",
     "gulp-postcss": "^7.0.0",
     "postcss": "^6.0.23",
