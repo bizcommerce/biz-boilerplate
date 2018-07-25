@@ -51,7 +51,7 @@ function loadbrowserSync(){
     serveStatic: require('./server/static'),
     middleware: require('./server/routes')
   }, function(){
-    console.log('Altere o arquivo css/theme/one.styl para testar');
+    console.log('Altere o arquivo css/theme/general.styl para testar');
   });
 }
 
