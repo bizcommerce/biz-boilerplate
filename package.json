@@ -4,13 +4,13 @@
   "description": "Estrutura base para custoizaÃ§Ã£o de Layouts Biz4",
   "main": "gulpfile.js",
   "dependencies": {
-    "backstopjs": "^3.9.4",
-    "gulp": "^3.9.0",
+    "backstopjs": "^3.8.8",
+    "gulp": "^4.0.0",
     "gulp-clipboard": "^0.1.1",
     "gulp-if": "^2.0.0",
     "gulp-stylus": "^2.7.0",
-    "gulp-svg-sprite": "^1.2.10",
-    "gulp-svgmin": "^1.2.1"
+    "gulp-svg-sprite": "^1.5.0",
+    "gulp-svgmin": "^2.1.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
