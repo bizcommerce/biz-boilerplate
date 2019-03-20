@@ -1,6 +1,6 @@
 {
   "protocol": "http",
-  "host": "lojaexemplo.bizcommerce.com.br",
+  "host": "test.loja.biz",
   "browsers": [">1%"],
   "pxtorem": {
     "rootValue": 16,
