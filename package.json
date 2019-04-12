@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "dependencies": {
     "backstopjs": "^3.8.8",
-    "gulp": "^4.0.0",
+    "gulp": "3.9.1",
     "gulp-clipboard": "^0.1.1",
     "gulp-if": "^2.0.0",
     "gulp-stylus": "^2.7.0",
